@@ -1,6 +1,6 @@
 # OB/GYN Revision
 
-A polished, mobile-first, zero-build static quiz web app for revising OB/GYN MCQ decks (Obstetrics, Gynecology and Women's Health). It runs entirely in the browser with no frameworks, no build step and no external assets — quiz data is loaded via plain `<script>` tags so the app works both when opened directly from disk (`file://`) and when served statically (e.g. GitHub Pages). It supports up to 5 renamable local profiles, per-profile/per-deck progress saved in `localStorage`, a question grid, per-option explanations, a "Key concept" teaching card, and one-click export of your wrong answers as a Markdown file ready to paste into ChatGPT.
+A polished, mobile-first, zero-build static quiz web app for revising OB/GYN MCQ decks (Obstetrics, Gynecology, Women's Health, and three mock exams: Mock Exam 1, Mock Exam 2 and the Mock Final). It runs entirely in the browser with no frameworks, no build step and no external assets — quiz data is loaded via plain `<script>` tags so the app works both when opened directly from disk (`file://`) and when served statically (e.g. GitHub Pages). It supports up to 5 renamable local profiles, per-profile/per-deck progress saved in `localStorage`, a question grid, per-option explanations, a "Key concept" teaching card, and one-click export of your wrong answers as a Markdown file ready to paste into ChatGPT.
 
 ## Study features
 
@@ -33,4 +33,6 @@ Run `node test_lecture_tags.mjs`. The check fails if any source question is unma
 
 ## Updating the questions
 
-Replace `data/obs.js`, `data/gyn.js`, or `data/womens-health.js` with updated decks. Each file pushes a deck onto `window.QUIZ_DECKS`; the app is fully data-driven and makes no assumptions about how many questions each deck has. When questions are added, removed, or renumbered, update `data/lecture-tags.js` and run `node test_lecture_tags.mjs` before deployment.
+Each file in `data/` pushes one deck onto `window.QUIZ_DECKS` and is loaded by a `<script>` tag in `index.html`; the app is fully data-driven and makes no assumptions about how many decks or questions there are. To add another deck, create a `data/<id>.js` file following the same schema and add a matching `<script>` tag to `index.html`.
+
+The three source decks (`obs`, `gyn`, `womens-health`) are additionally lecture-tagged: when their questions are added, removed, or renumbered, update `data/lecture-tags.js` and run `node test_lecture_tags.mjs` before deployment. The mock exam decks (`mock-exam-1`, `mock-exam-2`, `mock-final`) are standalone past papers and are not lecture-tagged, so the app simply renders no lecture flag for them.

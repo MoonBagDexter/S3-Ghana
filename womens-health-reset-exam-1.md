@@ -228,8 +228,8 @@
 - C. CT angiography.
 - D. Magnetic resonance angiography.
 
-### 37–41. *[Not captured]*
-> These questions were on page 8 of the MCQ booklet, which was not among the submitted images. Placeholder retained so numbering stays aligned with the original paper.
+### 37–41. *[Not available]*
+> Page 8 of the MCQ booklet (questions 37–41) is missing and could not be recovered, so these questions are not part of this digitized copy. The numbering below continues from the original paper (36 → 42).
 
 ### 42. A 30 year old G3P2 woman presents at 32 weeks with painless bright red vaginal bleeding. The patient is vitally stable and bleeding is moderate in amount. Ultrasound confirms placenta previa. What is the best next step in management?
 - A. Induce labour with oxytocin
@@ -405,4 +405,4 @@ She is currently normotensive, weighing 75 Kg. Her menses are regular, recurring
 
 ---
 
-*Digitized from photographs of the original MED422 "Women's Health Reset Exam 1" paper. MCQs 37–41 were not included in the source images and are marked as not captured.*
+*Digitized from photographs of the original MED422 "Women's Health Reset Exam 1" paper. MCQs 37–41 are absent because page 8 of the paper is missing; numbering follows the original.*

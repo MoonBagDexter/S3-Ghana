@@ -26,11 +26,33 @@
     ui: function (i) { return "obgyn:ui:" + i; }
   };
 
+  /* ---------- Deck categories (two-level tabs) ----------
+     Decks split into two groups: the study "Reviews" and the "Mock Exams".
+     Membership is derived from the deck id (mock-* is an exam) so the app
+     stays data-driven and new decks slot into the right group automatically. */
+  var CATEGORY_DEFS = [
+    { id: "reviews", title: "Reviews" },
+    { id: "mock", title: "Mock Exams" }
+  ];
+  function categoryOf(deckId) {
+    return /^mock-/.test(deckId) ? "mock" : "reviews";
+  }
+  function decksInCategory(catId) {
+    return DECKS.filter(function (d) { return categoryOf(d.id) === catId; });
+  }
+  function firstDeckIdIn(catId) {
+    var ds = decksInCategory(catId);
+    return ds.length ? ds[0].id : DECKS[0].id;
+  }
+  // Only surface categories that actually contain decks.
+  var CATEGORIES = CATEGORY_DEFS.filter(function (c) { return decksInCategory(c.id).length; });
+
   /* ---------- State ---------- */
   var state = {
     profileIdx: null,
     pendingProfile: null, // picker: tapped once, awaiting confirmation tap
     deckId: DECKS[0].id,
+    lastDeckInCat: {},  // category id -> last deck viewed in it (so switching back returns there)
     pos: {},            // deckId -> current position in the deck's order (preserved per deck)
     order: {},          // deckId -> array of question indexes when shuffled, or null for natural order
     progress: {},       // deckId -> { questionId: {picked, status} } for current profile
@@ -39,6 +61,7 @@
     showCompletion: false
   };
   DECKS.forEach(function (d) { state.pos[d.id] = 0; state.order[d.id] = null; });
+  state.lastDeckInCat[categoryOf(state.deckId)] = state.deckId;
 
   var profiles = loadProfiles();
   var app = document.getElementById("app");
@@ -416,6 +439,7 @@
     state.progress = loadProgress(idx);
     var ui = loadUi(idx);
     state.deckId = ui.deckId;
+    state.lastDeckInCat[categoryOf(state.deckId)] = state.deckId;
     state.pos = ui.pos;
     state.order = ui.order;
     state.showCompletion = false;
@@ -467,7 +491,12 @@
     var pct = s.total ? Math.round((s.answered / s.total) * 100) : 0;
     var accent = ACCENTS[state.profileIdx];
 
-    var tabs = DECKS.map(function (d) {
+    var currentCat = categoryOf(state.deckId);
+    var catTabs = CATEGORIES.map(function (c) {
+      return '<button class="cat-tab' + (c.id === currentCat ? " active" : "") +
+        '" data-cat="' + esc(c.id) + '">' + esc(c.title) + "</button>";
+    }).join("");
+    var tabs = decksInCategory(currentCat).map(function (d) {
       return '<button class="deck-tab' + (d.id === state.deckId ? " active" : "") +
         '" data-deck="' + esc(d.id) + '">' + esc(d.title) + "</button>";
     }).join("");
@@ -481,6 +510,7 @@
         '<button class="icon-btn zoom-btn" id="zoomIn" title="Make everything bigger" aria-label="Make everything bigger">+</button>' +
         '<button class="icon-btn" id="gridBtn" title="Question grid" aria-label="Question grid">&#9638;</button>' +
       "</div>" +
+      (CATEGORIES.length > 1 ? '<div class="cat-tabs">' + catTabs + "</div>" : "") +
       '<div class="deck-tabs">' + tabs + "</div>" +
       '<div class="progress-wrap">' +
         '<div class="progress-track"><div class="progress-fill" style="width:' + pct + '%"></div></div>' +
@@ -492,6 +522,9 @@
     hdr.querySelector("#zoomIn").addEventListener("click", function () { changeScale(1); });
     hdr.querySelector("#gridBtn").addEventListener("click", openGrid);
     applyScale(); // sync the +/- disabled states with the current scale
+    hdr.querySelectorAll(".cat-tab").forEach(function (t) {
+      t.addEventListener("click", function () { switchCategory(t.getAttribute("data-cat")); });
+    });
     hdr.querySelectorAll(".deck-tab").forEach(function (t) {
       t.addEventListener("click", function () { switchDeck(t.getAttribute("data-deck")); });
     });
@@ -504,9 +537,17 @@
     renderProfilePicker();
   }
 
+  function switchCategory(catId) {
+    if (categoryOf(state.deckId) === catId) return;
+    var target = state.lastDeckInCat[catId];
+    if (!target || categoryOf(target) !== catId) target = firstDeckIdIn(catId);
+    switchDeck(target);
+  }
+
   function switchDeck(deckId) {
     if (deckId === state.deckId) return;
     state.deckId = deckId;
+    state.lastDeckInCat[categoryOf(deckId)] = deckId;
     state.showCompletion = false;
     saveUi();
     paintHeader();

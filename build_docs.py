@@ -653,8 +653,8 @@ def mcq_markdown():
     out.append("Each question is followed by a boxed answer giving the correct option, "
                "why it is correct, and why each other option is wrong.")
     out.append("")
-    out.append("> **Note:** MCQs 37–41 were on a page not included in the source photographs, "
-               "so they are absent here. The numbering below matches the original paper.")
+    out.append("> **Note:** MCQs 37–41 are absent because page 8 of the paper is missing "
+               "and could not be recovered. The numbering below follows the original paper (36 → 42).")
     out.append("")
     out.append("---")
     out.append("")

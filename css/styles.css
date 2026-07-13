@@ -305,6 +305,12 @@ button {
   color: var(--accent);
   margin-bottom: 10px;
 }
+.q-count-note {
+  color: var(--text-faint);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
 
 .case-card {
   background: var(--surface-2);
@@ -463,6 +469,18 @@ button {
 .nav-btn:active:not(:disabled) { transform: scale(0.98); background: var(--surface-2); }
 .nav-btn:disabled { opacity: 0.4; cursor: default; }
 .nav-btn.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+
+/* Keyboard shortcut hint — only shown on devices with a real pointer/keyboard */
+.kbd-hint { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .kbd-hint {
+    display: block;
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 0.75rem;
+    margin-top: 14px;
+  }
+}
 
 /* ============================================================
    Grid overlay

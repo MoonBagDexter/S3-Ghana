@@ -27,13 +27,14 @@
   var state = {
     profileIdx: null,
     deckId: DECKS[0].id,
-    pos: {},            // deckId -> current question index (preserved per deck)
+    pos: {},            // deckId -> current position in the deck's order (preserved per deck)
+    order: {},          // deckId -> array of question indexes when shuffled, or null for natural order
     progress: {},       // deckId -> { questionId: {picked, status} } for current profile
     gridOpen: false,
     reviewFilter: false,
     showCompletion: false
   };
-  DECKS.forEach(function (d) { state.pos[d.id] = 0; });
+  DECKS.forEach(function (d) { state.pos[d.id] = 0; state.order[d.id] = null; });
 
   var profiles = loadProfiles();
   var app = document.getElementById("app");
@@ -70,7 +71,18 @@
     return DECKS[0];
   }
   function currentDeck() { return deckById(state.deckId); }
-  function currentQuestion() { return currentDeck().questions[state.pos[state.deckId]]; }
+  // Map a position in the current viewing order to a question index, and back.
+  function qIndexAtPos(deckId, pos) {
+    var o = state.order[deckId];
+    return o ? o[pos] : pos;
+  }
+  function posOfIndex(deckId, qIdx) {
+    var o = state.order[deckId];
+    return o ? o.indexOf(qIdx) : qIdx;
+  }
+  function currentQuestion() {
+    return currentDeck().questions[qIndexAtPos(state.deckId, state.pos[state.deckId])];
+  }
   function getRecord(deckId, qid) {
     var d = state.progress[deckId];
     return d ? d[qid] : undefined;
@@ -88,7 +100,9 @@
   }
   function initial(name) {
     var t = (name || "").trim();
-    return t ? t.charAt(0).toUpperCase() : "?";
+    if (!t) return "?";
+    // Array.from splits by code point so emoji/surrogate-pair names don't render as garbage.
+    return Array.from(t)[0].toUpperCase();
   }
 
   function deckStats(deckId) {
@@ -201,10 +215,10 @@
 
     hdr.innerHTML =
       '<div class="header-row">' +
-        '<button class="avatar-btn" id="profileBtn" title="Switch profile" ' +
+        '<button class="avatar-btn" id="profileBtn" title="Switch profile" aria-label="Switch profile" ' +
           'style="background:' + accent + '">' + esc(initial(profiles[state.profileIdx])) + "</button>" +
         '<div class="header-title">OB/GYN Revision</div>' +
-        '<button class="icon-btn" id="gridBtn" title="Question grid">&#9638;</button>' +
+        '<button class="icon-btn" id="gridBtn" title="Question grid" aria-label="Question grid">&#9638;</button>' +
       "</div>" +
       '<div class="deck-tabs">' + tabs + "</div>" +
       '<div class="progress-wrap">' +
@@ -282,8 +296,11 @@
       );
     }).join("");
 
+    var shuffled = !!state.order[state.deckId];
     var html =
-      '<div class="q-count">Question ' + (idx + 1) + " of " + total + "</div>";
+      '<div class="q-count">Question ' + (idx + 1) + " of " + total +
+      (shuffled ? ' <span class="q-count-note">&#128256; shuffled &middot; #' + esc(q.num) + "</span>" : "") +
+      "</div>";
     if (q.caseStem) {
       html += '<div class="case-card"><div class="label">Case</div><p>' + esc(q.caseStem) + "</p></div>";
     }
@@ -309,7 +326,8 @@
         '<button class="nav-btn" data-nav="prev"' + (idx <= 0 ? " disabled" : "") + ">&#8592; Prev</button>" +
         '<button class="nav-btn primary" data-nav="next"' +
           ((last && !deckStats(state.deckId).complete) ? " disabled" : "") + ">Next &#8594;</button>" +
-      "</div>";
+      "</div>" +
+      '<div class="kbd-hint">A&ndash;E answer &middot; I don\'t know &middot; &#8592;/&#8594; navigate &middot; G grid</div>';
     return html;
   }
 
@@ -327,7 +345,10 @@
           '<span class="count-chip idk">&#129335; ' + s.idk + " didn\'t know</span>" +
         "</div>" +
         '<div class="completion-actions">' +
-          '<button class="mini-btn primary" data-act="download">&#11015; Download wrong answers</button>' +
+          ((s.wrong + s.idk > 0)
+            ? '<button class="mini-btn primary" data-act="retry">&#128257; Retry wrong (' + (s.wrong + s.idk) + ")</button>"
+            : "") +
+          '<button class="mini-btn" data-act="download">&#11015; Download wrong answers</button>' +
           '<button class="mini-btn" data-act="review">&#128269; Review wrong only</button>' +
           '<button class="mini-btn danger" data-act="reset">&#8635; Reset deck</button>' +
         "</div>" +
@@ -360,6 +381,8 @@
     if (rv) rv.addEventListener("click", function () {
       state.reviewFilter = true; state.showCompletion = false; openGrid();
     });
+    var rt = view.querySelector('[data-act="retry"]');
+    if (rt) rt.addEventListener("click", retryWrong);
     var rs = view.querySelector('[data-act="reset"]');
     if (rs) rs.addEventListener("click", resetDeck);
   }
@@ -408,6 +431,8 @@
     state.gridOpen = false;
     var o = document.getElementById("overlay");
     if (o) o.parentNode.removeChild(o);
+    var back = document.getElementById("gridBtn");
+    if (back) back.focus();
   }
 
   function renderGrid() {
@@ -417,26 +442,33 @@
     var deck = currentDeck();
     var recs = state.progress[state.deckId] || {};
     var s = deckStats(state.deckId);
-    var curIdx = state.pos[state.deckId];
+    var curQIdx = qIndexAtPos(state.deckId, state.pos[state.deckId]);
 
     var tiles = deck.questions.map(function (q, i) {
       var r = recs[q.id];
       var cls = "tile";
       var isWrong = r && (r.status === "wrong" || r.status === "idk");
       if (r) cls += " " + r.status;
-      if (i === curIdx && !state.showCompletion) cls += " current";
+      if (i === curQIdx && !state.showCompletion) cls += " current";
       if (state.reviewFilter && !isWrong) cls += " dimmed";
-      return '<button class="' + cls + '" data-tile="' + i + '">' + esc(q.num) + "</button>";
+      var label = "Question " + q.num +
+        (r ? (r.status === "correct" ? ", correct" : r.status === "wrong" ? ", wrong" : ", didn't know")
+           : ", unanswered");
+      return '<button class="' + cls + '" data-tile="' + i + '" aria-label="' + esc(label) + '">' +
+        esc(q.num) + "</button>";
     }).join("");
 
     var overlay = document.createElement("div");
     overlay.className = "overlay";
     overlay.id = "overlay";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", deck.title + " question grid");
     overlay.innerHTML =
       '<div class="overlay-header">' +
         '<div class="overlay-top">' +
           "<h2>" + esc(deck.title) + " &mdash; Questions</h2>" +
-          '<button class="icon-btn" id="closeGrid" title="Close">&times;</button>' +
+          '<button class="icon-btn" id="closeGrid" title="Close" aria-label="Close question grid">&times;</button>' +
         "</div>" +
         '<div class="counts">' +
           '<span class="count-chip">' + s.answered + "/" + s.total + " answered</span>" +
@@ -448,6 +480,9 @@
         '<div class="overlay-actions">' +
           '<button class="mini-btn toggle' + (state.reviewFilter ? " on" : "") + '" id="filterBtn">' +
             "&#128269; Wrong only</button>" +
+          '<button class="mini-btn toggle' + (state.order[state.deckId] ? " on" : "") + '" id="shuffleBtn">' +
+            "&#128256; Shuffle</button>" +
+          '<button class="mini-btn" id="retryBtn">&#128257; Retry wrong</button>' +
           '<button class="mini-btn" id="dlBtn">&#11015; Download wrong</button>' +
           '<button class="mini-btn danger" id="resetBtn">&#8635; Reset progress</button>' +
         "</div>" +
@@ -464,18 +499,73 @@
       state.reviewFilter = !state.reviewFilter;
       renderGrid();
     });
+    overlay.querySelector("#shuffleBtn").addEventListener("click", toggleShuffle);
+    overlay.querySelector("#retryBtn").addEventListener("click", retryWrong);
     overlay.querySelector("#dlBtn").addEventListener("click", downloadWrong);
     overlay.querySelector("#resetBtn").addEventListener("click", resetDeck);
     overlay.querySelectorAll(".tile").forEach(function (t) {
       t.addEventListener("click", function () {
         var i = parseInt(t.getAttribute("data-tile"), 10);
-        state.pos[state.deckId] = i;
+        state.pos[state.deckId] = posOfIndex(state.deckId, i);
         state.showCompletion = false;
         closeGrid();
         paintHeader();
         paintContent(true);
       });
     });
+    overlay.querySelector("#closeGrid").focus();
+  }
+
+  /* ---------- Shuffle ---------- */
+  function toggleShuffle() {
+    var id = state.deckId;
+    var deck = currentDeck();
+    var curQIdx = qIndexAtPos(id, state.pos[id]);
+    if (state.order[id]) {
+      // Back to natural order, keeping the current question in view.
+      state.order[id] = null;
+      state.pos[id] = curQIdx;
+      toast("Original order restored");
+    } else {
+      var arr = deck.questions.map(function (_, i) { return i; });
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+      }
+      state.order[id] = arr;
+      state.pos[id] = 0;
+      toast("Questions shuffled");
+    }
+    state.showCompletion = false;
+    if (state.gridOpen) renderGrid();
+    paintHeader();
+    paintContent(false);
+  }
+
+  /* ---------- Retry wrong ---------- */
+  function retryWrong() {
+    var deck = currentDeck();
+    var recs = state.progress[state.deckId] || {};
+    var clearedIdx = [];
+    deck.questions.forEach(function (q, i) {
+      var r = recs[q.id];
+      if (r && r.status !== "correct") { delete recs[q.id]; clearedIdx.push(i); }
+    });
+    if (!clearedIdx.length) { toast("Nothing to retry — no wrong answers"); return; }
+    saveProgress();
+    state.reviewFilter = false;
+    state.showCompletion = false;
+    // Jump to whichever cleared question comes first in the current viewing order.
+    var firstPos = null;
+    clearedIdx.forEach(function (qi) {
+      var p = posOfIndex(state.deckId, qi);
+      if (firstPos == null || p < firstPos) firstPos = p;
+    });
+    state.pos[state.deckId] = firstPos;
+    if (state.gridOpen) closeGrid();
+    paintHeader();
+    paintContent(true);
+    toast("Retrying " + clearedIdx.length + " question" + (clearedIdx.length === 1 ? "" : "s"));
   }
 
   /* ---------- Reset ---------- */
@@ -551,6 +641,8 @@
     var t = document.createElement("div");
     t.className = "toast";
     t.id = "toast";
+    t.setAttribute("role", "status");
+    t.setAttribute("aria-live", "polite");
     t.textContent = msg;
     document.body.appendChild(t);
     if (toastTimer) clearTimeout(toastTimer);
@@ -588,12 +680,31 @@
      ============================================================ */
   document.addEventListener("keydown", function (e) {
     if (state.profileIdx == null) return;
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
     if (e.key === "Escape") {
       if (state.gridOpen) { closeGrid(); return; }
     }
     if (state.gridOpen) return;
-    if (e.key === "ArrowLeft") navigate(-1);
-    else if (e.key === "ArrowRight") navigate(1);
+
+    if (e.key === "ArrowLeft") { navigate(-1); return; }
+    if (e.key === "ArrowRight") { navigate(1); return; }
+
+    var k = e.key.length === 1 ? e.key.toUpperCase() : e.key;
+    if (k === "G") { openGrid(); return; }
+    if (state.showCompletion) return;
+
+    var q = currentQuestion();
+    if (!q || getRecord(state.deckId, q.id)) return; // already answered
+    if (k === "I") { selectAnswer(q, null); return; }
+    if (/^[A-Z]$/.test(k)) {
+      // Match option keys case-insensitively, but record the option's actual key.
+      for (var oi = 0; oi < q.options.length; oi++) {
+        if (String(q.options[oi].key).toUpperCase() === k) {
+          selectAnswer(q, q.options[oi].key);
+          return;
+        }
+      }
+    }
   });
 
   /* ============================================================

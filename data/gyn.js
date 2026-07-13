@@ -386,34 +386,34 @@ window.QUIZ_DECKS.push({
       "question": "A 55-year-old woman presents to the clinic enquiring about the use of hormone replacement therapy (HRT). She had a hysterectomy 8 years ago for fibroids. She has no contraindications or other past medical history, except a strong family history of osteoporosis. Her main symptoms are hot flushes and vaginal dryness. What would be your first treatment option?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "A selective estrogen receptor modulator"
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Combined sequential HRT"
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Estrogen-only HRT"
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Oral calcium therapy only"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Selective serotonin reuptake inhibitor"
         }
       ],
-      "correct": "c",
+      "correct": "C",
       "answerSource": "circled",
       "explanations": {
-        "a": "Incorrect. SERMs (e.g., raloxifene) protect bone but do not relieve vasomotor symptoms and can actually worsen hot flushes, so they do not address her main complaint.",
-        "b": "Incorrect. Combined (estrogen plus progestogen) HRT is required only for women with an intact uterus to protect the endometrium; she has had a hysterectomy, so adding a progestogen is unnecessary.",
-        "c": "Correct. Because she has had a hysterectomy she does not need endometrial protection, so unopposed estrogen-only HRT is the first-line choice; it relieves her hot flushes and vaginal dryness and also protects against osteoporosis, for which she has a strong family history.",
-        "d": "Incorrect. Calcium alone does not treat vasomotor symptoms or vaginal dryness and is inadequate management for her presenting menopausal complaints.",
-        "e": "Incorrect. SSRIs are a non-hormonal option for hot flushes when HRT is contraindicated, but she has no contraindications, so HRT is preferable and SSRIs do not help vaginal dryness."
+        "A": "Incorrect. SERMs (e.g., raloxifene) protect bone but do not relieve vasomotor symptoms and can actually worsen hot flushes, so they do not address her main complaint.",
+        "B": "Incorrect. Combined (estrogen plus progestogen) HRT is required only for women with an intact uterus to protect the endometrium; she has had a hysterectomy, so adding a progestogen is unnecessary.",
+        "C": "Correct. Because she has had a hysterectomy she does not need endometrial protection, so unopposed estrogen-only HRT is the first-line choice; it relieves her hot flushes and vaginal dryness and also protects against osteoporosis, for which she has a strong family history.",
+        "D": "Incorrect. Calcium alone does not treat vasomotor symptoms or vaginal dryness and is inadequate management for her presenting menopausal complaints.",
+        "E": "Incorrect. SSRIs are a non-hormonal option for hot flushes when HRT is contraindicated, but she has no contraindications, so HRT is preferable and SSRIs do not help vaginal dryness."
       },
       "teaching": "The key rule in prescribing systemic HRT is that a progestogen is added only to protect the endometrium in women who still have a uterus. A woman who has had a hysterectomy should receive estrogen-only HRT, avoiding the unnecessary risks of a progestogen. Estrogen effectively treats vasomotor symptoms and urogenital atrophy and provides bone protection, making it the appropriate first-line choice here.",
       "id": 10
@@ -470,34 +470,34 @@ window.QUIZ_DECKS.push({
       "question": "A 54-year-old woman undergoes a laparotomy because of a pelvic mass. At exploratory laparotomy, a unilateral ovarian neoplasm is discovered that is accompanied by a large omental metastasis. Frozen section diagnosis confirms metastatic serous cystadenocarcinoma. Which of the following is the most appropriate intraoperative course of action?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Excision of the omental metastasis and ovarian cystectomy"
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Omentectomy and ovarian cystectomy"
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Excision of the omental metastasis and unilateral oophorectomy"
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Omentectomy and bilateral salpingo-oophorectomy"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Omentectomy, total abdominal hysterectomy, and bilateral salpingo-oophorectomy"
         }
       ],
-      "correct": "e",
+      "correct": "E",
       "answerSource": "circled",
       "explanations": {
-        "a": "Incorrect. Ovarian cystectomy is inadequate cancer surgery; it leaves the affected ovary, the uterus, the opposite adnexa, and does not achieve the cytoreduction required for advanced ovarian carcinoma.",
-        "b": "Incorrect. Although omentectomy is appropriate, ovarian cystectomy is not an oncologically adequate procedure and leaves behind at-risk tissue.",
-        "c": "Incorrect. Excising only the omental deposit and one ovary leaves the uterus and contralateral adnexa, which is insufficient staging and debulking for metastatic ovarian cancer.",
-        "d": "Incorrect. Bilateral salpingo-oophorectomy with omentectomy is closer but omits the hysterectomy, so it does not constitute complete surgical cytoreduction/staging.",
-        "e": "Correct. Advanced (metastatic) ovarian serous cystadenocarcinoma is managed by maximal cytoreduction: total abdominal hysterectomy, bilateral salpingo-oophorectomy, and omentectomy (with removal of visible tumor), which is the standard debulking procedure."
+        "A": "Incorrect. Ovarian cystectomy is inadequate cancer surgery; it leaves the affected ovary, the uterus, the opposite adnexa, and does not achieve the cytoreduction required for advanced ovarian carcinoma.",
+        "B": "Incorrect. Although omentectomy is appropriate, ovarian cystectomy is not an oncologically adequate procedure and leaves behind at-risk tissue.",
+        "C": "Incorrect. Excising only the omental deposit and one ovary leaves the uterus and contralateral adnexa, which is insufficient staging and debulking for metastatic ovarian cancer.",
+        "D": "Incorrect. Bilateral salpingo-oophorectomy with omentectomy is closer but omits the hysterectomy, so it does not constitute complete surgical cytoreduction/staging.",
+        "E": "Correct. Advanced (metastatic) ovarian serous cystadenocarcinoma is managed by maximal cytoreduction: total abdominal hysterectomy, bilateral salpingo-oophorectomy, and omentectomy (with removal of visible tumor), which is the standard debulking procedure."
       },
       "teaching": "Epithelial ovarian carcinoma that has spread (e.g., to the omentum) is treated with cytoreductive/debulking surgery aiming to remove all visible disease. The standard operation is total abdominal hysterectomy, bilateral salpingo-oophorectomy, and omentectomy, plus resection of peritoneal implants, usually followed by platinum-based chemotherapy. Conservative options like cystectomy are never adequate for invasive ovarian cancer, especially in a postmenopausal woman with metastatic disease.",
       "id": 12
@@ -1015,34 +1015,34 @@ window.QUIZ_DECKS.push({
       "question": "Which of the following is the most likely diagnosis?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Candidiasis"
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Bacterial vaginosis"
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Trichomoniasis"
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Physiologic discharge"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Chlamydia"
         }
       ],
-      "correct": "b",
+      "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "a": "Incorrect. Candidiasis causes a thick, white, curd-like discharge with intense pruritus/burning and a normal pH (<4.5); this patient has a thin discharge, no itching, and an elevated pH.",
-        "b": "Correct. A thin grayish-white homogeneous discharge with a fishy odor and vaginal pH >4.5 (here 5.5), without inflammation or pruritus, is classic bacterial vaginosis (overgrowth of Gardnerella and anaerobes, often after antibiotic use disrupts normal lactobacilli).",
-        "c": "Incorrect. Trichomoniasis typically causes a frothy yellow-green discharge with pruritus and a 'strawberry cervix,' whereas this patient has a non-irritating grayish discharge and a non-inflamed cervix.",
-        "d": "Incorrect. Physiologic discharge is odorless with a normal pH (<4.5); the fishy odor and pH of 5.5 exclude it.",
-        "e": "Incorrect. Chlamydia is often asymptomatic or causes mucopurulent cervicitis, but this patient has no cervical inflammation or cervical discharge."
+        "A": "Incorrect. Candidiasis causes a thick, white, curd-like discharge with intense pruritus/burning and a normal pH (<4.5); this patient has a thin discharge, no itching, and an elevated pH.",
+        "B": "Correct. A thin grayish-white homogeneous discharge with a fishy odor and vaginal pH >4.5 (here 5.5), without inflammation or pruritus, is classic bacterial vaginosis (overgrowth of Gardnerella and anaerobes, often after antibiotic use disrupts normal lactobacilli).",
+        "C": "Incorrect. Trichomoniasis typically causes a frothy yellow-green discharge with pruritus and a 'strawberry cervix,' whereas this patient has a non-irritating grayish discharge and a non-inflamed cervix.",
+        "D": "Incorrect. Physiologic discharge is odorless with a normal pH (<4.5); the fishy odor and pH of 5.5 exclude it.",
+        "E": "Incorrect. Chlamydia is often asymptomatic or causes mucopurulent cervicitis, but this patient has no cervical inflammation or cervical discharge."
       },
       "teaching": "Bacterial vaginosis is diagnosed by Amsel criteria: thin grayish-white discharge, vaginal pH >4.5, a positive whiff (fishy amine) test, and clue cells on microscopy. The absence of vulvar itching/inflammation and the elevated pH separate it from candidiasis (low pH, itchy) and trichomoniasis (inflamed, frothy green).",
       "id": 25
@@ -1058,34 +1058,34 @@ window.QUIZ_DECKS.push({
       "question": "In the patient described in the question above, which of the following is the best treatment?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Reassurance"
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Oral Diflucan"
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Doxycycline 100 mg PO twice daily for 1 week"
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Ampicillin 500 mg PO twice daily for 1 week"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Metronidazole 500 mg PO twice daily for 1 week"
         }
       ],
-      "correct": "e",
+      "correct": "E",
       "answerSource": "circled",
       "explanations": {
-        "a": "Incorrect. Bacterial vaginosis is symptomatic and increases risks (e.g., PID, preterm labor in pregnancy); it should be treated, not merely observed.",
-        "b": "Incorrect. Oral fluconazole (Diflucan) treats candidiasis, not bacterial vaginosis.",
-        "c": "Incorrect. Doxycycline covers chlamydia and other organisms but is not the treatment for bacterial vaginosis.",
-        "d": "Incorrect. Ampicillin does not reliably eradicate the anaerobes/Gardnerella of BV; in fact prior amoxicillin use predisposed to it.",
-        "e": "Correct. Metronidazole 500 mg PO twice daily for 7 days is the standard treatment for bacterial vaginosis, targeting the anaerobic overgrowth (topical metronidazole or clindamycin are alternatives)."
+        "A": "Incorrect. Bacterial vaginosis is symptomatic and increases risks (e.g., PID, preterm labor in pregnancy); it should be treated, not merely observed.",
+        "B": "Incorrect. Oral fluconazole (Diflucan) treats candidiasis, not bacterial vaginosis.",
+        "C": "Incorrect. Doxycycline covers chlamydia and other organisms but is not the treatment for bacterial vaginosis.",
+        "D": "Incorrect. Ampicillin does not reliably eradicate the anaerobes/Gardnerella of BV; in fact prior amoxicillin use predisposed to it.",
+        "E": "Correct. Metronidazole 500 mg PO twice daily for 7 days is the standard treatment for bacterial vaginosis, targeting the anaerobic overgrowth (topical metronidazole or clindamycin are alternatives)."
       },
       "teaching": "Once bacterial vaginosis is diagnosed by the Amsel criteria, first-line therapy is metronidazole (oral 500 mg BID for 7 days or vaginal gel), with clindamycin as an alternative. Metronidazole targets the anaerobic bacteria responsible for the condition.",
       "id": 26
@@ -1100,34 +1100,34 @@ window.QUIZ_DECKS.push({
       "question": "A couple presents for evaluation of primary infertility. The evaluation of the woman is completely normal. The husband is found to have a left varicocele. If the husband’s varicocele is the cause of the couple’s infertility, what would you expect to see when evaluating the husband’s semen analysis?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Decreased sperm count with an increase in the number of abnormal forms"
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Decreased sperm count with an increase in motility"
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Increased sperm count with an increase in the number of abnormal forms"
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Increased sperm count with absent motility"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Azoospermia"
         }
       ],
-      "correct": "a",
+      "correct": "A",
       "answerSource": "circled",
       "explanations": {
-        "a": "Correct. A varicocele raises scrotal/testicular temperature and impairs spermatogenesis, producing the classic 'stress pattern': decreased sperm count (oligospermia), decreased motility, and an increased proportion of abnormal (tapered) forms.",
-        "b": "Incorrect. A varicocele decreases motility rather than increasing it, so decreased count with increased motility is not expected.",
-        "c": "Incorrect. Varicocele lowers, not raises, the sperm count even though abnormal forms do increase.",
-        "d": "Incorrect. Sperm count is reduced and motility is impaired but not typically completely absent, and it does not increase the count.",
-        "e": "Incorrect. Complete azoospermia is not the typical finding; varicocele usually causes oligospermia with reduced motility and increased abnormal forms."
+        "A": "Correct. A varicocele raises scrotal/testicular temperature and impairs spermatogenesis, producing the classic 'stress pattern': decreased sperm count (oligospermia), decreased motility, and an increased proportion of abnormal (tapered) forms.",
+        "B": "Incorrect. A varicocele decreases motility rather than increasing it, so decreased count with increased motility is not expected.",
+        "C": "Incorrect. Varicocele lowers, not raises, the sperm count even though abnormal forms do increase.",
+        "D": "Incorrect. Sperm count is reduced and motility is impaired but not typically completely absent, and it does not increase the count.",
+        "E": "Incorrect. Complete azoospermia is not the typical finding; varicocele usually causes oligospermia with reduced motility and increased abnormal forms."
       },
       "teaching": "A varicocele is the most common correctable cause of male infertility. The dilated pampiniform plexus raises testicular temperature and produces a semen 'stress pattern': low count, low motility, and increased abnormal (tapered) forms. Surgical varicocelectomy can improve these parameters.",
       "id": 27
@@ -1142,34 +1142,34 @@ window.QUIZ_DECKS.push({
       "question": "A 25-year-old woman presents to your office for evaluation of primary infertility. She has regular periods every 28 days. She has done testing at home with an ovulation kit, which suggests she is ovulating. A hysterosalpingogram demonstrates patency of both fallopian tubes. A progesterone level drawn in the mid-luteal phase is lower than expected. A luteal phase defect is suspected to be the cause of this patient’s infertility. Which of the following studies is helpful in making this diagnosis?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Serum estradiol levels"
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Urinary pregnanetriol levels"
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Endometrial biopsy"
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Serum follicle-stimulating hormone (FSH) levels"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Serum luteinizing hormone (LH) levels"
         }
       ],
-      "correct": "c",
+      "correct": "C",
       "answerSource": "circled",
       "explanations": {
-        "a": "Incorrect. Estradiol reflects follicular/ovarian estrogen production and does not assess the endometrial response to progesterone that defines a luteal phase defect.",
-        "b": "Incorrect. Urinary pregnanetriol is a metabolite of 17-hydroxyprogesterone used to evaluate congenital adrenal hyperplasia, not luteal endometrial maturation.",
-        "c": "Correct. A luteal phase defect is defined by inadequate progesterone effect on the endometrium; an endometrial biopsy showing a histologic lag (endometrial dating out of phase with the cycle day) is the classic diagnostic study.",
-        "d": "Incorrect. FSH levels assess ovarian reserve/follicular phase, not the luteal endometrial response.",
-        "e": "Incorrect. LH levels help detect the ovulatory surge but do not diagnose an inadequate luteal (endometrial) phase."
+        "A": "Incorrect. Estradiol reflects follicular/ovarian estrogen production and does not assess the endometrial response to progesterone that defines a luteal phase defect.",
+        "B": "Incorrect. Urinary pregnanetriol is a metabolite of 17-hydroxyprogesterone used to evaluate congenital adrenal hyperplasia, not luteal endometrial maturation.",
+        "C": "Correct. A luteal phase defect is defined by inadequate progesterone effect on the endometrium; an endometrial biopsy showing a histologic lag (endometrial dating out of phase with the cycle day) is the classic diagnostic study.",
+        "D": "Incorrect. FSH levels assess ovarian reserve/follicular phase, not the luteal endometrial response.",
+        "E": "Incorrect. LH levels help detect the ovulatory surge but do not diagnose an inadequate luteal (endometrial) phase."
       },
       "teaching": "A luteal phase defect refers to inadequate progesterone support of the endometrium after ovulation. Historically it was diagnosed by a late-luteal endometrial biopsy demonstrating a maturation lag (the endometrium is more than 2 days 'out of phase' with the expected cycle day).",
       "id": 28
@@ -1221,34 +1221,34 @@ window.QUIZ_DECKS.push({
       "question": "An 81-year-old woman presents to your office complaining that her uterus fell out 2 months ago. She has multiple medical problems, including chronic hypertension, congestive heart failure, and osteoporosis. She is limited to sitting in a wheelchair because of her health problems. Her fallen uterus causes significant pain. On physical examination, the patient is frail and requires assistance with getting on the examination table. She has complete procidentia of the uterus. Which of the following is the most appropriate next step in the management of this patient?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Reassurance"
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Placement of a pessary"
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Vaginal hysterectomy"
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Le Fort procedure"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Anterior colporrhaphy"
         }
       ],
-      "correct": "b",
+      "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "a": "Incorrect. The prolapse is symptomatic (significant pain) and complete (procidentia), so simple reassurance/observation is inappropriate; some intervention is required.",
-        "b": "Correct. A vaginal pessary is a non-surgical device that supports the prolapsed uterus and is the most appropriate first-line management for a frail, wheelchair-bound elderly woman with serious comorbidities (CHF, hypertension) who is a poor surgical candidate.",
-        "c": "Incorrect. Vaginal hysterectomy is definitive surgery but this frail 81-year-old with CHF and multiple comorbidities is a very high anesthetic/surgical risk, so a conservative device is preferred first.",
-        "d": "Incorrect. A Le Fort colpocleisis (partial closure of the vagina) is an obliterative surgical option reserved for those who accept loss of coital function and who can tolerate surgery; a pessary is tried first and avoids operative risk.",
-        "e": "Incorrect. Anterior colporrhaphy repairs a cystocele, not uterine procidentia, and would not correct her complete uterine prolapse."
+        "A": "Incorrect. The prolapse is symptomatic (significant pain) and complete (procidentia), so simple reassurance/observation is inappropriate; some intervention is required.",
+        "B": "Correct. A vaginal pessary is a non-surgical device that supports the prolapsed uterus and is the most appropriate first-line management for a frail, wheelchair-bound elderly woman with serious comorbidities (CHF, hypertension) who is a poor surgical candidate.",
+        "C": "Incorrect. Vaginal hysterectomy is definitive surgery but this frail 81-year-old with CHF and multiple comorbidities is a very high anesthetic/surgical risk, so a conservative device is preferred first.",
+        "D": "Incorrect. A Le Fort colpocleisis (partial closure of the vagina) is an obliterative surgical option reserved for those who accept loss of coital function and who can tolerate surgery; a pessary is tried first and avoids operative risk.",
+        "E": "Incorrect. Anterior colporrhaphy repairs a cystocele, not uterine procidentia, and would not correct her complete uterine prolapse."
       },
       "teaching": "For pelvic organ prolapse, management is stratified by symptoms, degree, and surgical fitness. A vaginal pessary is the mainstay non-surgical treatment and is especially favored in elderly, frail, or medically unfit women who are poor operative candidates. Definitive surgery (vaginal hysterectomy, colpocleisis) is reserved for those able to tolerate an operation and who fail or decline a pessary.",
       "id": 30
@@ -1263,34 +1263,34 @@ window.QUIZ_DECKS.push({
       "question": "An intrauterine pregnancy of approximately 10 weeks gestation is confirmed in a 30-year-old G5P4 woman with an IUD in place. On examination, the string of the IUD is noted to be protruding from the cervical os. Which of the following is the most appropriate course of action?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Leave the IUD in place without any other treatment."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Leave the IUD in place and continue prophylactic antibiotics throughout pregnancy."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Remove the IUD immediately, continue pregnancy."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Terminate the pregnancy because of the high risk of infection."
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Perform a laparoscopy to rule out a heterotopic ectopic pregnancy"
         }
       ],
-      "correct": "c",
+      "correct": "C",
       "answerSource": "circled",
       "explanations": {
-        "a": "Incorrect. Leaving a retained IUD in a pregnancy raises the risk of spontaneous abortion, septic abortion, chorioamnionitis, and preterm birth; when the strings are visible it should be removed.",
-        "b": "Incorrect. Prophylactic antibiotics do not substitute for removing the device; the definitive step when the string is accessible is early removal of the IUD.",
-        "c": "Correct. When a woman conceives with an IUD in place and the strings are visible at the cervical os in the first trimester, gentle prompt removal is recommended because it reduces the risks of septic abortion, miscarriage, and preterm delivery, while the pregnancy is continued.",
-        "d": "Incorrect. Pregnancy with an IUD is not an indication for termination; removing the device markedly lowers the infection/miscarriage risk and the pregnancy can proceed.",
-        "e": "Incorrect. The pregnancy is already confirmed to be intrauterine, so laparoscopy to exclude a heterotopic gestation is unnecessary and not indicated by the string finding."
+        "A": "Incorrect. Leaving a retained IUD in a pregnancy raises the risk of spontaneous abortion, septic abortion, chorioamnionitis, and preterm birth; when the strings are visible it should be removed.",
+        "B": "Incorrect. Prophylactic antibiotics do not substitute for removing the device; the definitive step when the string is accessible is early removal of the IUD.",
+        "C": "Correct. When a woman conceives with an IUD in place and the strings are visible at the cervical os in the first trimester, gentle prompt removal is recommended because it reduces the risks of septic abortion, miscarriage, and preterm delivery, while the pregnancy is continued.",
+        "D": "Incorrect. Pregnancy with an IUD is not an indication for termination; removing the device markedly lowers the infection/miscarriage risk and the pregnancy can proceed.",
+        "E": "Incorrect. The pregnancy is already confirmed to be intrauterine, so laparoscopy to exclude a heterotopic gestation is unnecessary and not indicated by the string finding."
       },
       "teaching": "If pregnancy occurs with an IUD in situ and the strings are visible, the IUD should be removed early in the first trimester to lower the risk of septic abortion, spontaneous miscarriage, chorioamnionitis, and preterm birth. If the strings are not visible, removal may cause harm and the device is usually left with counseling. Always confirm the pregnancy is intrauterine, as IUDs raise the relative risk of ectopic pregnancy.",
       "id": 31
@@ -1860,34 +1860,34 @@ window.QUIZ_DECKS.push({
       "question": "A 30-year-old G0P0, asking for a second opinion after being diagnosed to have a bicornuate uterus. She and her husband are planning to start a family and want to know how this diagnosis would affect the future reproductive life. Which is the MOST LIKELY complication?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Infertility requiring surgical intervention."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Recurrent miscarriage."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Preterm rupture of membranes."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Breech presentation when become pregnant."
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Bicornuate uterus should have no effect on the reproductive life"
         }
       ],
-      "correct": "d",
+      "correct": "D",
       "answerSource": "circled",
       "explanations": {
-        "a": "A bicornuate uterus does not typically cause infertility; affected women usually conceive without difficulty, so infertility requiring surgery is not the most likely reproductive consequence.",
-        "b": "Recurrent miscarriage is more classically associated with a septate uterus (poor implantation on the avascular septum); it can occur with a bicornuate uterus but is not the single most likely complication.",
-        "c": "Preterm labour and preterm prelabour rupture of membranes are increased with a bicornuate uterus due to the restricted, abnormally shaped cavity, but they are not the most likely problem asked for here.",
-        "d": "Correct. The abnormal fundal contour and reduced/distorted cavity of a bicornuate uterus most commonly cause fetal malpresentation, with breech (and transverse) lie being the most frequent complication once pregnancy is established.",
-        "e": "Incorrect; a bicornuate uterus is a Mullerian anomaly that clearly affects reproduction, increasing rates of malpresentation, preterm birth and second-trimester loss, so it does not have 'no effect.'"
+        "A": "A bicornuate uterus does not typically cause infertility; affected women usually conceive without difficulty, so infertility requiring surgery is not the most likely reproductive consequence.",
+        "B": "Recurrent miscarriage is more classically associated with a septate uterus (poor implantation on the avascular septum); it can occur with a bicornuate uterus but is not the single most likely complication.",
+        "C": "Preterm labour and preterm prelabour rupture of membranes are increased with a bicornuate uterus due to the restricted, abnormally shaped cavity, but they are not the most likely problem asked for here.",
+        "D": "Correct. The abnormal fundal contour and reduced/distorted cavity of a bicornuate uterus most commonly cause fetal malpresentation, with breech (and transverse) lie being the most frequent complication once pregnancy is established.",
+        "E": "Incorrect; a bicornuate uterus is a Mullerian anomaly that clearly affects reproduction, increasing rates of malpresentation, preterm birth and second-trimester loss, so it does not have 'no effect.'"
       },
       "teaching": "A bicornuate uterus results from incomplete fusion of the Mullerian ducts, producing two horns and a distorted cavity. Fertility (conception) is generally preserved, but the abnormal cavity leads to obstetric complications. Malpresentation (especially breech) is the most common problem, along with increased second-trimester loss, preterm labour and cervical incompetence.",
       "id": 47
@@ -1902,34 +1902,34 @@ window.QUIZ_DECKS.push({
       "question": "In the previous case, you explain that additional testing is necessary because of the woman's increased risk of congenital anomalies in which organ system?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Skeletal."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Hernatopoietic."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Central nervous."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Urinary,"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Tracheoesophageal."
         }
       ],
-      "correct": "d",
+      "correct": "D",
       "answerSource": "circled",
       "explanations": {
-        "a": "Skeletal anomalies are not the classic associated malformation of an isolated Mullerian (uterine) anomaly, so skeletal screening is not the additional testing indicated here.",
-        "b": "There is no recognized association between a bicornuate uterus and haematopoietic system anomalies.",
-        "c": "Central nervous system malformations are not linked to Mullerian duct fusion defects, so CNS is not the system at increased risk.",
-        "d": "Correct. Because the Mullerian (paramesonephric) ducts develop alongside the mesonephric/Wolffian system, Mullerian anomalies such as a bicornuate uterus carry a high rate of associated urinary tract anomalies (e.g. unilateral renal agenesis, ectopic or duplex kidney), so renal tract imaging is warranted.",
-        "e": "Tracheoesophageal anomalies belong to associations such as VACTERL and are not the specific increased risk that accompanies a bicornuate uterus."
+        "A": "Skeletal anomalies are not the classic associated malformation of an isolated Mullerian (uterine) anomaly, so skeletal screening is not the additional testing indicated here.",
+        "B": "There is no recognized association between a bicornuate uterus and haematopoietic system anomalies.",
+        "C": "Central nervous system malformations are not linked to Mullerian duct fusion defects, so CNS is not the system at increased risk.",
+        "D": "Correct. Because the Mullerian (paramesonephric) ducts develop alongside the mesonephric/Wolffian system, Mullerian anomalies such as a bicornuate uterus carry a high rate of associated urinary tract anomalies (e.g. unilateral renal agenesis, ectopic or duplex kidney), so renal tract imaging is warranted.",
+        "E": "Tracheoesophageal anomalies belong to associations such as VACTERL and are not the specific increased risk that accompanies a bicornuate uterus."
       },
       "teaching": "The Mullerian ducts and the mesonephric (Wolffian) ducts develop in close embryological relationship, and the mesonephric duct guides Mullerian development. Consequently, any uterine (Mullerian) anomaly should prompt evaluation of the urinary tract, because renal anomalies such as unilateral renal agenesis are commonly associated. Always image the kidneys when a congenital uterine malformation is found.",
       "id": 48
@@ -1943,34 +1943,34 @@ window.QUIZ_DECKS.push({
       "question": "A 17-year-old girl undergoes a laparotomy for appendicitis. On laparotomy, there is noted to be a torted gangrenous ovarian cyst, for which she undergoes a unilateral oophorectomy. Further exploration reveals a complete absence of the uterus and both fallopian tubes. The renal tract appears normal. Vaginal examination reveals a blind pouch of 3 cm length. FSH, LH and serum estradiol levels are normal. She is about to get married. What is the NEXT STEP in her management?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Karyotyping."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Psychosexual counseling."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Vaginoplasty."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Utriculoplasty."
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Removal of the other gonad."
         }
       ],
-      "correct": "a",
+      "correct": "A",
       "answerSource": "inferred",
       "explanations": {
-        "a": "Correct. Absent uterus and tubes with a blind vaginal pouch is Mullerian agenesis, and the essential next step is karyotyping to confirm 46,XX (MRKH) and, critically, to exclude a 46,XY disorder of sex development such as complete androgen insensitivity - the karyotype determines whether the remaining gonad must be removed.",
-        "b": "Psychosexual counseling is an important part of overall long-term care but is not the immediate next step; the diagnosis (chromosomal sex) must first be established.",
-        "c": "Vaginoplasty (or first-line vaginal dilatation) to create a functional vagina can be planned later once the diagnosis is confirmed; it is premature before karyotyping and is not urgent.",
-        "d": "Utriculoplasty is illogical because there is complete absence of the uterus - there is no uterine tissue to reconstruct.",
-        "e": "Removal of the remaining gonad is only indicated if karyotyping reveals XY gonadal tissue (malignancy risk in a DSD); doing it before establishing the karyotype would be premature and, if she is 46,XX with normal ovaries, unnecessary."
+        "A": "Correct. Absent uterus and tubes with a blind vaginal pouch is Mullerian agenesis, and the essential next step is karyotyping to confirm 46,XX (MRKH) and, critically, to exclude a 46,XY disorder of sex development such as complete androgen insensitivity - the karyotype determines whether the remaining gonad must be removed.",
+        "B": "Psychosexual counseling is an important part of overall long-term care but is not the immediate next step; the diagnosis (chromosomal sex) must first be established.",
+        "C": "Vaginoplasty (or first-line vaginal dilatation) to create a functional vagina can be planned later once the diagnosis is confirmed; it is premature before karyotyping and is not urgent.",
+        "D": "Utriculoplasty is illogical because there is complete absence of the uterus - there is no uterine tissue to reconstruct.",
+        "E": "Removal of the remaining gonad is only indicated if karyotyping reveals XY gonadal tissue (malignancy risk in a DSD); doing it before establishing the karyotype would be premature and, if she is 46,XX with normal ovaries, unnecessary."
       },
       "teaching": "Primary amenorrhoea with a blind vaginal pouch and absent uterus/tubes points to Mullerian agenesis. The two main differentials are MRKH syndrome (46,XX, normally functioning ovaries, normal FSH/LH/estradiol) and complete androgen insensitivity syndrome (46,XY, intra-abdominal testes with malignant potential). Karyotyping is therefore the key next step, because it distinguishes the two and decides whether the gonads must be removed; definitive vaginal creation and counseling follow once the diagnosis is confirmed.",
       "id": 49

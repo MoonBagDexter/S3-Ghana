@@ -1,6 +1,12 @@
 # OB/GYN Revision
 
-A polished, mobile-first, zero-build static quiz web app for revising two OB/GYN MCQ decks (Obstetrics and Gynecology). It runs entirely in the browser with no frameworks, no build step and no external assets — quiz data is loaded via plain `<script>` tags so the app works both when opened directly from disk (`file://`) and when served statically (e.g. GitHub Pages). It supports up to 5 renamable local profiles, per-profile/per-deck progress saved in `localStorage`, a question grid, per-option explanations, a "Key concept" teaching card, and one-click export of your wrong answers as a Markdown file ready to paste into ChatGPT.
+A polished, mobile-first, zero-build static quiz web app for revising OB/GYN MCQ decks (Obstetrics, Gynecology and Women's Health). It runs entirely in the browser with no frameworks, no build step and no external assets — quiz data is loaded via plain `<script>` tags so the app works both when opened directly from disk (`file://`) and when served statically (e.g. GitHub Pages). It supports up to 5 renamable local profiles, per-profile/per-deck progress saved in `localStorage`, a question grid, per-option explanations, a "Key concept" teaching card, and one-click export of your wrong answers as a Markdown file ready to paste into ChatGPT.
+
+## Study features
+
+- **Retry wrong** (completion screen or question grid): clears only your wrong and "I don't know" answers — correct ones are kept — so you can re-attempt just your weak spots without resetting the whole deck.
+- **Shuffle** (question grid): randomises the question order for the current deck so you learn the medicine, not the question positions. Toggle it off to return to the original order; your answers are unaffected either way.
+- **Keyboard shortcuts** (desktop): `A`–`E` picks an option, `I` marks "I don't know", `←`/`→` moves between questions, `G` opens the question grid, `Esc` closes it.
 
 ## Open it
 

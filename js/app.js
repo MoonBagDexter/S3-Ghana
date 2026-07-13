@@ -615,12 +615,8 @@
       enterProfile(idx0);
       return;
     }
-    var last = null;
-    try { last = localStorage.getItem(LS.lastProfile); } catch (e) {}
-    if (last != null && last !== "" && !isNaN(parseInt(last, 10))) {
-      var idx = parseInt(last, 10);
-      if (idx >= 0 && idx < NUM_PROFILES) { enterProfile(idx); return; }
-    }
+    // Plain URL always shows the picker — only a deep link (?p=N) jumps
+    // straight into a profile, so one tap never locks a device to a slot.
     renderProfilePicker();
   }
 

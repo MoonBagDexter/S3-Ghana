@@ -289,15 +289,15 @@
       : "";
     return (
       '<details class="lecture-match confidence-' + esc(match.confidence) + '">' +
-        '<summary title="Show lecture match details">' +
+        '<summary title="Reveal the likely lecture (hidden so it does not give the answer away)">' +
           '<span class="lecture-flag" aria-hidden="true">&#9873;</span>' +
           '<span class="lecture-kicker">Likely lecture</span>' +
-          '<strong class="lecture-title">' + esc(match.primary.title) + "</strong>" +
-          '<span class="lecture-confidence">' + esc(confidenceText) + "</span>" +
+          '<span class="lecture-reveal-hint">Tap to reveal</span>' +
         "</summary>" +
         '<div class="lecture-detail">' +
           '<div><span>Primary</span><strong>' + esc(match.primary.title) +
             '</strong><small>' + esc(lectureCode(match.primary)) + "</small></div>" +
+          '<div><span>Match</span><strong class="lecture-confidence">' + esc(confidenceText) + "</strong></div>" +
           (match.rationale ? '<p>' + esc(match.rationale) + "</p>" : "") +
           alternate +
           '<p class="lecture-note">Lecture matching is a study aid, not part of the original question.</p>' +

@@ -9,6 +9,7 @@ Markdown is written for the future website build; the PDFs are rendered from the
 same data via python-markdown -> HTML -> headless Chromium print-to-pdf.
 """
 import html
+import json
 import subprocess
 import os
 
@@ -774,6 +775,38 @@ h3 + p { margin-top: 4px; }
     margin: 4px 0 14px 0; border-bottom: 1px solid #c9c9c9; }
 """
 
+def deck_js():
+    """Build the quiz-app deck for the OB/GYN Revision site.
+
+    Matches the window.QUIZ_DECKS schema used by data/obs.js and data/gyn.js.
+    answerSource is 'inferred' because these answers are AI-derived from the
+    exam paper (no marked key was provided), which surfaces the app's built-in
+    disclaimer.
+    """
+    questions = []
+    for num, q, opts, ans, correct, wrongs in MCQ:
+        options = []
+        for o in opts:
+            key, text = o.split(".", 1)
+            options.append({"key": key.strip(), "text": text.strip()})
+        explanations = {ans: "Correct. " + correct}
+        for letter, reason in wrongs.items():
+            explanations[letter] = "Incorrect. " + reason
+        questions.append({
+            "num": num,
+            "question": q,
+            "options": options,
+            "correct": ans,
+            "answerSource": "inferred",
+            "explanations": explanations,
+            "id": num,
+        })
+    deck = {"id": "womens-health", "title": "Women's Health", "questions": questions}
+    payload = json.dumps(deck, ensure_ascii=False, indent=2)
+    return ("window.QUIZ_DECKS = window.QUIZ_DECKS || [];\n"
+            "window.QUIZ_DECKS.push(\n" + payload + "\n);\n")
+
+
 def render_pdf(md_text, out_pdf, title):
     import markdown as md
     body = md.markdown(md_text, extensions=["extra", "sane_lists", "nl2br"])
@@ -804,7 +837,14 @@ def main():
                "Women's Health Reset Exam 1 — MCQ Answer Key")
     render_pdf(saq_md, os.path.join(ROOT, "saq-answers.pdf"),
                "Women's Health Reset Exam 1 — Written Section")
-    print("Generated: mcq-answers.md/.pdf, saq-answers.md/.pdf")
+
+    data_dir = os.path.join(ROOT, "data")
+    if os.path.isdir(data_dir):
+        with open(os.path.join(data_dir, "womens-health.js"), "w", encoding="utf-8") as f:
+            f.write(deck_js())
+        print("Generated: mcq-answers.md/.pdf, saq-answers.md/.pdf, data/womens-health.js")
+    else:
+        print("Generated: mcq-answers.md/.pdf, saq-answers.md/.pdf (no data/ dir — skipped deck)")
 
 
 if __name__ == "__main__":

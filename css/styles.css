@@ -176,6 +176,31 @@ button {
 }
 .profile-card .edit:active { background: var(--surface-3); }
 
+.profile-card.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent), 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.profile-card .stat.confirm-hint {
+  color: var(--accent);
+  font-weight: 650;
+}
+
+/* Backup / restore controls under the profile grid */
+.backup-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+.backup-note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 10px auto 0;
+  max-width: 420px;
+}
+
 /* ============================================================
    Header
    ============================================================ */

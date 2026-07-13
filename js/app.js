@@ -20,12 +20,14 @@
   var LS = {
     profiles: "obgyn:profiles",
     lastProfile: "obgyn:lastProfile",
-    progress: function (i) { return "obgyn:progress:" + i; }
+    progress: function (i) { return "obgyn:progress:" + i; },
+    ui: function (i) { return "obgyn:ui:" + i; }
   };
 
   /* ---------- State ---------- */
   var state = {
     profileIdx: null,
+    pendingProfile: null, // picker: tapped once, awaiting confirmation tap
     deckId: DECKS[0].id,
     pos: {},            // deckId -> current question index (preserved per deck)
     progress: {},       // deckId -> { questionId: {picked, status} } for current profile
@@ -62,6 +64,120 @@
     try {
       localStorage.setItem(LS.progress(state.profileIdx), JSON.stringify(state.progress));
     } catch (e) {}
+  }
+
+  /* Per-profile UI state (active deck tab + current question in each deck),
+     so a reload or redeploy puts you back exactly where you were. */
+  function loadUi(idx) {
+    var ui = null;
+    try { ui = JSON.parse(localStorage.getItem(LS.ui(idx))); } catch (e) {}
+    var out = { deckId: DECKS[0].id, pos: {} };
+    DECKS.forEach(function (d) { out.pos[d.id] = 0; });
+    if (!ui || typeof ui !== "object") return out;
+    if (typeof ui.deckId === "string" &&
+        DECKS.some(function (d) { return d.id === ui.deckId; })) {
+      out.deckId = ui.deckId;
+    }
+    if (ui.pos && typeof ui.pos === "object") {
+      DECKS.forEach(function (d) {
+        var p = parseInt(ui.pos[d.id], 10);
+        if (!isNaN(p) && p >= 0 && p < d.questions.length) out.pos[d.id] = p;
+      });
+    }
+    return out;
+  }
+  function saveUi() {
+    if (state.profileIdx == null) return;
+    try {
+      localStorage.setItem(LS.ui(state.profileIdx),
+        JSON.stringify({ deckId: state.deckId, pos: state.pos }));
+    } catch (e) {}
+  }
+
+  /* ---------- Backup / restore ----------
+     localStorage only survives a redeploy if the site keeps the exact same
+     URL, and mobile browsers may evict it after inactivity. These helpers
+     let students download all progress as a JSON file and restore it on the
+     new deployment (or another device). */
+  function buildBackup() {
+    var data = {
+      app: "obgyn-revision",
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      profiles: profiles.slice(),
+      progress: {},
+      ui: {}
+    };
+    for (var i = 0; i < NUM_PROFILES; i++) {
+      data.progress[i] = i === state.profileIdx ? state.progress : loadProgress(i);
+      data.ui[i] = i === state.profileIdx
+        ? { deckId: state.deckId, pos: state.pos }
+        : loadUi(i);
+    }
+    return data;
+  }
+
+  function exportBackup() {
+    var data = buildBackup();
+    var any = false;
+    Object.keys(data.progress).forEach(function (k) {
+      if (Object.keys(data.progress[k]).length) any = true;
+    });
+    if (!any) { toast("No progress to back up yet"); return; }
+    var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "obgyn-progress-backup-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+    toast("Progress backup downloaded");
+  }
+
+  function importBackup(file) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var data;
+      try { data = JSON.parse(reader.result); } catch (e) { data = null; }
+      if (!data || data.app !== "obgyn-revision" || !data.progress || typeof data.progress !== "object") {
+        toast("Not a valid progress backup file");
+        return;
+      }
+      var existing = 0;
+      for (var i = 0; i < NUM_PROFILES; i++) {
+        var p = loadProgress(i);
+        Object.keys(p).forEach(function (dk) { existing += Object.keys(p[dk] || {}).length; });
+      }
+      if (existing > 0 &&
+          !confirm("Restoring this backup will replace the progress currently saved on this device. Continue?")) {
+        return;
+      }
+      if (Array.isArray(data.profiles)) {
+        for (var n = 0; n < NUM_PROFILES; n++) {
+          if (typeof data.profiles[n] === "string" && data.profiles[n].trim()) {
+            profiles[n] = data.profiles[n].trim();
+          }
+        }
+        saveProfiles();
+      }
+      for (var j = 0; j < NUM_PROFILES; j++) {
+        var prog = data.progress[j] || data.progress[String(j)];
+        try {
+          localStorage.setItem(LS.progress(j), JSON.stringify(prog && typeof prog === "object" ? prog : {}));
+        } catch (e) {}
+        var ui = data.ui && (data.ui[j] || data.ui[String(j)]);
+        try {
+          localStorage.setItem(LS.ui(j), JSON.stringify(ui && typeof ui === "object" ? ui : {}));
+        } catch (e) {}
+      }
+      if (state.profileIdx != null) state.progress = loadProgress(state.profileIdx);
+      renderProfilePicker();
+      toast("Progress restored");
+    };
+    reader.onerror = function () { toast("Could not read that file"); };
+    reader.readAsText(file);
   }
 
   /* ---------- Small utils ---------- */
@@ -127,14 +243,18 @@
      ============================================================ */
   function renderProfilePicker() {
     state.gridOpen = false;
+    var pending = state.pendingProfile;
     var cards = profiles.map(function (name, i) {
       var tot = profileTotals(i);
+      var isPending = i === pending;
       return (
-        '<div class="profile-card" data-profile="' + i + '">' +
+        '<div class="profile-card' + (isPending ? " selected" : "") + '" data-profile="' + i + '">' +
           '<button class="edit" data-edit="' + i + '" title="Rename">&#9998;</button>' +
           '<div class="avatar" style="background:' + ACCENTS[i] + '">' + esc(initial(name)) + "</div>" +
           '<div class="name">' + esc(name) + "</div>" +
-          '<div class="stat">' + tot.answered + "/" + tot.total + " answered</div>" +
+          (isPending
+            ? '<div class="stat confirm-hint">Tap again to confirm &#10003;</div>'
+            : '<div class="stat">' + tot.answered + "/" + tot.total + " answered</div>") +
         "</div>"
       );
     }).join("");
@@ -142,13 +262,30 @@
     app.innerHTML =
       '<div class="screen profiles">' +
         "<h1>OB/GYN Revision</h1>" +
-        '<p class="subtitle">Choose a profile to continue</p>' +
+        '<p class="subtitle">' +
+          (pending != null
+            ? "Continue as <strong>" + esc(profiles[pending]) + "</strong>? Tap the card again to confirm."
+            : "Choose a profile to continue") +
+        "</p>" +
         '<div class="profile-grid">' + cards + "</div>" +
+        '<div class="backup-row">' +
+          '<button class="mini-btn" id="exportBackup">&#11015; Back up progress</button>' +
+          '<button class="mini-btn" id="importBackup">&#11014; Restore backup</button>' +
+          '<input type="file" id="importFile" accept=".json,application/json" hidden />' +
+        "</div>" +
+        '<p class="backup-note">Progress lives in this browser. Back it up before the site moves to a new address, and restore it there.</p>' +
       "</div>";
 
     app.querySelectorAll(".profile-card").forEach(function (card) {
       card.addEventListener("click", function () {
-        enterProfile(parseInt(card.getAttribute("data-profile"), 10));
+        var i = parseInt(card.getAttribute("data-profile"), 10);
+        if (state.pendingProfile === i) {
+          state.pendingProfile = null;
+          enterProfile(i);
+        } else {
+          state.pendingProfile = i;
+          renderProfilePicker();
+        }
       });
     });
     app.querySelectorAll(".edit").forEach(function (btn) {
@@ -162,11 +299,25 @@
         }
       });
     });
+    var exp = app.querySelector("#exportBackup");
+    if (exp) exp.addEventListener("click", exportBackup);
+    var impBtn = app.querySelector("#importBackup");
+    var impFile = app.querySelector("#importFile");
+    if (impBtn && impFile) {
+      impBtn.addEventListener("click", function () { impFile.click(); });
+      impFile.addEventListener("change", function () {
+        if (impFile.files && impFile.files[0]) importBackup(impFile.files[0]);
+        impFile.value = "";
+      });
+    }
   }
 
   function enterProfile(idx) {
     state.profileIdx = idx;
     state.progress = loadProgress(idx);
+    var ui = loadUi(idx);
+    state.deckId = ui.deckId;
+    state.pos = ui.pos;
     state.showCompletion = false;
     try { localStorage.setItem(LS.lastProfile, String(idx)); } catch (e) {}
     render();
@@ -221,6 +372,7 @@
 
   function backToProfiles() {
     state.profileIdx = null;
+    state.pendingProfile = null;
     state.showCompletion = false;
     renderProfilePicker();
   }
@@ -229,6 +381,7 @@
     if (deckId === state.deckId) return;
     state.deckId = deckId;
     state.showCompletion = false;
+    saveUi();
     paintHeader();
     paintContent(true);
   }
@@ -394,6 +547,7 @@
       return;
     }
     state.pos[state.deckId] = ni;
+    saveUi();
     paintContent(true);
   }
 
@@ -471,6 +625,7 @@
         var i = parseInt(t.getAttribute("data-tile"), 10);
         state.pos[state.deckId] = i;
         state.showCompletion = false;
+        saveUi();
         closeGrid();
         paintHeader();
         paintContent(true);
@@ -486,6 +641,7 @@
     state.progress[state.deckId] = {};
     saveProgress();
     state.pos[state.deckId] = 0;
+    saveUi();
     state.showCompletion = false;
     if (state.gridOpen) renderGrid();
     paintHeader();
@@ -600,11 +756,21 @@
      Boot
      ============================================================ */
   function boot() {
+    // Ask the browser not to evict our saved data under storage pressure
+    // (helps progress survive long gaps between study sessions on mobile).
+    try {
+      if (navigator.storage && navigator.storage.persist) {
+        navigator.storage.persist().catch(function () {});
+      }
+    } catch (e) {}
+
+    // Pre-highlight the last-used profile, but always require a
+    // confirmation tap rather than entering a profile automatically.
     var last = null;
     try { last = localStorage.getItem(LS.lastProfile); } catch (e) {}
     if (last != null && last !== "" && !isNaN(parseInt(last, 10))) {
       var idx = parseInt(last, 10);
-      if (idx >= 0 && idx < NUM_PROFILES) { enterProfile(idx); return; }
+      if (idx >= 0 && idx < NUM_PROFILES) state.pendingProfile = idx;
     }
     renderProfilePicker();
   }

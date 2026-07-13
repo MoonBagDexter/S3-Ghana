@@ -600,6 +600,21 @@
      Boot
      ============================================================ */
   function boot() {
+    // Profile deep link: ?p=1..5[&name=X] opens that profile directly.
+    // The name is applied only while the slot still has its default name,
+    // so a later in-app rename isn't clobbered by revisiting the link.
+    var params = new URLSearchParams(location.search);
+    var p = parseInt(params.get("p"), 10);
+    if (p >= 1 && p <= NUM_PROFILES) {
+      var idx0 = p - 1;
+      var name = (params.get("name") || "").trim().slice(0, 30);
+      if (name && profiles[idx0] === "Student " + p) {
+        profiles[idx0] = name;
+        saveProfiles();
+      }
+      enterProfile(idx0);
+      return;
+    }
     var last = null;
     try { last = localStorage.getItem(LS.lastProfile); } catch (e) {}
     if (last != null && last !== "" && !isNaN(parseInt(last, 10))) {

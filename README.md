@@ -7,6 +7,11 @@ A polished, mobile-first, zero-build static quiz web app for revising OB/GYN MCQ
 - **Retry wrong** (completion screen or question grid): clears only your wrong and "I don't know" answers — correct ones are kept — so you can re-attempt just your weak spots without resetting the whole deck.
 - **Shuffle** (question grid): randomises the question order for the current deck so you learn the medicine, not the question positions. Toggle it off to return to the original order; your answers are unaffected either way.
 - **Keyboard shortcuts** (desktop): `A`–`E` picks an option, `I` marks "I don't know", `←`/`→` moves between questions, `G` opens the question grid, `Esc` closes it.
+- **Likely lecture tags:** every question is matched to the most relevant MED422 lecture. The compact flag opens confidence, rationale, and an alternate lecture when a question genuinely overlaps topics. Lecture context is also retained in wrong-answer exports.
+
+## Verify lecture coverage
+
+Run `node test_lecture_tags.mjs`. The check fails if any source question is unmapped, duplicated, or points to malformed lecture metadata.
 
 ## Open it
 
@@ -22,4 +27,4 @@ A polished, mobile-first, zero-build static quiz web app for revising OB/GYN MCQ
 
 ## Updating the questions
 
-Replace `data/obs.js` and `data/gyn.js` with the real decks. Each file just pushes a deck onto `window.QUIZ_DECKS`; the app is fully data-driven and makes no assumptions about how many questions each deck has. See the sample files for the exact question schema.
+Replace `data/obs.js`, `data/gyn.js`, or `data/womens-health.js` with updated decks. Each file pushes a deck onto `window.QUIZ_DECKS`; the app is fully data-driven and makes no assumptions about how many questions each deck has. When questions are added, removed, or renumbered, update `data/lecture-tags.js` and run `node test_lecture_tags.mjs` before deployment.

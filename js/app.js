@@ -8,6 +8,7 @@
 
   /* ---------- Data ---------- */
   var DECKS = (window.QUIZ_DECKS || []).slice();
+  var LECTURE_TAGS = window.LECTURE_TAGS || {};
   if (!DECKS.length) {
     document.getElementById("app").innerHTML =
       '<div class="empty-note">No quiz data loaded.</div>';
@@ -103,6 +104,44 @@
     if (!t) return "?";
     // Array.from splits by code point so emoji/surrogate-pair names don't render as garbage.
     return Array.from(t)[0].toUpperCase();
+  }
+
+  function lectureMatch(deckId, questionId) {
+    var deckMatches = LECTURE_TAGS[deckId];
+    return deckMatches ? deckMatches[String(questionId)] || null : null;
+  }
+
+  function lectureCode(lecture) {
+    if (!lecture) return "";
+    return "Test " + lecture.testGroup + " · Lecture " + lecture.officialNumber;
+  }
+
+  function lectureMatchHTML(q) {
+    var match = lectureMatch(state.deckId, q.id);
+    if (!match || !match.primary) return "";
+    var confidenceText = match.confidence === "high" ? "Strong match" :
+      (match.confidence === "medium" ? "Likely match" : "Possible match");
+    var alternate = match.alternate
+      ? '<div class="lecture-alternate"><span>Also possible</span><strong>' +
+          esc(match.alternate.title) + '</strong><small>' + esc(lectureCode(match.alternate)) + "</small></div>"
+      : "";
+    return (
+      '<details class="lecture-match confidence-' + esc(match.confidence) + '">' +
+        '<summary title="Show lecture match details">' +
+          '<span class="lecture-flag" aria-hidden="true">&#9873;</span>' +
+          '<span class="lecture-kicker">Likely lecture</span>' +
+          '<strong class="lecture-title">' + esc(match.primary.title) + "</strong>" +
+          '<span class="lecture-confidence">' + esc(confidenceText) + "</span>" +
+        "</summary>" +
+        '<div class="lecture-detail">' +
+          '<div><span>Primary</span><strong>' + esc(match.primary.title) +
+            '</strong><small>' + esc(lectureCode(match.primary)) + "</small></div>" +
+          (match.rationale ? '<p>' + esc(match.rationale) + "</p>" : "") +
+          alternate +
+          '<p class="lecture-note">Lecture matching is a study aid, not part of the original question.</p>' +
+        "</div>" +
+      "</details>"
+    );
   }
 
   function deckStats(deckId) {
@@ -298,9 +337,9 @@
 
     var shuffled = !!state.order[state.deckId];
     var html =
-      '<div class="q-count">Question ' + (idx + 1) + " of " + total +
-      (shuffled ? ' <span class="q-count-note">&#128256; shuffled &middot; #' + esc(q.num) + "</span>" : "") +
-      "</div>";
+      '<div class="q-meta"><div class="q-count">Question ' + (idx + 1) + " of " + total +
+        (shuffled ? ' <span class="q-count-note">&#128256; shuffled &middot; #' + esc(q.num) + "</span>" : "") +
+      "</div>" + lectureMatchHTML(q) + "</div>";
     if (q.caseStem) {
       html += '<div class="case-card"><div class="label">Case</div><p>' + esc(q.caseStem) + "</p></div>";
     }
@@ -454,7 +493,10 @@
       var label = "Question " + q.num +
         (r ? (r.status === "correct" ? ", correct" : r.status === "wrong" ? ", wrong" : ", didn't know")
            : ", unanswered");
-      return '<button class="' + cls + '" data-tile="' + i + '" aria-label="' + esc(label) + '">' +
+      var match = lectureMatch(state.deckId, q.id);
+      if (match && match.primary) label += ", likely lecture " + match.primary.title;
+      return '<button class="' + cls + '" data-tile="' + i + '" title="' +
+        esc(match && match.primary ? match.primary.title : label) + '" aria-label="' + esc(label) + '">' +
         esc(q.num) + "</button>";
     }).join("");
 
@@ -597,6 +639,13 @@
       if (!r || r.status === "correct") return;
       count++;
       lines.push("## Question " + q.num);
+      var match = lectureMatch(state.deckId, q.id);
+      if (match && match.primary) {
+        lines.push("");
+        lines.push("**Likely lecture:** " + match.primary.title + " (" + lectureCode(match.primary) +
+          "; " + match.confidence + " confidence)");
+        if (match.alternate) lines.push("**Also possible:** " + match.alternate.title);
+      }
       if (q.caseStem) { lines.push(""); lines.push("**Case:** " + q.caseStem); }
       lines.push("");
       lines.push(q.question);

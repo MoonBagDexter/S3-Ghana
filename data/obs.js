@@ -490,34 +490,34 @@ window.QUIZ_DECKS.push({
       "question": "A primigravid woman presents in spontaneous labour at 39 weeks of gestation. At 18:00h, her cervical dilatation is 6 cm. A further vaginal examination at 22:00h reveals that cervical dilatation is still at 6 cm. At 02:10h, the fetus is in the occipitoposterior position and uterine activity is present. What is the most appropriate action?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Amniotomy"
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Commence intravenous oxytocin"
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Membrane sweep"
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Repeat vaginal examination after 2 hours"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Repeat vaginal examination after 4 hours"
         }
       ],
-      "correct": "a",
+      "correct": "A",
       "answerSource": "circled",
       "explanations": {
-        "a": "Correct: there is arrest of dilatation (6 cm at 18:00h and still 6 cm at 22:00h, no progress over 4 hours) in the first stage with intact membranes; amniotomy is the first step to augment labour before considering oxytocin.",
-        "b": "Intravenous oxytocin is usually started after amniotomy if progress remains inadequate; with membranes intact, ARM should be performed first.",
-        "c": "A membrane sweep is used to promote the onset of labour in a woman who is not yet in labour (e.g. post-dates), not to manage an arrest of dilatation in established labour.",
-        "d": "Simply repeating the examination after 2 hours merely delays treatment of an already-confirmed arrest of cervical dilatation.",
-        "e": "Waiting a further 4 hours is an even longer inappropriate delay in the face of an established arrest of dilatation."
+        "A": "Correct: there is arrest of dilatation (6 cm at 18:00h and still 6 cm at 22:00h, no progress over 4 hours) in the first stage with intact membranes; amniotomy is the first step to augment labour before considering oxytocin.",
+        "B": "Intravenous oxytocin is usually started after amniotomy if progress remains inadequate; with membranes intact, ARM should be performed first.",
+        "C": "A membrane sweep is used to promote the onset of labour in a woman who is not yet in labour (e.g. post-dates), not to manage an arrest of dilatation in established labour.",
+        "D": "Simply repeating the examination after 2 hours merely delays treatment of an already-confirmed arrest of cervical dilatation.",
+        "E": "Waiting a further 4 hours is an even longer inappropriate delay in the face of an established arrest of dilatation."
       },
       "teaching": "Arrest of dilatation in the first stage (no cervical change over several hours) with intact membranes is managed first by amniotomy, followed by oxytocin augmentation if progress is still inadequate. Membrane sweep and simply re-examining later do not address the underlying dysfunctional labour.",
       "id": 13
@@ -532,34 +532,34 @@ window.QUIZ_DECKS.push({
       "question": "A nulliparous woman presents with spontaneous rupture of membranes at 41 weeks of gestation. At 18:00h, her cervical dilatation is 3 cm. A further vaginal examination at 22:00h reveals that her cervical dilatation is still 3 cm. At 02:10h, the fetus is in the occipitoposterior position and uterine activity is present. What is the most appropriate action?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Administer prostaglandin per vaginam"
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Caesarean section"
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Commence intravenous oxytocin"
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Membrane sweep"
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Repeat vaginal examination after 4 hours"
         }
       ],
-      "correct": "c",
+      "correct": "C",
       "answerSource": "circled",
       "explanations": {
-        "a": "Prostaglandin (e.g. vaginal PGE2) is used to ripen an unfavourable cervix for induction before labour is established. This woman is already in established labour with ruptured membranes and uterine activity, so cervical priming is not indicated.",
-        "b": "Caesarean section is not the first step. This is primary dysfunctional labour (arrest of dilatation at 3 cm over several hours) in a nulliparous woman; the appropriate response is augmentation with oxytocin, and CS is reserved for failure to progress despite adequate contractions or fetal compromise.",
-        "c": "Correct. Membranes are already ruptured and there is inadequate progress (dilatation static at 3 cm for many hours) with an OP position and uterine activity present. Since amniotomy has effectively occurred, the next step to augment the primary dysfunctional labour is commencing intravenous oxytocin.",
-        "d": "A membrane sweep is a method to promote the onset of labour in a woman who is not yet in labour; it is irrelevant here because the membranes have already ruptured and she is in established labour.",
-        "e": "Simply repeating the examination after 4 more hours delays management. Progress has already been static for 4 hours (18:00 to 22:00) and beyond, so active augmentation is required rather than further watchful waiting."
+        "A": "Prostaglandin (e.g. vaginal PGE2) is used to ripen an unfavourable cervix for induction before labour is established. This woman is already in established labour with ruptured membranes and uterine activity, so cervical priming is not indicated.",
+        "B": "Caesarean section is not the first step. This is primary dysfunctional labour (arrest of dilatation at 3 cm over several hours) in a nulliparous woman; the appropriate response is augmentation with oxytocin, and CS is reserved for failure to progress despite adequate contractions or fetal compromise.",
+        "C": "Correct. Membranes are already ruptured and there is inadequate progress (dilatation static at 3 cm for many hours) with an OP position and uterine activity present. Since amniotomy has effectively occurred, the next step to augment the primary dysfunctional labour is commencing intravenous oxytocin.",
+        "D": "A membrane sweep is a method to promote the onset of labour in a woman who is not yet in labour; it is irrelevant here because the membranes have already ruptured and she is in established labour.",
+        "E": "Simply repeating the examination after 4 more hours delays management. Progress has already been static for 4 hours (18:00 to 22:00) and beyond, so active augmentation is required rather than further watchful waiting."
       },
       "teaching": "In a nulliparous woman with poor progress in the active phase, management follows a stepwise approach: if membranes are intact, perform amniotomy; if membranes are already ruptured (as here) and contractions are inadequate, augment with intravenous oxytocin. Caesarean section is reserved for failure to progress despite adequate uterine activity or for fetal distress.",
       "id": 14
@@ -617,34 +617,34 @@ window.QUIZ_DECKS.push({
       "question": "A healthy 25-year-old G1P0 at 37 weeks gestational age comes to your office to see you for a routine obstetric (OB) visit. The patient complains to you that on several occasions she has experienced dizziness, light-headedness, and feeling as if she is going to pass out when she lies down on her back to take a nap. What is the most appropriate plan of management for this patient?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Do an electrocardiogram."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Monitor her for 24 hours with a Holter monitor to rule out an arrhythmia."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Do an arterial blood gas analysis."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Refer her to a neurologist."
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Reassure her and encourage her not to lie flat on her back."
         }
       ],
-      "correct": "e",
+      "correct": "E",
       "answerSource": "circled",
       "explanations": {
-        "a": "An ECG is unnecessary. The symptoms are clearly positional (only when supine) and reproduce the classic pattern of supine hypotensive syndrome, not a cardiac arrhythmia requiring electrical investigation.",
-        "b": "Holter monitoring to look for an arrhythmia is not warranted because the history is diagnostic of a mechanical, positional cause rather than a paroxysmal rhythm disturbance.",
-        "c": "Arterial blood gas analysis assesses oxygenation and acid-base status and has no role in evaluating positional dizziness caused by aortocaval compression.",
-        "d": "Neurology referral is inappropriate; there is no neurological deficit, and the symptom is explained entirely by pregnancy physiology.",
-        "e": "Correct. The symptoms occur only when supine and are the classic supine hypotensive (aortocaval compression) syndrome, in which the gravid uterus compresses the inferior vena cava, reducing venous return and cardiac output. The correct management is reassurance and advising her to lie in the left lateral position rather than flat on her back."
+        "A": "An ECG is unnecessary. The symptoms are clearly positional (only when supine) and reproduce the classic pattern of supine hypotensive syndrome, not a cardiac arrhythmia requiring electrical investigation.",
+        "B": "Holter monitoring to look for an arrhythmia is not warranted because the history is diagnostic of a mechanical, positional cause rather than a paroxysmal rhythm disturbance.",
+        "C": "Arterial blood gas analysis assesses oxygenation and acid-base status and has no role in evaluating positional dizziness caused by aortocaval compression.",
+        "D": "Neurology referral is inappropriate; there is no neurological deficit, and the symptom is explained entirely by pregnancy physiology.",
+        "E": "Correct. The symptoms occur only when supine and are the classic supine hypotensive (aortocaval compression) syndrome, in which the gravid uterus compresses the inferior vena cava, reducing venous return and cardiac output. The correct management is reassurance and advising her to lie in the left lateral position rather than flat on her back."
       },
       "teaching": "Supine hypotensive syndrome occurs in the third trimester when the woman lies flat and the gravid uterus compresses the inferior vena cava, decreasing venous return, cardiac output and blood pressure, producing dizziness and near-syncope that resolve on turning to the side. It is a benign, positional condition; management is reassurance and avoiding the supine position (favouring left lateral tilt), with no need for cardiac or neurological workup.",
       "id": 16
@@ -659,34 +659,34 @@ window.QUIZ_DECKS.push({
       "question": "A 29-year-old G1P0 patient at 28 weeks gestational age presents to your office complaining of some shortness of breath that is more intense with exertion. She has no significant past medical history and is not on any medication. The patient denies any chest pain. She is concerned because she has always been very athletic and cannot maintain the same degree of exercise that she was accustomed to prior to becoming pregnant. On physical examination, her pulse is 72 beats per minute. Her blood pressure is 90/50 mm Hg. Cardiac examination is consistent with a grade I systolic ejection murmur. The lungs are clear to auscultation and percussion. Which of the following is the most appropriate next step to pursue in the workup of this patient?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Refer the patient for a ventilation-perfusion scan to rule out a pulmonary embolism."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Perform an arterial blood gas."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Refer the patient to a cardiologist."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Reassure the patient."
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Order an electrocardiogram."
         }
       ],
-      "correct": "d",
+      "correct": "D",
       "answerSource": "circled",
       "explanations": {
-        "a": "A V/Q scan is used when pulmonary embolism is suspected, but there are no features of PE here (no pleuritic chest pain, no tachycardia, no hypoxia, no risk factors); the exertional breathlessness is physiological.",
-        "b": "Arterial blood gas is not indicated because there is no evidence of hypoxia or respiratory compromise; the lungs are clear and she is describing normal physiological dyspnoea of pregnancy.",
-        "c": "Cardiology referral is unnecessary. A grade I systolic ejection (flow) murmur and mild blood pressure reduction are normal findings of pregnancy caused by increased cardiac output and decreased systemic vascular resistance.",
-        "d": "Correct. Mild dyspnoea, a soft grade I systolic ejection murmur, and a modestly lowered blood pressure are all normal physiological changes of pregnancy. With a benign history and examination, the appropriate step is to reassure the patient.",
-        "e": "An ECG is not required in an asymptomatic woman with findings fully explained by normal pregnancy physiology and no signs of cardiac pathology."
+        "A": "A V/Q scan is used when pulmonary embolism is suspected, but there are no features of PE here (no pleuritic chest pain, no tachycardia, no hypoxia, no risk factors); the exertional breathlessness is physiological.",
+        "B": "Arterial blood gas is not indicated because there is no evidence of hypoxia or respiratory compromise; the lungs are clear and she is describing normal physiological dyspnoea of pregnancy.",
+        "C": "Cardiology referral is unnecessary. A grade I systolic ejection (flow) murmur and mild blood pressure reduction are normal findings of pregnancy caused by increased cardiac output and decreased systemic vascular resistance.",
+        "D": "Correct. Mild dyspnoea, a soft grade I systolic ejection murmur, and a modestly lowered blood pressure are all normal physiological changes of pregnancy. With a benign history and examination, the appropriate step is to reassure the patient.",
+        "E": "An ECG is not required in an asymptomatic woman with findings fully explained by normal pregnancy physiology and no signs of cardiac pathology."
       },
       "teaching": "Physiological dyspnoea of pregnancy affects most women and is due to increased minute ventilation (progesterone effect) and the sensation of breathlessness, plus later mechanical effects of the uterus. Normal cardiovascular adaptations include a fall in systemic vascular resistance (lower BP, widened pulse pressure) and a benign systolic ejection flow murmur from the increased blood volume and cardiac output. When history and examination are otherwise normal, reassurance is appropriate rather than an extensive cardiopulmonary workup.",
       "id": 17
@@ -701,34 +701,34 @@ window.QUIZ_DECKS.push({
       "question": "You are counseling a 24-year-old woman who is a G2P1 at 36 weeks gestatiion. She delivered her first baby at 41 weeks gestation by cesarean section as a result of fetal distress that occurred during an induction of labor for mild preeclampsia. She would like to know if she can have a trial of labor with this pregnancy. Which of the following is the best response to this patient?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "No, since she has never had a vaginal delivery."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Yes, but only if she had a low transverse cesarean section."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "No, because once she has had a cesarean section she must deliver all of her subsequent children by cesarean section."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Yes, but only if her uterine incision was made above the lower uterine segment."
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Yes, but only if she had a classical cesarean section."
         }
       ],
-      "correct": "b",
+      "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "a": "Not having had a previous vaginal delivery does not preclude a trial of labour after caesarean (TOLAC); prior vaginal birth improves success rates but is not a requirement.",
-        "b": "Correct. TOLAC is appropriate for a woman with one previous low transverse (lower uterine segment) caesarean, which carries a low risk of uterine rupture (~0.5-1%). The type of previous uterine incision is the key determinant of candidacy for a trial of labour.",
-        "c": "The dictum once a caesarean always a caesarean is outdated; VBAC/TOLAC is a well-established and safe option for appropriately selected women with a low transverse scar.",
-        "d": "An incision above the lower uterine segment (classical or high vertical) is a contraindication to trial of labour because of the high risk of uterine rupture; this statement is the opposite of correct practice.",
-        "e": "A classical (vertical upper-segment) caesarean scar is a contraindication to trial of labour owing to the substantially higher rupture risk, so TOLAC should not be offered in that situation."
+        "A": "Not having had a previous vaginal delivery does not preclude a trial of labour after caesarean (TOLAC); prior vaginal birth improves success rates but is not a requirement.",
+        "B": "Correct. TOLAC is appropriate for a woman with one previous low transverse (lower uterine segment) caesarean, which carries a low risk of uterine rupture (~0.5-1%). The type of previous uterine incision is the key determinant of candidacy for a trial of labour.",
+        "C": "The dictum once a caesarean always a caesarean is outdated; VBAC/TOLAC is a well-established and safe option for appropriately selected women with a low transverse scar.",
+        "D": "An incision above the lower uterine segment (classical or high vertical) is a contraindication to trial of labour because of the high risk of uterine rupture; this statement is the opposite of correct practice.",
+        "E": "A classical (vertical upper-segment) caesarean scar is a contraindication to trial of labour owing to the substantially higher rupture risk, so TOLAC should not be offered in that situation."
       },
       "teaching": "Eligibility for a trial of labour after caesarean (TOLAC/VBAC) depends chiefly on the type of prior uterine incision. A low transverse (lower uterine segment) scar carries a low rupture risk and is suitable for a trial of labour, whereas a classical or high vertical incision involving the contractile upper segment is a contraindication because of a markedly higher rupture risk. The reason for the first caesarean (here, fetal distress during induction) does not by itself prohibit a future trial of labour.",
       "id": 18
@@ -743,34 +743,34 @@ window.QUIZ_DECKS.push({
       "question": "A patient comes to your office with her last menstrual period 4 weeks ago. She denies any symptoms such as nausea, fatigue, urinary frequency, or breast tenderness. She thinks that she may be pregnant because she has not had her period yet. She is very anxious to find out because she has a history of a previous ectopic pregnancy and wants to be sure to get early prenatal care. Which of the following actions is most appropriate at this time?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "No action is needed because the patient is asymptomatic, has not missed her period, and cannot be pregnant."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Order a serum quantitative pregnancy test."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Perform a TV ultrasound."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Perform an abdominal ultrasound."
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Perform a bimanual pelvic examination to assess uterine size."
         }
       ],
-      "correct": "b",
+      "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "a": "This is incorrect and unsafe. At 4 weeks from the LMP she is around the time of the expected/missed period and could well be pregnant; given her prior ectopic she needs active evaluation, not dismissal.",
-        "b": "Correct. A serum quantitative beta-hCG is the most sensitive and earliest way to confirm pregnancy and gives a baseline value that, combined with serial measurement and later ultrasound, helps confirm an intrauterine (versus ectopic) location. This is especially important given her history of ectopic pregnancy.",
-        "c": "Transvaginal ultrasound at only about 4 weeks is usually too early to visualise an intrauterine gestational sac (typically seen when beta-hCG is above the discriminatory zone, ~1500-2000). Confirming pregnancy biochemically first is the appropriate initial step.",
-        "d": "Abdominal ultrasound is even less sensitive than transvaginal ultrasound this early and cannot reliably identify or locate such an early pregnancy.",
-        "e": "A bimanual examination is unreliable for detecting or dating a pregnancy this early and cannot distinguish an intrauterine from an ectopic gestation."
+        "A": "This is incorrect and unsafe. At 4 weeks from the LMP she is around the time of the expected/missed period and could well be pregnant; given her prior ectopic she needs active evaluation, not dismissal.",
+        "B": "Correct. A serum quantitative beta-hCG is the most sensitive and earliest way to confirm pregnancy and gives a baseline value that, combined with serial measurement and later ultrasound, helps confirm an intrauterine (versus ectopic) location. This is especially important given her history of ectopic pregnancy.",
+        "C": "Transvaginal ultrasound at only about 4 weeks is usually too early to visualise an intrauterine gestational sac (typically seen when beta-hCG is above the discriminatory zone, ~1500-2000). Confirming pregnancy biochemically first is the appropriate initial step.",
+        "D": "Abdominal ultrasound is even less sensitive than transvaginal ultrasound this early and cannot reliably identify or locate such an early pregnancy.",
+        "E": "A bimanual examination is unreliable for detecting or dating a pregnancy this early and cannot distinguish an intrauterine from an ectopic gestation."
       },
       "teaching": "In a woman with a prior ectopic pregnancy who may be newly pregnant, the first step is to confirm pregnancy with a quantitative serum beta-hCG, which is positive earlier and more sensitively than ultrasound. Ultrasound is used subsequently, once the beta-hCG exceeds the discriminatory zone (~1500-2000 mIU/mL), to confirm an intrauterine location and exclude a recurrent ectopic. Early biochemical confirmation allows appropriate early surveillance in this higher-risk patient.",
       "id": 19
@@ -786,34 +786,34 @@ window.QUIZ_DECKS.push({
       "question": "Which of the following is the best next step in the management of this patient?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "Allow the patient to undergo a vaginal breech delivery whenever she goes into labor."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "Send the patient to labor and delivery immediately for an emergent cesarean section."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "Schedule a cesarean section at or after 41 weeks gestational age."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "Schedule an external cephalic version in the next few days."
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "Allow the patient to go into labor and do an external cephalic version at that time if the fetus is still in the double footling breech presentation."
         }
       ],
-      "correct": "d",
+      "correct": "D",
       "answerSource": "circled",
       "explanations": {
-        "a": "Incorrect. A footling (incomplete) breech is a contraindication to planned vaginal breech delivery because of the high risk of cord prolapse and head entrapment through an incompletely dilated cervix; allowing spontaneous vaginal breech delivery is unsafe here.",
-        "b": "Incorrect. There is no maternal or fetal emergency: the patient is not in labor, has no contractions, fluid is normal, and there is no evidence of fetal distress or cord prolapse, so an immediate/emergent cesarean is not warranted at this time.",
-        "c": "Incorrect. Deferring management to 41 weeks needlessly commits the patient to cesarean and forgoes the opportunity, at 37 weeks, to convert the fetus to vertex and permit a trial of vaginal delivery.",
-        "d": "Correct. At 37 weeks (term, before the onset of labor) external cephalic version is the appropriate next step to attempt to convert the breech to a cephalic presentation, which if successful allows a planned vaginal delivery; if it fails, a scheduled cesarean is arranged.",
-        "e": "Incorrect. ECV is most successful and safest when performed electively before labor at around 37 weeks; attempting version once she is already in labor is less likely to succeed and carries greater risk."
+        "A": "Incorrect. A footling (incomplete) breech is a contraindication to planned vaginal breech delivery because of the high risk of cord prolapse and head entrapment through an incompletely dilated cervix; allowing spontaneous vaginal breech delivery is unsafe here.",
+        "B": "Incorrect. There is no maternal or fetal emergency: the patient is not in labor, has no contractions, fluid is normal, and there is no evidence of fetal distress or cord prolapse, so an immediate/emergent cesarean is not warranted at this time.",
+        "C": "Incorrect. Deferring management to 41 weeks needlessly commits the patient to cesarean and forgoes the opportunity, at 37 weeks, to convert the fetus to vertex and permit a trial of vaginal delivery.",
+        "D": "Correct. At 37 weeks (term, before the onset of labor) external cephalic version is the appropriate next step to attempt to convert the breech to a cephalic presentation, which if successful allows a planned vaginal delivery; if it fails, a scheduled cesarean is arranged.",
+        "E": "Incorrect. ECV is most successful and safest when performed electively before labor at around 37 weeks; attempting version once she is already in labor is less likely to succeed and carries greater risk."
       },
       "teaching": "Breech presentation at term is managed by offering external cephalic version at about 37 weeks to attempt conversion to cephalic and enable a vaginal delivery. Footling breech and other malpresentations are not candidates for planned vaginal breech delivery, so if version fails a scheduled cesarean is planned. Version is done before labor because success rates fall and complications rise once labor begins.",
       "id": 20
@@ -829,34 +829,34 @@ window.QUIZ_DECKS.push({
       "question": "As her obstetrician, which of the following should you recommend to the patient?",
       "options": [
         {
-          "key": "a",
+          "key": "A",
           "text": "She should be admitted for an immediate cesarean section."
         },
         {
-          "key": "b",
+          "key": "B",
           "text": "She should be admitted for labor induction."
         },
         {
-          "key": "c",
+          "key": "C",
           "text": "She should be scheduled for a cesarean section in 1 week if she has not gone into labor by that time."
         },
         {
-          "key": "d",
+          "key": "D",
           "text": "She should continue to monitor kick counts and to return to your office in 1 week to reassess her situation."
         },
         {
-          "key": "e",
+          "key": "E",
           "text": "She should walk as much as possible to stimulate contractions."
         }
       ],
-      "correct": "d",
+      "correct": "D",
       "answerSource": "circled",
       "explanations": {
-        "a": "Incorrect. There is no obstetric indication for cesarean: the pregnancy is uncomplicated, fetal movement and well-being are reassuring, and simple patient impatience is not an indication for operative delivery.",
-        "b": "Incorrect. At exactly 40 weeks with an unfavorable (firm, posterior, minimally dilated) cervix and a reassuring fetus, there is no medical indication for induction; expectant management is appropriate and induction of an unripe cervix increases the risk of failed induction.",
-        "c": "Incorrect. Scheduling a cesarean simply for reaching term is not indicated in an uncomplicated pregnancy with a well fetus and no obstetric contraindication to vaginal birth.",
-        "d": "Correct. With good dates, reassuring fetal movement/kick counts, and no complications at 40 weeks, expectant management with continued fetal-movement monitoring and reassessment in about a week (with antenatal surveillance as she approaches 41-42 weeks) is the appropriate recommendation.",
-        "e": "Incorrect. Walking has not been shown to reliably initiate labor, so recommending it as a strategy to bring on contractions is not evidence-based management."
+        "A": "Incorrect. There is no obstetric indication for cesarean: the pregnancy is uncomplicated, fetal movement and well-being are reassuring, and simple patient impatience is not an indication for operative delivery.",
+        "B": "Incorrect. At exactly 40 weeks with an unfavorable (firm, posterior, minimally dilated) cervix and a reassuring fetus, there is no medical indication for induction; expectant management is appropriate and induction of an unripe cervix increases the risk of failed induction.",
+        "C": "Incorrect. Scheduling a cesarean simply for reaching term is not indicated in an uncomplicated pregnancy with a well fetus and no obstetric contraindication to vaginal birth.",
+        "D": "Correct. With good dates, reassuring fetal movement/kick counts, and no complications at 40 weeks, expectant management with continued fetal-movement monitoring and reassessment in about a week (with antenatal surveillance as she approaches 41-42 weeks) is the appropriate recommendation.",
+        "E": "Incorrect. Walking has not been shown to reliably initiate labor, so recommending it as a strategy to bring on contractions is not evidence-based management."
       },
       "teaching": "A well-dated, uncomplicated pregnancy at 40 weeks with a reassuring fetus and an unfavorable cervix does not require immediate delivery. The correct approach is expectant management with ongoing assessment of fetal well-being (kick counts, and antenatal testing as she moves past her due date), reserving induction for a clear indication or once she reaches the late post-term window. Patient impatience alone is not an indication for induction or cesarean.",
       "id": 21

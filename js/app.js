@@ -8,6 +8,7 @@
 
   /* ---------- Data ---------- */
   var DECKS = (window.QUIZ_DECKS || []).slice();
+  var LECTURE_TAGS = window.LECTURE_TAGS || {};
   if (!DECKS.length) {
     document.getElementById("app").innerHTML =
       '<div class="empty-note">No quiz data loaded.</div>';
@@ -29,13 +30,14 @@
     profileIdx: null,
     pendingProfile: null, // picker: tapped once, awaiting confirmation tap
     deckId: DECKS[0].id,
-    pos: {},            // deckId -> current question index (preserved per deck)
+    pos: {},            // deckId -> current position in the deck's order (preserved per deck)
+    order: {},          // deckId -> array of question indexes when shuffled, or null for natural order
     progress: {},       // deckId -> { questionId: {picked, status} } for current profile
     gridOpen: false,
     reviewFilter: false,
     showCompletion: false
   };
-  DECKS.forEach(function (d) { state.pos[d.id] = 0; });
+  DECKS.forEach(function (d) { state.pos[d.id] = 0; state.order[d.id] = null; });
 
   var profiles = loadProfiles();
   var app = document.getElementById("app");
@@ -66,31 +68,41 @@
     } catch (e) {}
   }
 
-  /* Per-profile UI state (active deck tab + current question in each deck),
-     so a reload or redeploy puts you back exactly where you were. */
+  /* Per-profile UI state (active deck tab, current question and shuffle
+     order in each deck), so a reload or redeploy puts you back exactly
+     where you were. */
+  function validOrder(o, deck) {
+    if (!Array.isArray(o) || o.length !== deck.questions.length) return false;
+    var seen = {};
+    for (var i = 0; i < o.length; i++) {
+      var v = o[i];
+      if (typeof v !== "number" || v < 0 || v >= o.length || v % 1 !== 0 || seen[v]) return false;
+      seen[v] = true;
+    }
+    return true;
+  }
   function loadUi(idx) {
     var ui = null;
     try { ui = JSON.parse(localStorage.getItem(LS.ui(idx))); } catch (e) {}
-    var out = { deckId: DECKS[0].id, pos: {} };
-    DECKS.forEach(function (d) { out.pos[d.id] = 0; });
+    var out = { deckId: DECKS[0].id, pos: {}, order: {} };
+    DECKS.forEach(function (d) { out.pos[d.id] = 0; out.order[d.id] = null; });
     if (!ui || typeof ui !== "object") return out;
     if (typeof ui.deckId === "string" &&
         DECKS.some(function (d) { return d.id === ui.deckId; })) {
       out.deckId = ui.deckId;
     }
-    if (ui.pos && typeof ui.pos === "object") {
-      DECKS.forEach(function (d) {
-        var p = parseInt(ui.pos[d.id], 10);
-        if (!isNaN(p) && p >= 0 && p < d.questions.length) out.pos[d.id] = p;
-      });
-    }
+    DECKS.forEach(function (d) {
+      if (ui.order && validOrder(ui.order[d.id], d)) out.order[d.id] = ui.order[d.id];
+      var p = ui.pos ? parseInt(ui.pos[d.id], 10) : NaN;
+      if (!isNaN(p) && p >= 0 && p < d.questions.length) out.pos[d.id] = p;
+    });
     return out;
   }
   function saveUi() {
     if (state.profileIdx == null) return;
     try {
       localStorage.setItem(LS.ui(state.profileIdx),
-        JSON.stringify({ deckId: state.deckId, pos: state.pos }));
+        JSON.stringify({ deckId: state.deckId, pos: state.pos, order: state.order }));
     } catch (e) {}
   }
 
@@ -111,7 +123,7 @@
     for (var i = 0; i < NUM_PROFILES; i++) {
       data.progress[i] = i === state.profileIdx ? state.progress : loadProgress(i);
       data.ui[i] = i === state.profileIdx
-        ? { deckId: state.deckId, pos: state.pos }
+        ? { deckId: state.deckId, pos: state.pos, order: state.order }
         : loadUi(i);
     }
     return data;
@@ -186,7 +198,18 @@
     return DECKS[0];
   }
   function currentDeck() { return deckById(state.deckId); }
-  function currentQuestion() { return currentDeck().questions[state.pos[state.deckId]]; }
+  // Map a position in the current viewing order to a question index, and back.
+  function qIndexAtPos(deckId, pos) {
+    var o = state.order[deckId];
+    return o ? o[pos] : pos;
+  }
+  function posOfIndex(deckId, qIdx) {
+    var o = state.order[deckId];
+    return o ? o.indexOf(qIdx) : qIdx;
+  }
+  function currentQuestion() {
+    return currentDeck().questions[qIndexAtPos(state.deckId, state.pos[state.deckId])];
+  }
   function getRecord(deckId, qid) {
     var d = state.progress[deckId];
     return d ? d[qid] : undefined;
@@ -204,7 +227,47 @@
   }
   function initial(name) {
     var t = (name || "").trim();
-    return t ? t.charAt(0).toUpperCase() : "?";
+    if (!t) return "?";
+    // Array.from splits by code point so emoji/surrogate-pair names don't render as garbage.
+    return Array.from(t)[0].toUpperCase();
+  }
+
+  function lectureMatch(deckId, questionId) {
+    var deckMatches = LECTURE_TAGS[deckId];
+    return deckMatches ? deckMatches[String(questionId)] || null : null;
+  }
+
+  function lectureCode(lecture) {
+    if (!lecture) return "";
+    return "Test " + lecture.testGroup + " · Lecture " + lecture.officialNumber;
+  }
+
+  function lectureMatchHTML(q) {
+    var match = lectureMatch(state.deckId, q.id);
+    if (!match || !match.primary) return "";
+    var confidenceText = match.confidence === "high" ? "Strong match" :
+      (match.confidence === "medium" ? "Likely match" : "Possible match");
+    var alternate = match.alternate
+      ? '<div class="lecture-alternate"><span>Also possible</span><strong>' +
+          esc(match.alternate.title) + '</strong><small>' + esc(lectureCode(match.alternate)) + "</small></div>"
+      : "";
+    return (
+      '<details class="lecture-match confidence-' + esc(match.confidence) + '">' +
+        '<summary title="Show lecture match details">' +
+          '<span class="lecture-flag" aria-hidden="true">&#9873;</span>' +
+          '<span class="lecture-kicker">Likely lecture</span>' +
+          '<strong class="lecture-title">' + esc(match.primary.title) + "</strong>" +
+          '<span class="lecture-confidence">' + esc(confidenceText) + "</span>" +
+        "</summary>" +
+        '<div class="lecture-detail">' +
+          '<div><span>Primary</span><strong>' + esc(match.primary.title) +
+            '</strong><small>' + esc(lectureCode(match.primary)) + "</small></div>" +
+          (match.rationale ? '<p>' + esc(match.rationale) + "</p>" : "") +
+          alternate +
+          '<p class="lecture-note">Lecture matching is a study aid, not part of the original question.</p>' +
+        "</div>" +
+      "</details>"
+    );
   }
 
   function deckStats(deckId) {
@@ -318,6 +381,7 @@
     var ui = loadUi(idx);
     state.deckId = ui.deckId;
     state.pos = ui.pos;
+    state.order = ui.order;
     state.showCompletion = false;
     try { localStorage.setItem(LS.lastProfile, String(idx)); } catch (e) {}
     render();
@@ -352,10 +416,10 @@
 
     hdr.innerHTML =
       '<div class="header-row">' +
-        '<button class="avatar-btn" id="profileBtn" title="Switch profile" ' +
+        '<button class="avatar-btn" id="profileBtn" title="Switch profile" aria-label="Switch profile" ' +
           'style="background:' + accent + '">' + esc(initial(profiles[state.profileIdx])) + "</button>" +
         '<div class="header-title">OB/GYN Revision</div>' +
-        '<button class="icon-btn" id="gridBtn" title="Question grid">&#9638;</button>' +
+        '<button class="icon-btn" id="gridBtn" title="Question grid" aria-label="Question grid">&#9638;</button>' +
       "</div>" +
       '<div class="deck-tabs">' + tabs + "</div>" +
       '<div class="progress-wrap">' +
@@ -435,8 +499,11 @@
       );
     }).join("");
 
+    var shuffled = !!state.order[state.deckId];
     var html =
-      '<div class="q-count">Question ' + (idx + 1) + " of " + total + "</div>";
+      '<div class="q-meta"><div class="q-count">Question ' + (idx + 1) + " of " + total +
+        (shuffled ? ' <span class="q-count-note">&#128256; shuffled &middot; #' + esc(q.num) + "</span>" : "") +
+      "</div>" + lectureMatchHTML(q) + "</div>";
     if (q.caseStem) {
       html += '<div class="case-card"><div class="label">Case</div><p>' + esc(q.caseStem) + "</p></div>";
     }
@@ -462,7 +529,8 @@
         '<button class="nav-btn" data-nav="prev"' + (idx <= 0 ? " disabled" : "") + ">&#8592; Prev</button>" +
         '<button class="nav-btn primary" data-nav="next"' +
           ((last && !deckStats(state.deckId).complete) ? " disabled" : "") + ">Next &#8594;</button>" +
-      "</div>";
+      "</div>" +
+      '<div class="kbd-hint">A&ndash;E answer &middot; I don\'t know &middot; &#8592;/&#8594; navigate &middot; G grid</div>';
     return html;
   }
 
@@ -480,7 +548,10 @@
           '<span class="count-chip idk">&#129335; ' + s.idk + " didn\'t know</span>" +
         "</div>" +
         '<div class="completion-actions">' +
-          '<button class="mini-btn primary" data-act="download">&#11015; Download wrong answers</button>' +
+          ((s.wrong + s.idk > 0)
+            ? '<button class="mini-btn primary" data-act="retry">&#128257; Retry wrong (' + (s.wrong + s.idk) + ")</button>"
+            : "") +
+          '<button class="mini-btn" data-act="download">&#11015; Download wrong answers</button>' +
           '<button class="mini-btn" data-act="review">&#128269; Review wrong only</button>' +
           '<button class="mini-btn danger" data-act="reset">&#8635; Reset deck</button>' +
         "</div>" +
@@ -513,6 +584,8 @@
     if (rv) rv.addEventListener("click", function () {
       state.reviewFilter = true; state.showCompletion = false; openGrid();
     });
+    var rt = view.querySelector('[data-act="retry"]');
+    if (rt) rt.addEventListener("click", retryWrong);
     var rs = view.querySelector('[data-act="reset"]');
     if (rs) rs.addEventListener("click", resetDeck);
   }
@@ -562,6 +635,8 @@
     state.gridOpen = false;
     var o = document.getElementById("overlay");
     if (o) o.parentNode.removeChild(o);
+    var back = document.getElementById("gridBtn");
+    if (back) back.focus();
   }
 
   function renderGrid() {
@@ -571,26 +646,36 @@
     var deck = currentDeck();
     var recs = state.progress[state.deckId] || {};
     var s = deckStats(state.deckId);
-    var curIdx = state.pos[state.deckId];
+    var curQIdx = qIndexAtPos(state.deckId, state.pos[state.deckId]);
 
     var tiles = deck.questions.map(function (q, i) {
       var r = recs[q.id];
       var cls = "tile";
       var isWrong = r && (r.status === "wrong" || r.status === "idk");
       if (r) cls += " " + r.status;
-      if (i === curIdx && !state.showCompletion) cls += " current";
+      if (i === curQIdx && !state.showCompletion) cls += " current";
       if (state.reviewFilter && !isWrong) cls += " dimmed";
-      return '<button class="' + cls + '" data-tile="' + i + '">' + esc(q.num) + "</button>";
+      var label = "Question " + q.num +
+        (r ? (r.status === "correct" ? ", correct" : r.status === "wrong" ? ", wrong" : ", didn't know")
+           : ", unanswered");
+      var match = lectureMatch(state.deckId, q.id);
+      if (match && match.primary) label += ", likely lecture " + match.primary.title;
+      return '<button class="' + cls + '" data-tile="' + i + '" title="' +
+        esc(match && match.primary ? match.primary.title : label) + '" aria-label="' + esc(label) + '">' +
+        esc(q.num) + "</button>";
     }).join("");
 
     var overlay = document.createElement("div");
     overlay.className = "overlay";
     overlay.id = "overlay";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", deck.title + " question grid");
     overlay.innerHTML =
       '<div class="overlay-header">' +
         '<div class="overlay-top">' +
           "<h2>" + esc(deck.title) + " &mdash; Questions</h2>" +
-          '<button class="icon-btn" id="closeGrid" title="Close">&times;</button>' +
+          '<button class="icon-btn" id="closeGrid" title="Close" aria-label="Close question grid">&times;</button>' +
         "</div>" +
         '<div class="counts">' +
           '<span class="count-chip">' + s.answered + "/" + s.total + " answered</span>" +
@@ -602,6 +687,9 @@
         '<div class="overlay-actions">' +
           '<button class="mini-btn toggle' + (state.reviewFilter ? " on" : "") + '" id="filterBtn">' +
             "&#128269; Wrong only</button>" +
+          '<button class="mini-btn toggle' + (state.order[state.deckId] ? " on" : "") + '" id="shuffleBtn">' +
+            "&#128256; Shuffle</button>" +
+          '<button class="mini-btn" id="retryBtn">&#128257; Retry wrong</button>' +
           '<button class="mini-btn" id="dlBtn">&#11015; Download wrong</button>' +
           '<button class="mini-btn danger" id="resetBtn">&#8635; Reset progress</button>' +
         "</div>" +
@@ -618,12 +706,14 @@
       state.reviewFilter = !state.reviewFilter;
       renderGrid();
     });
+    overlay.querySelector("#shuffleBtn").addEventListener("click", toggleShuffle);
+    overlay.querySelector("#retryBtn").addEventListener("click", retryWrong);
     overlay.querySelector("#dlBtn").addEventListener("click", downloadWrong);
     overlay.querySelector("#resetBtn").addEventListener("click", resetDeck);
     overlay.querySelectorAll(".tile").forEach(function (t) {
       t.addEventListener("click", function () {
         var i = parseInt(t.getAttribute("data-tile"), 10);
-        state.pos[state.deckId] = i;
+        state.pos[state.deckId] = posOfIndex(state.deckId, i);
         state.showCompletion = false;
         saveUi();
         closeGrid();
@@ -631,6 +721,61 @@
         paintContent(true);
       });
     });
+    overlay.querySelector("#closeGrid").focus();
+  }
+
+  /* ---------- Shuffle ---------- */
+  function toggleShuffle() {
+    var id = state.deckId;
+    var deck = currentDeck();
+    var curQIdx = qIndexAtPos(id, state.pos[id]);
+    if (state.order[id]) {
+      // Back to natural order, keeping the current question in view.
+      state.order[id] = null;
+      state.pos[id] = curQIdx;
+      toast("Original order restored");
+    } else {
+      var arr = deck.questions.map(function (_, i) { return i; });
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+      }
+      state.order[id] = arr;
+      state.pos[id] = 0;
+      toast("Questions shuffled");
+    }
+    saveUi();
+    state.showCompletion = false;
+    if (state.gridOpen) renderGrid();
+    paintHeader();
+    paintContent(false);
+  }
+
+  /* ---------- Retry wrong ---------- */
+  function retryWrong() {
+    var deck = currentDeck();
+    var recs = state.progress[state.deckId] || {};
+    var clearedIdx = [];
+    deck.questions.forEach(function (q, i) {
+      var r = recs[q.id];
+      if (r && r.status !== "correct") { delete recs[q.id]; clearedIdx.push(i); }
+    });
+    if (!clearedIdx.length) { toast("Nothing to retry — no wrong answers"); return; }
+    saveProgress();
+    state.reviewFilter = false;
+    state.showCompletion = false;
+    // Jump to whichever cleared question comes first in the current viewing order.
+    var firstPos = null;
+    clearedIdx.forEach(function (qi) {
+      var p = posOfIndex(state.deckId, qi);
+      if (firstPos == null || p < firstPos) firstPos = p;
+    });
+    state.pos[state.deckId] = firstPos;
+    saveUi();
+    if (state.gridOpen) closeGrid();
+    paintHeader();
+    paintContent(true);
+    toast("Retrying " + clearedIdx.length + " question" + (clearedIdx.length === 1 ? "" : "s"));
   }
 
   /* ---------- Reset ---------- */
@@ -663,6 +808,13 @@
       if (!r || r.status === "correct") return;
       count++;
       lines.push("## Question " + q.num);
+      var match = lectureMatch(state.deckId, q.id);
+      if (match && match.primary) {
+        lines.push("");
+        lines.push("**Likely lecture:** " + match.primary.title + " (" + lectureCode(match.primary) +
+          "; " + match.confidence + " confidence)");
+        if (match.alternate) lines.push("**Also possible:** " + match.alternate.title);
+      }
       if (q.caseStem) { lines.push(""); lines.push("**Case:** " + q.caseStem); }
       lines.push("");
       lines.push(q.question);
@@ -707,6 +859,8 @@
     var t = document.createElement("div");
     t.className = "toast";
     t.id = "toast";
+    t.setAttribute("role", "status");
+    t.setAttribute("aria-live", "polite");
     t.textContent = msg;
     document.body.appendChild(t);
     if (toastTimer) clearTimeout(toastTimer);
@@ -744,12 +898,31 @@
      ============================================================ */
   document.addEventListener("keydown", function (e) {
     if (state.profileIdx == null) return;
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
     if (e.key === "Escape") {
       if (state.gridOpen) { closeGrid(); return; }
     }
     if (state.gridOpen) return;
-    if (e.key === "ArrowLeft") navigate(-1);
-    else if (e.key === "ArrowRight") navigate(1);
+
+    if (e.key === "ArrowLeft") { navigate(-1); return; }
+    if (e.key === "ArrowRight") { navigate(1); return; }
+
+    var k = e.key.length === 1 ? e.key.toUpperCase() : e.key;
+    if (k === "G") { openGrid(); return; }
+    if (state.showCompletion) return;
+
+    var q = currentQuestion();
+    if (!q || getRecord(state.deckId, q.id)) return; // already answered
+    if (k === "I") { selectAnswer(q, null); return; }
+    if (/^[A-Z]$/.test(k)) {
+      // Match option keys case-insensitively, but record the option's actual key.
+      for (var oi = 0; oi < q.options.length; oi++) {
+        if (String(q.options[oi].key).toUpperCase() === k) {
+          selectAnswer(q, q.options[oi].key);
+          return;
+        }
+      }
+    }
   });
 
   /* ============================================================
@@ -764,8 +937,24 @@
       }
     } catch (e) {}
 
-    // Pre-highlight the last-used profile, but always require a
-    // confirmation tap rather than entering a profile automatically.
+    // Profile deep link: ?p=1..5[&name=X] opens that profile directly.
+    // The name is applied only while the slot still has its default name,
+    // so a later in-app rename isn't clobbered by revisiting the link.
+    var params = new URLSearchParams(location.search);
+    var p = parseInt(params.get("p"), 10);
+    if (p >= 1 && p <= NUM_PROFILES) {
+      var idx0 = p - 1;
+      var name = (params.get("name") || "").trim().slice(0, 30);
+      if (name && profiles[idx0] === "Student " + p) {
+        profiles[idx0] = name;
+        saveProfiles();
+      }
+      enterProfile(idx0);
+      return;
+    }
+    // Plain URL always shows the picker — only a deep link (?p=N) jumps
+    // straight into a profile. Pre-highlight the last-used profile, but
+    // require a confirmation tap rather than entering it automatically.
     var last = null;
     try { last = localStorage.getItem(LS.lastProfile); } catch (e) {}
     if (last != null && last !== "" && !isNaN(parseInt(last, 10))) {

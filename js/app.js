@@ -21,6 +21,7 @@
   var LS = {
     profiles: "obgyn:profiles",
     lastProfile: "obgyn:lastProfile",
+    uiScale: "obgyn:uiScale",
     progress: function (i) { return "obgyn:progress:" + i; },
     ui: function (i) { return "obgyn:ui:" + i; }
   };
@@ -66,6 +67,41 @@
     try {
       localStorage.setItem(LS.progress(state.profileIdx), JSON.stringify(state.progress));
     } catch (e) {}
+  }
+
+  /* ---------- UI scale (zoom) ----------
+     One shared setting for the device (not per profile): the whole app is
+     scaled with CSS zoom so − fits more on screen and + makes everything
+     bigger. Layout is fluid, so content refills the viewport at any scale. */
+  var SCALE_MIN = 0.6, SCALE_MAX = 1.4, SCALE_STEP = 0.1;
+
+  function clampScale(v) {
+    v = Math.round(v * 10) / 10;
+    return Math.min(SCALE_MAX, Math.max(SCALE_MIN, v));
+  }
+  function loadScale() {
+    try {
+      var v = parseFloat(localStorage.getItem(LS.uiScale));
+      if (!isNaN(v)) return clampScale(v);
+    } catch (e) {}
+    return 1;
+  }
+  var uiScale = loadScale();
+
+  function applyScale() {
+    document.documentElement.style.setProperty("--ui-scale", String(uiScale));
+    var out = document.getElementById("zoomOut");
+    var zin = document.getElementById("zoomIn");
+    if (out) out.disabled = uiScale <= SCALE_MIN + 0.001;
+    if (zin) zin.disabled = uiScale >= SCALE_MAX - 0.001;
+  }
+  function changeScale(dir) {
+    var next = clampScale(uiScale + dir * SCALE_STEP);
+    if (next === uiScale) return;
+    uiScale = next;
+    try { localStorage.setItem(LS.uiScale, String(uiScale)); } catch (e) {}
+    applyScale();
+    toast("Size " + Math.round(uiScale * 100) + "%");
   }
 
   /* Per-profile UI state (active deck tab, current question and shuffle
@@ -393,13 +429,35 @@
   function render() {
     if (state.profileIdx == null) { renderProfilePicker(); return; }
     app.innerHTML =
-      '<div class="screen">' +
+      '<div class="screen quiz">' +
         '<header class="app-header" id="hdr"></header>' +
         '<main class="content anim" id="qview"></main>' +
+        '<footer class="nav-bar" id="navbar">' +
+          '<button class="nav-btn" data-nav="prev">&#8592; Prev</button>' +
+          '<button class="nav-btn primary" data-nav="next">Next &#8594;</button>' +
+        "</footer>" +
       "</div>";
+    var navbar = document.getElementById("navbar");
+    navbar.querySelector('[data-nav="prev"]').addEventListener("click", function () { navigate(-1); });
+    navbar.querySelector('[data-nav="next"]').addEventListener("click", function () { navigate(1); });
     paintHeader();
     paintContent(true);
     attachSwipe(document.getElementById("qview"));
+  }
+
+  /* The Prev/Next bar lives outside the question view in a fixed footer,
+     so the buttons never move no matter how long the question is —
+     only their enabled state is updated here. */
+  function paintNav() {
+    var bar = document.getElementById("navbar");
+    if (!bar) return;
+    var total = currentDeck().questions.length;
+    var idx = state.pos[state.deckId];
+    var onCompletion = state.showCompletion && deckStats(state.deckId).complete;
+    bar.querySelector('[data-nav="prev"]').disabled = onCompletion ? false : idx <= 0;
+    bar.querySelector('[data-nav="next"]').disabled = onCompletion
+      ? true
+      : (idx >= total - 1 && !deckStats(state.deckId).complete);
   }
 
   function paintHeader() {
@@ -419,6 +477,8 @@
         '<button class="avatar-btn" id="profileBtn" title="Switch profile" aria-label="Switch profile" ' +
           'style="background:' + accent + '">' + esc(initial(profiles[state.profileIdx])) + "</button>" +
         '<div class="header-title">OB/GYN Revision</div>' +
+        '<button class="icon-btn zoom-btn" id="zoomOut" title="Make everything smaller" aria-label="Make everything smaller">&minus;</button>' +
+        '<button class="icon-btn zoom-btn" id="zoomIn" title="Make everything bigger" aria-label="Make everything bigger">+</button>' +
         '<button class="icon-btn" id="gridBtn" title="Question grid" aria-label="Question grid">&#9638;</button>' +
       "</div>" +
       '<div class="deck-tabs">' + tabs + "</div>" +
@@ -428,7 +488,10 @@
       "</div>";
 
     hdr.querySelector("#profileBtn").addEventListener("click", backToProfiles);
+    hdr.querySelector("#zoomOut").addEventListener("click", function () { changeScale(-1); });
+    hdr.querySelector("#zoomIn").addEventListener("click", function () { changeScale(1); });
     hdr.querySelector("#gridBtn").addEventListener("click", openGrid);
+    applyScale(); // sync the +/- disabled states with the current scale
     hdr.querySelectorAll(".deck-tab").forEach(function (t) {
       t.addEventListener("click", function () { switchDeck(t.getAttribute("data-deck")); });
     });
@@ -458,11 +521,13 @@
       ? completionHTML()
       : questionHTML(currentQuestion());
     if (animate) {
+      view.scrollTop = 0; // the question view is its own scroll container
       view.classList.remove("anim");
       void view.offsetWidth; // reflow to restart animation
       view.classList.add("anim");
     }
     bindContent();
+    paintNav();
   }
 
   function questionHTML(q) {
@@ -523,14 +588,8 @@
       }
     }
 
-    var last = idx >= total - 1;
     html +=
-      '<div class="nav-row">' +
-        '<button class="nav-btn" data-nav="prev"' + (idx <= 0 ? " disabled" : "") + ">&#8592; Prev</button>" +
-        '<button class="nav-btn primary" data-nav="next"' +
-          ((last && !deckStats(state.deckId).complete) ? " disabled" : "") + ">Next &#8594;</button>" +
-      "</div>" +
-      '<div class="kbd-hint">A&ndash;E answer &middot; I don\'t know &middot; &#8592;/&#8594; navigate &middot; G grid</div>';
+      '<div class="kbd-hint">A&ndash;E answer &middot; I don\'t know &middot; &#8592;/&#8594; navigate &middot; G grid &middot; +/&minus; size</div>';
     return html;
   }
 
@@ -571,11 +630,6 @@
     });
     var idk = view.querySelector(".idk-btn");
     if (idk) idk.addEventListener("click", function () { selectAnswer(currentQuestion(), null); });
-
-    var prev = view.querySelector('[data-nav="prev"]');
-    if (prev) prev.addEventListener("click", function () { navigate(-1); });
-    var next = view.querySelector('[data-nav="next"]');
-    if (next) next.addEventListener("click", function () { navigate(1); });
 
     // completion actions
     var dl = view.querySelector('[data-act="download"]');
@@ -906,6 +960,8 @@
 
     if (e.key === "ArrowLeft") { navigate(-1); return; }
     if (e.key === "ArrowRight") { navigate(1); return; }
+    if (e.key === "+" || e.key === "=") { changeScale(1); return; }
+    if (e.key === "-" || e.key === "_") { changeScale(-1); return; }
 
     var k = e.key.length === 1 ? e.key.toUpperCase() : e.key;
     if (k === "G") { openGrid(); return; }
@@ -929,6 +985,8 @@
      Boot
      ============================================================ */
   function boot() {
+    applyScale();
+
     // Ask the browser not to evict our saved data under storage pressure
     // (helps progress survive long gaps between study sessions on mobile).
     try {

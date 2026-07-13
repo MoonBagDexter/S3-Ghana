@@ -34,6 +34,11 @@
   --maxw: 720px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* Whole-app zoom, driven by the +/- header buttons (js sets it inline).
+     Viewport-height sizes are divided by it so the layout always fills the
+     real screen at any scale. */
+  --ui-scale: 1;
 }
 
 @media (prefers-color-scheme: light) {
@@ -69,8 +74,9 @@ body {
     Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
-  min-height: 100vh;
+  min-height: calc(100vh / var(--ui-scale, 1));
   overscroll-behavior-y: none;
+  zoom: var(--ui-scale, 1);
 }
 
 button {
@@ -81,23 +87,44 @@ button {
   background: none;
 }
 
-#app { min-height: 100vh; }
+#app { min-height: calc(100vh / var(--ui-scale, 1)); }
 
 .hidden { display: none !important; }
 
 /* ---------- Screen scaffolding ---------- */
+/* Fluid: fills the whole viewport width so buttons and cards grow with the
+   screen instead of sitting in a fixed 720px column. */
 .screen {
-  max-width: var(--maxw);
+  width: 100%;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: calc(100vh / var(--ui-scale, 1));
   display: flex;
   flex-direction: column;
+}
+
+/* The quiz screen is a fixed frame: header pinned on top, Prev/Next bar
+   pinned on the bottom, and only the question area in between scrolls.
+   Buttons never move. */
+.screen.quiz {
+  height: calc(100vh / var(--ui-scale, 1));
+  overflow: hidden;
+}
+.screen.quiz .content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* dvh tracks the *visible* viewport on mobile (URL bar shown/hidden). */
+@supports (height: 100dvh) {
+  body, #app, .screen { min-height: calc(100dvh / var(--ui-scale, 1)); }
+  .screen.quiz { height: calc(100dvh / var(--ui-scale, 1)); }
 }
 
 /* ============================================================
    Profile picker
    ============================================================ */
 .profiles {
+  max-width: var(--maxw); /* the picker stays a comfortable column */
   padding: calc(24px + var(--safe-top)) 20px calc(24px + var(--safe-bottom));
   justify-content: center;
   gap: 8px;
@@ -242,7 +269,11 @@ button {
   flex: none;
   transition: background 0.15s ease, transform 0.1s ease;
 }
-.icon-btn:active { transform: scale(0.93); background: var(--surface-2); }
+.icon-btn:active:not(:disabled) { transform: scale(0.93); background: var(--surface-2); }
+.icon-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* +/- size controls */
+.zoom-btn { font-size: 1.45rem; font-weight: 700; line-height: 1; }
 
 .avatar-btn {
   width: var(--tap);
@@ -312,7 +343,7 @@ button {
    ============================================================ */
 .content {
   flex: 1;
-  padding: 16px 16px calc(16px + var(--safe-bottom));
+  padding: 16px; /* bottom safe-area is handled by the fixed nav bar */
   display: flex;
   flex-direction: column;
   animation: fadeSlide 0.25s ease;
@@ -566,11 +597,17 @@ button {
   font-style: italic;
 }
 
-/* Prev / Next nav */
-.nav-row {
+/* Prev / Next nav — a fixed bar at the bottom of the quiz screen, outside
+   the scrolling question area, so the buttons are always in the same spot. */
+.nav-bar {
+  flex: none;
   display: flex;
   gap: 10px;
-  margin-top: 20px;
+  padding: 10px 16px calc(10px + var(--safe-bottom));
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .nav-btn {
   flex: 1;

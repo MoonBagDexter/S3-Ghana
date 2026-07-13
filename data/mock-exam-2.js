@@ -2,7 +2,7 @@ window.QUIZ_DECKS = window.QUIZ_DECKS || [];
 window.QUIZ_DECKS.push(
 {
   "id": "mock-exam-2",
-  "title": "Mock Exam 2",
+  "title": "Exam 2",
   "questions": [
     {
       "num": 1,

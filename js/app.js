@@ -27,15 +27,17 @@
   };
 
   /* ---------- Deck categories (two-level tabs) ----------
-     Decks split into two groups: the study "Reviews" and the "Mock Exams".
-     Membership is derived from the deck id (mock-* is an exam) so the app
-     stays data-driven and new decks slot into the right group automatically. */
+     Decks split into two groups: the study "Reviews" (Obstetrics, Gynecology)
+     and the "Mock Exams" (Final 1, Final 2, Exam 1, Exam 2). Everything that
+     isn't an explicit review deck is treated as an exam, so new exam decks
+     slot into the right group automatically. */
   var CATEGORY_DEFS = [
     { id: "reviews", title: "Reviews" },
     { id: "mock", title: "Mock Exams" }
   ];
+  var REVIEW_DECK_IDS = { "obs": true, "gyn": true };
   function categoryOf(deckId) {
-    return /^mock-/.test(deckId) ? "mock" : "reviews";
+    return REVIEW_DECK_IDS[deckId] ? "reviews" : "mock";
   }
   function decksInCategory(catId) {
     return DECKS.filter(function (d) { return categoryOf(d.id) === catId; });

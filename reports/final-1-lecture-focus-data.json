@@ -1,6 +1,7 @@
 {
   "deckId": "womens-health",
   "deckTitle": "Final 1",
+  "layout": "mobile-portrait",
   "questions": 55,
   "canonicalLectures": 50,
   "distinctPrimaryLectures": 22,

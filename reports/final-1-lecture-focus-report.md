@@ -11,85 +11,182 @@
 - **Test 1 dominates:** 38/55 questions (69.1%) map to Test 1 lectures.
 - Best use: master the 2 leaders, then the 10 other three-question clusters before the two-question and singleton topics.
 
-## Recommended revision order
+## Revision order
 
-| Priority | Lectures | Questions covered | Deck share |
-|---|---|---:|---:|
-| Tier 1 — highest | T1.L5 Prenatal screening and diagnosis (4); T1.L13 Hypertension in pregnancy (4) | 8 | 14.5% |
-| Tier 2 — major clusters | T1.L1 The menstrual cycle & reproductive endocrinology (3); T1.L6 Amenorrhea–dysmenorrhea–PMS (3); T1.L7 Polycystic ovary syndrome (3); T1.L8 Bleeding in early pregnancy (3); T1.L15 Medical Diseases & Pregnancy 2 (3); T1.L16 Medical Diseases & Pregnancy 3 (3); T2.L11 Benign diseases of the ovary (3); T2.L12 Endometriosis and adenomyosis (3); T3.L6 Contraception (3); T3.L9 Preterm labour and PROM (3) | 30 | 54.5% |
-| Tier 3 — supporting | T1.L2 Fetus, placenta, membranes and amniotic fluid (2); T1.L3 Sexual development & Puberty (2); T1.L4 Preconceptional counselling and antenatal care (2); T1.L10 Multifetal gestation (2); T1.L14 Medical Diseases & Pregnancy 1 (2); T2.L5 Anatomy of the pelvis & mechanism of normal labor (2); T2.L7 Management of normal labour (2) | 14 | 25.5% |
-| Tier 4 — singletons | T1.L9 Antepartum hemorrhage (1); T1.L12 Abnormal uterine bleeding (1); T2.L10 Psychosocial problems & women’s health (1) | 3 | 5.5% |
+### Tier 1 — highest priority
+
+**8 questions · 14.5% of Final 1**
+
+- **T1.L5 — Prenatal screening and diagnosis**
+    - 4 questions: Q8, Q10, Q11, Q12
+- **T1.L13 — Hypertension in pregnancy**
+    - 4 questions: Q9, Q24, Q25, Q26
+
+### Tier 2 — major clusters
+
+**30 questions · 54.5% of Final 1**
+
+- **T1.L1 — The menstrual cycle & reproductive endocrinology**
+    - 3 questions: Q16, Q17, Q18
+- **T1.L6 — Amenorrhea–dysmenorrhea–PMS**
+    - 3 questions: Q20, Q21, Q59
+- **T1.L7 — Polycystic ovary syndrome**
+    - 3 questions: Q56, Q57, Q58
+- **T1.L8 — Bleeding in early pregnancy**
+    - 3 questions: Q13, Q14, Q15
+- **T1.L15 — Medical Diseases & Pregnancy 2**
+    - 3 questions: Q5, Q6, Q7
+- **T1.L16 — Medical Diseases & Pregnancy 3**
+    - 3 questions: Q27, Q28, Q29
+- **T2.L11 — Benign diseases of the ovary**
+    - 3 questions: Q50, Q51, Q52
+- **T2.L12 — Endometriosis and adenomyosis**
+    - 3 questions: Q47, Q48, Q49
+- **T3.L6 — Contraception**
+    - 3 questions: Q53, Q54, Q55
+- **T3.L9 — Preterm labour and PROM**
+    - 3 questions: Q30, Q31, Q32
+
+### Tier 3 — supporting topics
+
+**14 questions · 25.5% of Final 1**
+
+- **T1.L2 — Fetus, placenta, membranes and amniotic fluid**
+    - 2 questions: Q1, Q2
+- **T1.L3 — Sexual development & Puberty**
+    - 2 questions: Q22, Q23
+- **T1.L4 — Preconceptional counselling and antenatal care**
+    - 2 questions: Q3, Q4
+- **T1.L10 — Multifetal gestation**
+    - 2 questions: Q33, Q34
+- **T1.L14 — Medical Diseases & Pregnancy 1**
+    - 2 questions: Q35, Q36
+- **T2.L5 — Anatomy of the pelvis & mechanism of normal labor**
+    - 2 questions: Q43, Q44
+- **T2.L7 — Management of normal labour**
+    - 2 questions: Q45, Q46
+
+### Tier 4 — single questions
+
+**3 questions · 5.5% of Final 1**
+
+- **T1.L9 — Antepartum hemorrhage**
+    - 1 question: Q42
+- **T1.L12 — Abnormal uterine bleeding**
+    - 1 question: Q19
+- **T2.L10 — Psychosocial problems & women’s health**
+    - 1 question: Q60
+
 
 ## Test-group distribution
 
-| Test group | Questions | Share | Distinct primary lectures |
-|---|---:|---:|---:|
-| Test 1 | 38 | 69.1% | 15 |
-| Test 2 | 11 | 20.0% | 5 |
-| Test 3 | 6 | 10.9% | 2 |
+- **Test 1: 38 questions (69.1%)**
+    - 15 distinct primary lectures
+- **Test 2: 11 questions (20.0%)**
+    - 5 distinct primary lectures
+- **Test 3: 6 questions (10.9%)**
+    - 2 distinct primary lectures
 
-## Complete primary lecture footprint
+## Complete lecture footprint
 
-Every question is represented in the question-number column; repeated numbers are not hidden by the ranking.
+Every retained question appears below under its primary likely lecture.
 
-| Lecture | Questions | Count | Share |
-|---|---:|---:|---:|
-| T1.L5 — Prenatal screening and diagnosis | Q8, Q10, Q11, Q12 | 4 | 7.3% |
-| T1.L13 — Hypertension in pregnancy | Q9, Q24, Q25, Q26 | 4 | 7.3% |
-| T1.L1 — The menstrual cycle & reproductive endocrinology | Q16, Q17, Q18 | 3 | 5.5% |
-| T1.L6 — Amenorrhea–dysmenorrhea–PMS | Q20, Q21, Q59 | 3 | 5.5% |
-| T1.L7 — Polycystic ovary syndrome | Q56, Q57, Q58 | 3 | 5.5% |
-| T1.L8 — Bleeding in early pregnancy | Q13, Q14, Q15 | 3 | 5.5% |
-| T1.L15 — Medical Diseases & Pregnancy 2 | Q5, Q6, Q7 | 3 | 5.5% |
-| T1.L16 — Medical Diseases & Pregnancy 3 | Q27, Q28, Q29 | 3 | 5.5% |
-| T2.L11 — Benign diseases of the ovary | Q50, Q51, Q52 | 3 | 5.5% |
-| T2.L12 — Endometriosis and adenomyosis | Q47, Q48, Q49 | 3 | 5.5% |
-| T3.L6 — Contraception | Q53, Q54, Q55 | 3 | 5.5% |
-| T3.L9 — Preterm labour and PROM | Q30, Q31, Q32 | 3 | 5.5% |
-| T1.L2 — Fetus, placenta, membranes and amniotic fluid | Q1, Q2 | 2 | 3.6% |
-| T1.L3 — Sexual development & Puberty | Q22, Q23 | 2 | 3.6% |
-| T1.L4 — Preconceptional counselling and antenatal care | Q3, Q4 | 2 | 3.6% |
-| T1.L10 — Multifetal gestation | Q33, Q34 | 2 | 3.6% |
-| T1.L14 — Medical Diseases & Pregnancy 1 | Q35, Q36 | 2 | 3.6% |
-| T2.L5 — Anatomy of the pelvis & mechanism of normal labor | Q43, Q44 | 2 | 3.6% |
-| T2.L7 — Management of normal labour | Q45, Q46 | 2 | 3.6% |
-| T1.L9 — Antepartum hemorrhage | Q42 | 1 | 1.8% |
-| T1.L12 — Abnormal uterine bleeding | Q19 | 1 | 1.8% |
-| T2.L10 — Psychosocial problems & women’s health | Q60 | 1 | 1.8% |
+- **T1.L5 — Prenatal screening and diagnosis**
+    - 4 questions · 7.3% · Q8, Q10, Q11, Q12
+- **T1.L13 — Hypertension in pregnancy**
+    - 4 questions · 7.3% · Q9, Q24, Q25, Q26
+- **T1.L1 — The menstrual cycle & reproductive endocrinology**
+    - 3 questions · 5.5% · Q16, Q17, Q18
+- **T1.L6 — Amenorrhea–dysmenorrhea–PMS**
+    - 3 questions · 5.5% · Q20, Q21, Q59
+- **T1.L7 — Polycystic ovary syndrome**
+    - 3 questions · 5.5% · Q56, Q57, Q58
+- **T1.L8 — Bleeding in early pregnancy**
+    - 3 questions · 5.5% · Q13, Q14, Q15
+- **T1.L15 — Medical Diseases & Pregnancy 2**
+    - 3 questions · 5.5% · Q5, Q6, Q7
+- **T1.L16 — Medical Diseases & Pregnancy 3**
+    - 3 questions · 5.5% · Q27, Q28, Q29
+- **T2.L11 — Benign diseases of the ovary**
+    - 3 questions · 5.5% · Q50, Q51, Q52
+- **T2.L12 — Endometriosis and adenomyosis**
+    - 3 questions · 5.5% · Q47, Q48, Q49
+- **T3.L6 — Contraception**
+    - 3 questions · 5.5% · Q53, Q54, Q55
+- **T3.L9 — Preterm labour and PROM**
+    - 3 questions · 5.5% · Q30, Q31, Q32
+- **T1.L2 — Fetus, placenta, membranes and amniotic fluid**
+    - 2 questions · 3.6% · Q1, Q2
+- **T1.L3 — Sexual development & Puberty**
+    - 2 questions · 3.6% · Q22, Q23
+- **T1.L4 — Preconceptional counselling and antenatal care**
+    - 2 questions · 3.6% · Q3, Q4
+- **T1.L10 — Multifetal gestation**
+    - 2 questions · 3.6% · Q33, Q34
+- **T1.L14 — Medical Diseases & Pregnancy 1**
+    - 2 questions · 3.6% · Q35, Q36
+- **T2.L5 — Anatomy of the pelvis & mechanism of normal labor**
+    - 2 questions · 3.6% · Q43, Q44
+- **T2.L7 — Management of normal labour**
+    - 2 questions · 3.6% · Q45, Q46
+- **T1.L9 — Antepartum hemorrhage**
+    - 1 question · 1.8% · Q42
+- **T1.L12 — Abnormal uterine bleeding**
+    - 1 question · 1.8% · Q19
+- **T2.L10 — Psychosocial problems & women’s health**
+    - 1 question · 1.8% · Q60
 
 ## Mapping quality and answer provenance
 
-| Measure | Questions | Share |
-|---|---:|---:|
-| Lecture match — Strong | 51 | 92.7% |
-| Lecture match — Likely | 2 | 3.6% |
-| Lecture match — Possible | 2 | 3.6% |
-| Answer provenance — Circled in captured paper | 0 | 0.0% |
-| Answer provenance — Inferred/reconstructed | 55 | 100.0% |
-| Answer provenance — Unknown/unrecorded | 0 | 0.0% |
+- **Lecture match:** 51 strong · 2 likely · 2 possible
+- **Answer key:** 0 circled · 55 inferred/reconstructed · 0 unknown
 
 All 55 Final 1 answer keys are marked **inferred** in the legacy deck data. This is a provenance limitation, not a downgrade of the lecture mapping: 51/55 lecture matches are strong.
 
-## Lower-confidence mappings to review carefully
+## Lower-confidence mappings
 
-| Likely lecture | Q | Match | Why confidence is lower |
-|---|---:|---:|---|
-| T1.L12 — Abnormal uterine bleeding | 19 | Possible | The AUB lecture is the best topical match, but it does not teach low ferritin as a predictor of heavy menstrual bleeding and says ferritin is not routinely required. |
-| T1.L6 — Amenorrhea–dysmenorrhea–PMS | 21 | Possible | The dysmenorrhea lecture is the correct topical home and defines TENS, but the verified text does not support the specific high-frequency TENS efficacy claim. |
-| T2.L5 — Anatomy of the pelvis & mechanism of normal labor | 43 | Likely | Mechanism and normal-labour lectures both directly support active labour at 7 cm and non-engagement at −2; medium reflects defensible primary/alternate ordering. |
-| T2.L7 — Management of normal labour | 46 | Likely | The normal-labour lecture covers second-stage perineal care and episiotomy, but not warm compresses or controlled head delivery; it is a topical rather than exact match. |
+### Q19 — T1.L12 — Abnormal uterine bleeding
 
-## Genuine cross-lecture overlaps — 7/55 questions
+**Possible match.** The AUB lecture is the best topical match, but it does not teach low ferritin as a predictor of heavy menstrual bleeding and says ferritin is not routinely required.
 
-| Primary → alternate | Q |
-|---|---:|
-| T1.L4 — Preconceptional counselling and antenatal care → T2.L8 — Disorders of fetal growth | 3 |
-| T1.L5 — Prenatal screening and diagnosis → T2.L9 — Role of Ultrasound in obstetric | 8 |
-| T1.L5 — Prenatal screening and diagnosis → T2.L9 — Role of Ultrasound in obstetric | 12 |
-| T1.L3 — Sexual development & Puberty → T3.L2 — Gynecological problems in childhood & adolescence | 22 |
-| T2.L5 — Anatomy of the pelvis & mechanism of normal labor → T2.L7 — Management of normal labour | 43 |
-| T2.L12 — Endometriosis and adenomyosis → T3.L1 — Subfertility | 49 |
-| T1.L6 — Amenorrhea–dysmenorrhea–PMS → T2.L10 — Psychosocial problems & women’s health | 59 |
+### Q21 — T1.L6 — Amenorrhea–dysmenorrhea–PMS
+
+**Possible match.** The dysmenorrhea lecture is the correct topical home and defines TENS, but the verified text does not support the specific high-frequency TENS efficacy claim.
+
+### Q43 — T2.L5 — Anatomy of the pelvis & mechanism of normal labor
+
+**Likely match.** Mechanism and normal-labour lectures both directly support active labour at 7 cm and non-engagement at −2; medium reflects defensible primary/alternate ordering.
+
+### Q46 — T2.L7 — Management of normal labour
+
+**Likely match.** The normal-labour lecture covers second-stage perineal care and episiotomy, but not warm compresses or controlled head delivery; it is a topical rather than exact match.
+
+
+## Cross-lecture overlaps — 7/55
+
+These are genuine overlaps, not duplicate assignments.
+
+- **Q3**
+    - Primary: T1.L4 — Preconceptional counselling and antenatal care
+    - Alternate: T2.L8 — Disorders of fetal growth
+- **Q8**
+    - Primary: T1.L5 — Prenatal screening and diagnosis
+    - Alternate: T2.L9 — Role of Ultrasound in obstetric
+- **Q12**
+    - Primary: T1.L5 — Prenatal screening and diagnosis
+    - Alternate: T2.L9 — Role of Ultrasound in obstetric
+- **Q22**
+    - Primary: T1.L3 — Sexual development & Puberty
+    - Alternate: T3.L2 — Gynecological problems in childhood & adolescence
+- **Q43**
+    - Primary: T2.L5 — Anatomy of the pelvis & mechanism of normal labor
+    - Alternate: T2.L7 — Management of normal labour
+- **Q49**
+    - Primary: T2.L12 — Endometriosis and adenomyosis
+    - Alternate: T3.L1 — Subfertility
+- **Q59**
+    - Primary: T1.L6 — Amenorrhea–dysmenorrhea–PMS
+    - Alternate: T2.L10 — Psychosocial problems & women’s health
 
 ## Source and item cautions
 

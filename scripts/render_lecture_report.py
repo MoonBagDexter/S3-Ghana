@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import tempfile
@@ -29,12 +30,14 @@ REPORTS = [
         "output": ROOT / "reports" / "S3-Ghana_MED422_Final_1_Lecture_Focus_Report.pdf",
         "freshness": ROOT / "reports" / "S3-Ghana_MED422_Final_1_Lecture_Focus_Report.source.sha256",
         "title": "S3 Ghana MED422 Final 1 Lecture Focus Report",
+        "layout": "mobile",
     },
     {
         "source": ROOT / "reports" / "final-2-lecture-focus-report.md",
         "output": ROOT / "reports" / "S3-Ghana_MED422_Final_2_Lecture_Focus_Report.pdf",
         "freshness": ROOT / "reports" / "S3-Ghana_MED422_Final_2_Lecture_Focus_Report.source.sha256",
         "title": "S3 Ghana MED422 Final 2 Lecture Focus Report",
+        "layout": "mobile",
     },
 ]
 
@@ -69,6 +72,33 @@ body > h2:last-of-type + ul li { margin:.3mm 0; }
 @media print { h2 { break-before:auto; } }
 """
 
+MOBILE_CSS = r"""
+@page { size: 108mm 192mm; margin: 7mm 7mm 9mm; }
+:root { --ink:#172033; --muted:#5f6b7a; --line:#d8dee9; --blue:#3159cf; --pale:#edf3ff; --navy:#111a31; --gold:#d59a1b; }
+* { box-sizing:border-box; }
+html { background:white; }
+body { margin:0; color:var(--ink); font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; font-size:11.2pt; line-height:1.5; overflow-wrap:anywhere; }
+h1 { margin:0 0 5mm; padding:7mm 6mm; border-radius:4mm; color:white; background:linear-gradient(145deg,#111a31,#294aab 72%,#6a7eed); font-size:20pt; line-height:1.12; letter-spacing:-.03em; }
+h1 + p { margin:-2mm 0 4mm; padding:3.5mm 4mm; border-left:1.2mm solid var(--blue); border-radius:0 2.5mm 2.5mm 0; background:var(--pale); font-size:11pt; line-height:1.45; }
+h2 { break-after:avoid; margin:7mm 0 3mm; padding:0 0 1.4mm; border-bottom:.5mm solid #a9b9ed; color:#17327c; font-size:15.5pt; line-height:1.2; letter-spacing:-.02em; }
+h3 { break-inside:avoid; break-after:avoid; margin:5mm 0 2mm; padding:2.5mm 3mm; border-left:1mm solid var(--blue); border-radius:0 2.5mm 2.5mm 0; background:#f4f7ff; color:#263d7d; font-size:12.3pt; line-height:1.3; }
+p { margin:1.8mm 0 3mm; }
+h3 + p { break-inside:avoid; }
+h3 + p:has(+ ul) { break-after:avoid; }
+blockquote { break-inside:avoid; margin:3mm 0 4mm; padding:3.5mm 4mm; border-left:1.1mm solid var(--gold); border-radius:0 2.5mm 2.5mm 0; background:#fff7df; color:#59420f; }
+ul,ol { margin:1.5mm 0 4mm; padding-left:5.5mm; }
+li { break-inside:avoid; margin:1.4mm 0; padding-left:.5mm; }
+li > ul, li > ol { margin:1mm 0 2.2mm; padding-left:4.8mm; color:#4c5870; font-size:10.6pt; }
+strong { font-weight:760; }
+code { padding:.3mm 1mm; border-radius:1mm; background:#edf0f6; font-size:9.4pt; overflow-wrap:anywhere; }
+a { color:var(--blue); overflow-wrap:anywhere; }
+table { width:100%; border-collapse:collapse; font-size:9.5pt; }
+th,td { padding:2mm; border:.2mm solid var(--line); text-align:left; vertical-align:top; }
+th { background:var(--navy); color:white; }
+tr { break-inside:avoid; }
+@media print { h2,h3 { break-before:auto; } }
+"""
+
 
 def find_chrome() -> str:
     configured = os.environ.get("CHROME_BIN")
@@ -94,17 +124,21 @@ def render_report(report: dict[str, Path | str], chrome: str) -> None:
     output = report["output"]
     freshness = report["freshness"]
     title = report["title"]
+    layout = report.get("layout", "landscape")
     assert isinstance(source, Path)
     assert isinstance(output, Path)
     assert isinstance(freshness, Path)
     assert isinstance(title, str)
+    assert layout in {"landscape", "mobile"}
 
     source_bytes = source.read_bytes()
     source_text = source_bytes.decode("utf-8")
     body = markdown.markdown(source_text, extensions=["tables", "fenced_code", "toc"])
+    if layout == "mobile" and re.search(r"<table(?:\s|>)", body, flags=re.IGNORECASE):
+        raise SystemExit(f"Mobile report must not render table elements: {source}")
     document = (
         '<!doctype html><html><head><meta charset="utf-8">'
-        f"<title>{title}</title><style>{CSS}</style>"
+        f"<title>{title}</title><style>{MOBILE_CSS if layout == 'mobile' else CSS}</style>"
         f"</head><body>{body}</body></html>"
     )
 

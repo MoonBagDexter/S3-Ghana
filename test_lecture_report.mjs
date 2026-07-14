@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";
 
@@ -83,6 +84,7 @@ const standaloneReports = [
     slug: "final-1",
     deckId: "womens-health",
     expected: {
+      layout: "mobile-portrait",
       questions: 55,
       distinctPrimaryLectures: 22,
       alternateMappings: 7,
@@ -98,6 +100,7 @@ const standaloneReports = [
     slug: "final-2",
     deckId: "mock-final",
     expected: {
+      layout: "mobile-portrait",
       questions: 48,
       distinctPrimaryLectures: 43,
       alternateMappings: 17,
@@ -115,11 +118,15 @@ for (const report of standaloneReports) {
   const markdownPath = `reports/${report.slug}-lecture-focus-report.md`;
   const dataPath = `reports/${report.slug}-lecture-focus-data.json`;
   const deckCsvPath = `reports/${report.slug}-question-to-lecture-map.csv`;
+  const deckMarkdown = fs.readFileSync(markdownPath, "utf8");
   const deckData = JSON.parse(fs.readFileSync(dataPath, "utf8"));
   for (const [key, value] of Object.entries(report.expected)) {
     assert.deepEqual(deckData[key], value, `${report.slug} ${key} changed unexpectedly`);
   }
   assert.equal(deckData.deckId, report.deckId);
+  const deckHtml = renderMarkdown(deckMarkdown);
+  assert.doesNotMatch(deckHtml, /<table(?:\s|>)/i, `${report.slug} mobile report must not render any table element`);
+  assert.doesNotMatch(deckMarkdown, /page-break/, `${report.slug} mobile report must flow naturally without forced desktop pagination`);
   assert.equal(deckData.lectures.reduce((sum, lecture) => sum + lecture.total, 0), report.expected.questions);
   const footprintNumbers = deckData.lectures.flatMap((lecture) => lecture.questionNumbers.map(String));
   assert.equal(footprintNumbers.length, report.expected.questions, `${report.slug} footprint must include every question`);
@@ -143,6 +150,7 @@ for (const report of standaloneReports) {
   assert.equal(deckChecksums.get(markdownPath.split("/").at(-1)), deckSourceHash, `${report.slug} PDF source is stale; run scripts/render_lecture_report.py`);
   const deckPdf = fs.readFileSync(report.pdf);
   assert.ok(deckPdf.length > 10_000 && deckPdf.subarray(0, 5).toString() === "%PDF-", `${report.slug} PDF is invalid`);
+  assertPhoneShapedPages(report.pdf, report.slug);
   assert.equal(
     deckChecksums.get(report.pdf.split("/").at(-1)),
     crypto.createHash("sha256").update(deckPdf).digest("hex"),
@@ -177,6 +185,36 @@ function readChecksums(filePath) {
   }
   assert.equal(checksums.size, 2, `${filePath} must bind one Markdown source and one PDF`);
   return checksums;
+}
+
+function renderMarkdown(source) {
+  return execFileSync(
+    "python3",
+    ["-c", "import markdown,sys; sys.stdout.write(markdown.markdown(sys.stdin.read(), extensions=['tables','fenced_code','toc']))"],
+    { input: source, encoding: "utf8" },
+  );
+}
+
+function assertPhoneShapedPages(filePath, slug) {
+  const summary = execFileSync("pdfinfo", [filePath], { encoding: "utf8" });
+  const pageCountMatch = summary.match(/^Pages:\s+(\d+)$/m);
+  assert.ok(pageCountMatch, `${slug} PDF must expose a page count through pdfinfo`);
+  const pageCount = Number(pageCountMatch[1]);
+  assert.ok(pageCount > 0, `${slug} PDF must contain at least one page`);
+
+  const details = execFileSync("pdfinfo", ["-f", "1", "-l", String(pageCount), filePath], { encoding: "utf8" });
+  const sizes = [...details.matchAll(/^Page\s+\d+\s+size:\s+([0-9.]+) x ([0-9.]+) pts(?:\s+\([^\n]+\))?$/gm)];
+  const rotations = [...details.matchAll(/^Page\s+\d+\s+rot:\s+(-?\d+)$/gm)];
+  assert.equal(sizes.length, pageCount, `${slug} PDF must expose the size of every page`);
+  assert.equal(rotations.length, pageCount, `${slug} PDF must expose the rotation of every page`);
+  for (const [index, size] of sizes.entries()) {
+    const width = Number(size[1]);
+    const height = Number(size[2]);
+    assert.ok(width < 320 && height / width > 1.7, `${slug} page ${index + 1} must be narrow and phone-shaped`);
+  }
+  for (const [index, rotation] of rotations.entries()) {
+    assert.equal(Number(rotation[1]), 0, `${slug} page ${index + 1} must not rely on rotation for portrait layout`);
+  }
 }
 
 function parseCsv(text) {

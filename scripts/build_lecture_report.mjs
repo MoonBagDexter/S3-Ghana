@@ -382,75 +382,75 @@ function buildDeckFocusReport(sourceRows, definition) {
     );
   }
 
-  lines.push("", "## Recommended revision order", "");
+  lines.push("", "## Revision order", "");
   if (definition.deckId === "womens-health") {
     const tiers = [
-      ["Tier 1 — highest", lectureRows.filter((row) => row.total >= 4)],
+      ["Tier 1 — highest priority", lectureRows.filter((row) => row.total >= 4)],
       ["Tier 2 — major clusters", lectureRows.filter((row) => row.total === 3)],
-      ["Tier 3 — supporting", lectureRows.filter((row) => row.total === 2)],
-      ["Tier 4 — singletons", lectureRows.filter((row) => row.total === 1)],
+      ["Tier 3 — supporting topics", lectureRows.filter((row) => row.total === 2)],
+      ["Tier 4 — single questions", lectureRows.filter((row) => row.total === 1)],
     ];
-    lines.push("| Priority | Lectures | Questions covered | Deck share |", "|---|---|---:|---:|");
     for (const [tier, tierRows] of tiers) {
       const questions = tierRows.reduce((sum, row) => sum + row.total, 0);
-      lines.push(`| ${tier} | ${tierRows.map((row) => `${code(row)} ${md(row.title)} (${row.total})`).join("; ")} | ${questions} | ${pct(questions, sourceRows.length)} |`);
+      lines.push(`### ${tier}`, "", `**${questions} questions · ${pct(questions, sourceRows.length)} of Final 1**`, "");
+      for (const row of tierRows) {
+        lines.push(
+          `- **${code(row)} — ${md(row.title)}**`,
+          `    - ${row.total} question${row.total === 1 ? "" : "s"}: ${formatQuestionList(questionNumbersByLecture.get(row.lectureId))}`,
+        );
+      }
+      lines.push("");
     }
   } else {
     lines.push(
-      "### Extra-pass lectures",
+      `### Give these ${repeatedLectures.length} an extra pass`,
       "",
-      "These are the only lectures repeated in Final 2. Each contributes two questions.",
+      "These are the only lectures repeated in Final 2.",
       "",
-      "| Lecture | Questions | Deck share |",
-      "|---|---:|---:|",
     );
     for (const row of repeatedLectures) {
-      lines.push(`| ${code(row)} — ${md(row.title)} | ${formatQuestionList(questionNumbersByLecture.get(row.lectureId))} | ${pct(row.total, sourceRows.length)} |`);
+      lines.push(
+        `- **${code(row)} — ${md(row.title)}**`,
+        `    - ${formatQuestionList(questionNumbersByLecture.get(row.lectureId))} · ${pct(row.total, sourceRows.length)} of the paper`,
+      );
     }
     lines.push(
       "",
-      `After these ${repeatedLectures.length}, use a **broad-sweep strategy**: the remaining ${singletonLectures.length} questions each map to a different lecture, so breadth matters more than ranking among the singletons.`,
+      "### Then revise broadly",
+      "",
+      `The remaining ${singletonLectures.length} questions each map to a different lecture. Final 2 rewards breadth more than narrow topic prediction.`,
+    );
+  }
+
+  lines.push("", "## Test-group distribution", "");
+  for (const testGroup of [1, 2, 3]) {
+    const groupRows = lectureRows.filter((row) => row.testGroup === testGroup);
+    lines.push(
+      `- **Test ${testGroup}: ${testGroups[testGroup] || 0} questions (${pct(testGroups[testGroup] || 0, sourceRows.length)})**`,
+      `    - ${groupRows.length} distinct primary lectures`,
     );
   }
 
   lines.push(
     "",
-    "## Test-group distribution",
+    "## Complete lecture footprint",
     "",
-    "| Test group | Questions | Share | Distinct primary lectures |",
-    "|---|---:|---:|---:|",
-  );
-  for (const testGroup of [1, 2, 3]) {
-    const groupRows = lectureRows.filter((row) => row.testGroup === testGroup);
-    lines.push(`| Test ${testGroup} | ${testGroups[testGroup] || 0} | ${pct(testGroups[testGroup] || 0, sourceRows.length)} | ${groupRows.length} |`);
-  }
-
-  lines.push(
+    "Every retained question appears below under its primary likely lecture.",
     "",
-    "## Complete primary lecture footprint",
-    "",
-    "Every question is represented in the question-number column; repeated numbers are not hidden by the ranking.",
-    "",
-    "| Lecture | Questions | Count | Share |",
-    "|---|---:|---:|---:|",
   );
   for (const row of lectureRows) {
-    lines.push(`| ${code(row)} — ${md(row.title)} | ${formatQuestionList(questionNumbersByLecture.get(row.lectureId))} | ${row.total} | ${pct(row.total, sourceRows.length)} |`);
+    lines.push(
+      `- **${code(row)} — ${md(row.title)}**`,
+      `    - ${row.total} question${row.total === 1 ? "" : "s"} · ${pct(row.total, sourceRows.length)} · ${formatQuestionList(questionNumbersByLecture.get(row.lectureId))}`,
+    );
   }
 
-  if (definition.deckId === "mock-final") lines.push("", '<div class="page-break"></div>');
   lines.push(
     "",
     "## Mapping quality and answer provenance",
     "",
-    "| Measure | Questions | Share |",
-    "|---|---:|---:|",
-    `| Lecture match — Strong | ${confidence.high || 0} | ${pct(confidence.high || 0, sourceRows.length)} |`,
-    `| Lecture match — Likely | ${confidence.medium || 0} | ${pct(confidence.medium || 0, sourceRows.length)} |`,
-    `| Lecture match — Possible | ${confidence.low || 0} | ${pct(confidence.low || 0, sourceRows.length)} |`,
-    `| Answer provenance — Circled in captured paper | ${answerProvenance.circled || 0} | ${pct(answerProvenance.circled || 0, sourceRows.length)} |`,
-    `| Answer provenance — Inferred/reconstructed | ${answerProvenance.inferred || 0} | ${pct(answerProvenance.inferred || 0, sourceRows.length)} |`,
-    `| Answer provenance — Unknown/unrecorded | ${answerProvenance.unknown || 0} | ${pct(answerProvenance.unknown || 0, sourceRows.length)} |`,
+    `- **Lecture match:** ${confidence.high || 0} strong · ${confidence.medium || 0} likely · ${confidence.low || 0} possible`,
+    `- **Answer key:** ${answerProvenance.circled || 0} circled · ${answerProvenance.inferred || 0} inferred/reconstructed · ${answerProvenance.unknown || 0} unknown`,
     "",
   );
 
@@ -460,11 +460,15 @@ function buildDeckFocusReport(sourceRows, definition) {
     lines.push("Final 2 has 47 questions with **unknown/unrecorded** answer provenance. Q41 alone is explicitly inferred/reconstructed from a truncated capture. Unknown is not treated as source-confirmed.", "");
   }
 
-  lines.push("## Lower-confidence mappings to review carefully", "");
+  lines.push("## Lower-confidence mappings", "");
   if (lowerConfidenceRows.length) {
-    lines.push("| Likely lecture | Q | Match | Why confidence is lower |", "|---|---:|---:|---|");
     for (const row of lowerConfidenceRows) {
-      lines.push(`| ${lectureLabel(row.primary)} | ${md(row.questionNum)} | ${confidenceLabel(row.confidence)} | ${md(deckLowerConfidenceRationale(row, definition.deckId))} |`);
+      lines.push(
+        `### Q${md(row.questionNum)} — ${lectureLabel(row.primary)}`,
+        "",
+        `**${confidenceLabel(row.confidence)} match.** ${md(deckLowerConfidenceRationale(row, definition.deckId))}`,
+        "",
+      );
     }
   } else {
     lines.push("- None; every lecture match is strong.");
@@ -472,13 +476,18 @@ function buildDeckFocusReport(sourceRows, definition) {
 
   lines.push(
     "",
-    `## Genuine cross-lecture overlaps — ${alternateRows.length}/${sourceRows.length} questions`,
+    `## Cross-lecture overlaps — ${alternateRows.length}/${sourceRows.length}`,
+    "",
+    "These are genuine overlaps, not duplicate assignments.",
     "",
   );
   if (alternateRows.length) {
-    lines.push("| Primary → alternate | Q |", "|---|---:|");
     for (const row of alternateRows) {
-      lines.push(`| ${lectureLabel(row.primary)} → ${lectureLabel(row.alternate)} | ${md(row.questionNum)} |`);
+      lines.push(
+        `- **Q${md(row.questionNum)}**`,
+        `    - Primary: ${lectureLabel(row.primary)}`,
+        `    - Alternate: ${lectureLabel(row.alternate)}`,
+      );
     }
   } else {
     lines.push("- None.");
@@ -502,6 +511,7 @@ function buildDeckFocusReport(sourceRows, definition) {
     data: {
       deckId: definition.deckId,
       deckTitle: definition.label,
+      layout: "mobile-portrait",
       questions: sourceRows.length,
       canonicalLectures: catalog.length,
       distinctPrimaryLectures: lectureRows.length,

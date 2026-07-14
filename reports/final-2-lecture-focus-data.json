@@ -1,6 +1,7 @@
 {
   "deckId": "mock-final",
   "deckTitle": "Final 2",
+  "layout": "mobile-portrait",
   "questions": 48,
   "canonicalLectures": 50,
   "distinctPrimaryLectures": 43,

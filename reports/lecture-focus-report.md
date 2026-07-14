@@ -27,9 +27,9 @@ Alternates were used for **55/220** questions where content genuinely crosses le
 
 ## What changed since the previous 139-question pass
 
-The repository added **81 questions**: Final 2 (48), Exam 1 (16), and Exam 2 (17). The previous Obstetrics, Gynecology, and Final 1 set remains 139 questions.
+This mapping pass added lecture coverage for **81 existing questions**: Final 2 (48), Exam 1 (16), and Exam 2 (17). The previous Obstetrics, Gynecology, and Final 1 set remains 139 questions.
 
-New-question mapping confidence: **76 strong**, **5 likely**, **0 possible**.
+Newly covered-question mapping confidence: **76 strong**, **5 likely**, **0 possible**.
 
 | Rank | Lecture | Final 2 | Exam 1 | Exam 2 | New total | New share |
 |---:|---|---:|---:|---:|---:|---:|
@@ -73,13 +73,13 @@ This section isolates **136 questions** from Final 1, Final 2, Exam 1, and Exam 
 | 3 | T1.L13 — Hypertension in pregnancy | 6 | 4.4% | 3/4 | 1 |
 | 4 | T1.L1 — The menstrual cycle & reproductive endocrinology | 5 | 3.7% | 3/4 | 0 |
 | 5 | T1.L4 — Preconceptional counselling and antenatal care | 5 | 3.7% | 3/4 | 2 |
-| 6 | T1.L6 — Amenorrhea–dysmenorrhea–PMS | 5 | 3.7% | 3/4 | 5 |
+| 6 | T1.L6 — Amenorrhea–dysmenorrhea–PMS | 5 | 3.7% | 3/4 | 1 |
 | 7 | T1.L8 — Bleeding in early pregnancy | 5 | 3.7% | 3/4 | 0 |
 | 8 | T1.L16 — Medical Diseases & Pregnancy 3 | 5 | 3.7% | 3/4 | 0 |
 | 9 | T2.L11 — Benign diseases of the ovary | 5 | 3.7% | 3/4 | 1 |
 | 10 | T2.L12 — Endometriosis and adenomyosis | 5 | 3.7% | 3/4 | 0 |
-| 11 | T1.L2 — Fetus, placenta, membranes and amniotic fluid | 4 | 2.9% | 3/4 | 3 |
-| 12 | T1.L3 — Sexual development & Puberty | 4 | 2.9% | 3/4 | 5 |
+| 11 | T1.L2 — Fetus, placenta, membranes and amniotic fluid | 4 | 2.9% | 3/4 | 1 |
+| 12 | T1.L3 — Sexual development & Puberty | 4 | 2.9% | 3/4 | 3 |
 | 13 | T1.L10 — Multifetal gestation | 4 | 2.9% | 3/4 | 0 |
 | 14 | T1.L14 — Medical Diseases & Pregnancy 1 | 4 | 2.9% | 3/4 | 1 |
 | 15 | T1.L15 — Medical Diseases & Pregnancy 2 | 4 | 2.9% | 2/4 | 0 |
@@ -297,14 +297,14 @@ Sorted by mock-exam primary count, then all-bank count. A zero means no question
 - **2/50 lectures** have no primary match anywhere in the six-deck corpus.
 - Mapping confidence: **200 strong**, **17 likely**, **3 possible**.
 - Mock-only confidence: **127 strong**, **7 likely**, **2 possible**.
-- **Source-answer provenance:** 57 answers are flagged inferred in the repository (Gynecology 1, Final 1 55, Final 2 1). This concerns the answer key's provenance, not lecture-match confidence.
+- **Answer-key provenance:** 83 circled from captured papers, 57 inferred (Gynecology 1, Final 1 55, Final 2 1), and 80 unrecorded (Final 2 47, Exam 1 16, Exam 2 17). Unknown values remain unknown rather than being treated as source-confirmed. This is separate from lecture-match confidence.
 - **Final 2 Q41:** the original item capture was truncated; its options/key were reconstructed. The Endometriosis lecture independently supports the mapped Sampson-theory answer.
 - Frequency measures what this collected bank repeated. It does not replace the official lecture roster, announced scope, or marked/highlighted lecturer priorities.
 
 ### No primary match in mock exams
 
 - T2.L9 — Role of Ultrasound in obstetric (6 alternate mentions)
-- T3.L1 — Subfertility (4 alternate mentions)
+- T3.L1 — Subfertility (2 alternate mentions)
 - T3.L8 — Communication skills and breaking bad news (case-based)
 
 ### No primary match anywhere

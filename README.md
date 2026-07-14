@@ -16,16 +16,20 @@ Run:
 ```bash
 node test_lecture_tags.mjs
 node scripts/build_lecture_report.mjs
+python3 scripts/render_lecture_report.py
+node test_lecture_report.mjs
 ```
 
-The coverage test fails if any of the 220 source questions is unmapped, duplicated, or points to non-canonical lecture metadata. The report command rebuilds:
+The coverage test fails if any of the 220 source questions is unmapped, duplicated, or points to non-canonical lecture metadata. The report test checks mock-only counting, answer provenance, CSV integrity, and that the tracked PDF was rendered from the current Markdown. PDF rendering requires Python-Markdown and Chrome/Chromium; set `CHROME_BIN` when the browser is not on `PATH`.
+
+The report command rebuilds:
 
 - `reports/lecture-focus-report.md` — mock-only and all-bank lecture clustering, cross-paper recurrence, test-group distribution, deck matrix, and coverage gaps.
 - `reports/question-to-lecture-map.md` — compact human-readable mapping for every question.
 - `reports/question-to-lecture-map.csv` — spreadsheet-ready mapping with full question text.
 - `reports/lecture-focus-data.json` — machine-readable counts.
 
-Curated review evidence is preserved separately in `reports/mapping-audit-notes.md` and `reports/audits/`, including approved corrections and source-question caveats. The presentation-ready summary is `reports/S3-Ghana_MED422_Lecture_Focus_Report.pdf`.
+Curated decision records are preserved separately in `reports/mapping-audit-notes.md` and `reports/audits/`, including approved corrections, source-question caveats, and a hash manifest for the non-redistributed lecture corpus. The presentation-ready summary is `reports/S3-Ghana_MED422_Lecture_Focus_Report.pdf`.
 
 ## Progress, resume and backups
 

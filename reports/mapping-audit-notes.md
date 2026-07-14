@@ -23,6 +23,8 @@ The app labels are inferred study guidance, not metadata supplied by the origina
 
 For the original 139 mappings, the automated retrieval cross-check placed every primary inside the top eight verified lectures and ranked **107/139 first**. The remaining confidence and disagreement cases were manually adjudicated.
 
+The lecture PDFs and extracted texts are not redistributed in this repository. Audit line citations refer to the deterministic local text extraction used during review; `audits/lecture-corpus-manifest.json` records the source PDF filename, extracted-text filename, character count, and SHA-256 hashes for all 50 lectures so the exact corpus can be checked or reconstructed by an authorized holder.
+
 ## Approved corrections
 
 ### Original 139-question baseline — 11
@@ -77,5 +79,6 @@ These do not invalidate the lecture tags, but they matter when studying from the
 - `audits/original-139-focused-audit.md`
 - `audits/final-2-audit.md`
 - `audits/exam-1-2-audit.md`
+- `audits/lecture-corpus-manifest.json`
 - `question-to-lecture-map.md`
 - `question-to-lecture-map.csv`

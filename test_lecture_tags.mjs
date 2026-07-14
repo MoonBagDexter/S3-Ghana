@@ -31,6 +31,22 @@ const catalogById = new Map(catalog.map((lecture) => [lecture.id, lecture]));
 assert.ok(Array.isArray(decks) && decks.length === 6, "all six quiz decks must load");
 assert.ok(tags && typeof tags === "object", "lecture tag data must load");
 assert.equal(catalog.length, 50, "canonical MED422 lecture catalog must contain 50 lectures");
+assert.equal(catalogById.size, catalog.length, "canonical lecture IDs must be unique");
+const catalogCodes = new Set(catalog.map((lecture) => `${lecture.test_group}:${lecture.official_number}`));
+assert.equal(catalogCodes.size, catalog.length, "canonical test/official-number pairs must be unique");
+for (const [group, size] of [[1, 16], [2, 17], [3, 17]]) {
+  const numbers = catalog
+    .filter((lecture) => lecture.test_group === group)
+    .map((lecture) => lecture.official_number)
+    .sort(numericSort);
+  assert.deepEqual(numbers, Array.from({ length: size }, (_, index) => index + 1), `Test ${group}: canonical lecture numbering must be complete`);
+}
+for (const lecture of catalog) {
+  assert.ok(Number.isInteger(lecture.id) && lecture.id > 0, "catalog lecture IDs must be positive integers");
+  assert.ok([1, 2, 3].includes(lecture.test_group), `catalog lecture ${lecture.id}: invalid test group`);
+  assert.ok(Number.isInteger(lecture.official_number) && lecture.official_number > 0, `catalog lecture ${lecture.id}: invalid official number`);
+  assert.ok(typeof lecture.title === "string" && lecture.title.trim(), `catalog lecture ${lecture.id}: missing title`);
+}
 assert.deepEqual(Object.keys(tags).sort(), Object.keys(expectedDeckCounts).sort(), "tag data must cover exactly the six source decks");
 
 let questionCount = 0;
@@ -49,6 +65,9 @@ for (const deck of decks) {
     const stableKey = `${deck.id}:${question.id}`;
     assert.ok(!seenQuestionKeys.has(stableKey), `${stableKey}: duplicate source question key`);
     seenQuestionKeys.add(stableKey);
+    if (Object.hasOwn(question, "answerSource")) {
+      assert.ok(["circled", "inferred"].includes(question.answerSource), `${stableKey}: invalid answerSource`);
+    }
     const match = deckTags[String(question.id)];
     tagCount += 1;
     assert.ok(["high", "medium", "low"].includes(match.confidence), `${stableKey}: invalid confidence`);

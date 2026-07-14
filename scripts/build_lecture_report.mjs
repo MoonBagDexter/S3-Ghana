@@ -45,7 +45,7 @@ for (const deck of decks) {
       questionNum: question.num ?? question.id,
       question: [question.caseStem, question.question].filter(Boolean).join(" "),
       correct: question.correct || "",
-      answerSource: question.answerSource || "source",
+      answerSource: question.answerSource ?? "unknown",
       ...match,
     });
   }
@@ -126,7 +126,7 @@ function buildFocusReport(sourceRows) {
   const previousCountsById = new Map(countLectures(previousRows).map((row) => [row.lectureId, row]));
   const newCounts = countLectures(newRows).sort(sortBy("total"));
   const newlySurfaced = newCounts.filter((row) => row.total > 0 && previousCountsById.get(row.lectureId).total === 0);
-  const mockCounts = counts.slice().sort(sortBy("mock"));
+  const mockCounts = countLectures(mockRows).sort(sortBy("mock"));
   const allCounts = counts.slice().sort(sortBy("total"));
   const confidence = countBy(sourceRows, (row) => row.confidence);
   const mockConfidence = countBy(mockRows, (row) => row.confidence);
@@ -134,13 +134,20 @@ function buildFocusReport(sourceRows) {
   const overallGroups = groupCounts(sourceRows);
   const mockGroups = groupCounts(mockRows);
   const recurring = mockCounts.filter((row) => mockDeckBreadth(row) >= 2 && row.mock > 0);
-  const zeroMock = counts.filter((row) => row.mock === 0).sort(officialSort);
+  const zeroMock = mockCounts.filter((row) => row.mock === 0).sort(officialSort);
   const zeroAll = counts.filter((row) => row.total === 0).sort(officialSort);
+  const answerProvenance = countBy(sourceRows, (row) => row.answerSource);
   const inferredAnswers = sourceRows.filter((row) => row.answerSource === "inferred");
+  const unknownAnswers = sourceRows.filter((row) => row.answerSource === "unknown");
   const inferredByDeck = countBy(inferredAnswers, (row) => row.deckTitle);
+  const unknownByDeck = countBy(unknownAnswers, (row) => row.deckTitle);
   const inferredDeckSummary = decks
     .filter((deck) => inferredByDeck[deck.title])
     .map((deck) => `${deck.title} ${inferredByDeck[deck.title]}`)
+    .join(", ");
+  const unknownDeckSummary = decks
+    .filter((deck) => unknownByDeck[deck.title])
+    .map((deck) => `${deck.title} ${unknownByDeck[deck.title]}`)
     .join(", ");
   const topMock = mockCounts.filter((row) => row.mock > 0).slice(0, 15);
   const topAll = allCounts.filter((row) => row.total > 0).slice(0, 15);
@@ -177,9 +184,9 @@ function buildFocusReport(sourceRows) {
     "",
     "## What changed since the previous 139-question pass",
     "",
-    `The repository added **${newRows.length} questions**: Final 2 (${deckById.get("mock-final").questions.length}), Exam 1 (${deckById.get("mock-exam-1").questions.length}), and Exam 2 (${deckById.get("mock-exam-2").questions.length}). The previous Obstetrics, Gynecology, and Final 1 set remains ${previousRows.length} questions.`,
+    `This mapping pass added lecture coverage for **${newRows.length} existing questions**: Final 2 (${deckById.get("mock-final").questions.length}), Exam 1 (${deckById.get("mock-exam-1").questions.length}), and Exam 2 (${deckById.get("mock-exam-2").questions.length}). The previous Obstetrics, Gynecology, and Final 1 set remains ${previousRows.length} questions.`,
     "",
-    `New-question mapping confidence: **${newConfidence.high || 0} strong**, **${newConfidence.medium || 0} likely**, **${newConfidence.low || 0} possible**.`,
+    `Newly covered-question mapping confidence: **${newConfidence.high || 0} strong**, **${newConfidence.medium || 0} likely**, **${newConfidence.low || 0} possible**.`,
     "",
     "| Rank | Lecture | Final 2 | Exam 1 | Exam 2 | New total | New share |",
     "|---:|---|---:|---:|---:|---:|---:|",
@@ -270,7 +277,7 @@ function buildFocusReport(sourceRows) {
     `- **${zeroAll.length}/${catalog.length} lectures** have no primary match anywhere in the six-deck corpus.`,
     `- Mapping confidence: **${confidence.high || 0} strong**, **${confidence.medium || 0} likely**, **${confidence.low || 0} possible**.`,
     `- Mock-only confidence: **${mockConfidence.high || 0} strong**, **${mockConfidence.medium || 0} likely**, **${mockConfidence.low || 0} possible**.`,
-    inferredAnswers.length ? `- **Source-answer provenance:** ${inferredAnswers.length} answers are flagged inferred in the repository (${inferredDeckSummary}). This concerns the answer key's provenance, not lecture-match confidence.` : "- No inferred answer keys are present.",
+    `- **Answer-key provenance:** ${answerProvenance.circled || 0} circled from captured papers, ${inferredAnswers.length} inferred (${inferredDeckSummary}), and ${unknownAnswers.length} unrecorded (${unknownDeckSummary}). Unknown values remain unknown rather than being treated as source-confirmed. This is separate from lecture-match confidence.`,
     "- **Final 2 Q41:** the original item capture was truncated; its options/key were reconstructed. The Endometriosis lecture independently supports the mapped Sampson-theory answer.",
     "- Frequency measures what this collected bank repeated. It does not replace the official lecture roster, announced scope, or marked/highlighted lecturer priorities.",
     "",
@@ -299,11 +306,12 @@ function buildFocusReport(sourceRows) {
       newConfidence,
       testGroups: { all: overallGroups, mock: mockGroups },
       lectures: counts,
+      mockLectures: mockCounts,
       newDeckLectureCounts: newCounts,
       newlySurfacedLectureIds: newlySurfaced.map((row) => row.lectureId),
       zeroMockLectureIds: zeroMock.map((row) => row.lectureId),
       zeroAllLectureIds: zeroAll.map((row) => row.lectureId),
-      answerProvenance: { inferred: inferredAnswers.length, inferredByDeck },
+      answerProvenance: { ...answerProvenance, inferredByDeck, unknownByDeck },
     },
   };
 }

@@ -934,6 +934,908 @@
       }
     }
   ],
+  "mockLectures": [
+    {
+      "lectureId": 5,
+      "testGroup": 1,
+      "officialNumber": 5,
+      "title": "Prenatal screening and diagnosis",
+      "total": 6,
+      "mock": 6,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 4,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 7,
+      "testGroup": 1,
+      "officialNumber": 7,
+      "title": "Polycystic ovary syndrome",
+      "total": 6,
+      "mock": 6,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 2,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 13,
+      "testGroup": 1,
+      "officialNumber": 13,
+      "title": "Hypertension in pregnancy",
+      "total": 6,
+      "mock": 6,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 4,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 2,
+      "testGroup": 1,
+      "officialNumber": 1,
+      "title": "The menstrual cycle & reproductive endocrinology",
+      "total": 5,
+      "mock": 5,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 3,
+      "testGroup": 1,
+      "officialNumber": 4,
+      "title": "Preconceptional counselling and antenatal care",
+      "total": 5,
+      "mock": 5,
+      "reviews": 0,
+      "alternates": 2,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 2,
+        "mock-final": 2,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 6,
+      "testGroup": 1,
+      "officialNumber": 6,
+      "title": "Amenorrhea–dysmenorrhea–PMS",
+      "total": 5,
+      "mock": 5,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 8,
+      "testGroup": 1,
+      "officialNumber": 8,
+      "title": "Bleeding in early pregnancy",
+      "total": 5,
+      "mock": 5,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 16,
+      "testGroup": 1,
+      "officialNumber": 16,
+      "title": "Medical Diseases & Pregnancy 3",
+      "total": 5,
+      "mock": 5,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 28,
+      "testGroup": 2,
+      "officialNumber": 11,
+      "title": "Benign diseases of the ovary",
+      "total": 5,
+      "mock": 5,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 29,
+      "testGroup": 2,
+      "officialNumber": 12,
+      "title": "Endometriosis and adenomyosis",
+      "total": 5,
+      "mock": 5,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 1,
+      "testGroup": 1,
+      "officialNumber": 2,
+      "title": "Fetus, placenta, membranes and amniotic fluid",
+      "total": 4,
+      "mock": 4,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 2,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 4,
+      "testGroup": 1,
+      "officialNumber": 3,
+      "title": "Sexual development & Puberty",
+      "total": 4,
+      "mock": 4,
+      "reviews": 0,
+      "alternates": 3,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 2,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 10,
+      "testGroup": 1,
+      "officialNumber": 10,
+      "title": "Multifetal gestation",
+      "total": 4,
+      "mock": 4,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 2,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 14,
+      "testGroup": 1,
+      "officialNumber": 14,
+      "title": "Medical Diseases & Pregnancy 1",
+      "total": 4,
+      "mock": 4,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 2,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 15,
+      "testGroup": 1,
+      "officialNumber": 15,
+      "title": "Medical Diseases & Pregnancy 2",
+      "total": 4,
+      "mock": 4,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 0,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 24,
+      "testGroup": 2,
+      "officialNumber": 7,
+      "title": "Management of normal labour",
+      "total": 4,
+      "mock": 4,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 2,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 44,
+      "testGroup": 3,
+      "officialNumber": 6,
+      "title": "Contraception",
+      "total": 4,
+      "mock": 4,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 17,
+      "testGroup": 3,
+      "officialNumber": 9,
+      "title": "Preterm labour and PROM",
+      "total": 4,
+      "mock": 4,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 3,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 9,
+      "testGroup": 1,
+      "officialNumber": 9,
+      "title": "Antepartum hemorrhage",
+      "total": 3,
+      "mock": 3,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 1,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 19,
+      "testGroup": 2,
+      "officialNumber": 2,
+      "title": "Menopause",
+      "total": 3,
+      "mock": 3,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 2,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 22,
+      "testGroup": 2,
+      "officialNumber": 5,
+      "title": "Anatomy of the pelvis & mechanism of normal labor",
+      "total": 3,
+      "mock": 3,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 2,
+        "mock-final": 0,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 25,
+      "testGroup": 2,
+      "officialNumber": 8,
+      "title": "Disorders of fetal growth",
+      "total": 3,
+      "mock": 3,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 30,
+      "testGroup": 2,
+      "officialNumber": 13,
+      "title": "Fetal malposition & malpresentations",
+      "total": 3,
+      "mock": 3,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 2,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 11,
+      "testGroup": 1,
+      "officialNumber": 11,
+      "title": "Hyperemesis gravidarum",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 12,
+      "testGroup": 1,
+      "officialNumber": 12,
+      "title": "Abnormal uterine bleeding",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 1,
+        "mock-final": 0,
+        "mock-exam-1": 1,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 18,
+      "testGroup": 2,
+      "officialNumber": 1,
+      "title": "Infections & vaccinations in pregnancy",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 20,
+      "testGroup": 2,
+      "officialNumber": 3,
+      "title": "RH isoimmunization",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 21,
+      "testGroup": 2,
+      "officialNumber": 4,
+      "title": "Benign lesions of uterus & Cervix",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 23,
+      "testGroup": 2,
+      "officialNumber": 6,
+      "title": "Infections of the genital tract",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 27,
+      "testGroup": 2,
+      "officialNumber": 10,
+      "title": "Psychosocial problems & women’s health",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 2,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 1,
+        "mock-final": 0,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 31,
+      "testGroup": 2,
+      "officialNumber": 14,
+      "title": "Endometrial hyperplasia and endometrial cancer",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 32,
+      "testGroup": 2,
+      "officialNumber": 15,
+      "title": "Pelvic organ prolapse",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 33,
+      "testGroup": 2,
+      "officialNumber": 16,
+      "title": "Urinary incontinence",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 35,
+      "testGroup": 2,
+      "officialNumber": 17,
+      "title": "Operative vaginal delivery (case-based)",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 1
+      }
+    },
+    {
+      "lectureId": 37,
+      "testGroup": 3,
+      "officialNumber": 2,
+      "title": "Gynecological problems in childhood & adolescence",
+      "total": 2,
+      "mock": 2,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 2,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 40,
+      "testGroup": 3,
+      "officialNumber": 3,
+      "title": "Anesthesia and analgesia in labour",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 41,
+      "testGroup": 3,
+      "officialNumber": 4,
+      "title": "Postmaturity and induction of labor",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 42,
+      "testGroup": 3,
+      "officialNumber": 5,
+      "title": "Cesarean section",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 45,
+      "testGroup": 3,
+      "officialNumber": 7,
+      "title": "Cervical cancer & screening",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 38,
+      "testGroup": 3,
+      "officialNumber": 10,
+      "title": "Abnormal labour and its management (case-based)",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 39,
+      "testGroup": 3,
+      "officialNumber": 11,
+      "title": "Emergency gynecology (case-based)",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 43,
+      "testGroup": 3,
+      "officialNumber": 12,
+      "title": "Postnatal care and puerperal sepsis",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 46,
+      "testGroup": 3,
+      "officialNumber": 13,
+      "title": "Atrophic & dystrophic conditions of the vulva",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 47,
+      "testGroup": 3,
+      "officialNumber": 14,
+      "title": "Minimally invasive surgery in gynecology",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 48,
+      "testGroup": 3,
+      "officialNumber": 15,
+      "title": "Malignant ovarian tumors",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 49,
+      "testGroup": 3,
+      "officialNumber": 16,
+      "title": "Maternal collapse and its management (case-based)",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 50,
+      "testGroup": 3,
+      "officialNumber": 17,
+      "title": "PPH & other Obstetric emergencies (case-based)",
+      "total": 1,
+      "mock": 1,
+      "reviews": 0,
+      "alternates": 1,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 1,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 26,
+      "testGroup": 2,
+      "officialNumber": 9,
+      "title": "Role of Ultrasound in obstetric",
+      "total": 0,
+      "mock": 0,
+      "reviews": 0,
+      "alternates": 6,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 0,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 36,
+      "testGroup": 3,
+      "officialNumber": 1,
+      "title": "Subfertility",
+      "total": 0,
+      "mock": 0,
+      "reviews": 0,
+      "alternates": 2,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 0,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    },
+    {
+      "lectureId": 34,
+      "testGroup": 3,
+      "officialNumber": 8,
+      "title": "Communication skills and breaking bad news (case-based)",
+      "total": 0,
+      "mock": 0,
+      "reviews": 0,
+      "alternates": 0,
+      "decks": {
+        "obs": 0,
+        "gyn": 0,
+        "womens-health": 0,
+        "mock-final": 0,
+        "mock-exam-1": 0,
+        "mock-exam-2": 0
+      }
+    }
+  ],
   "newDeckLectureCounts": [
     {
       "lectureId": 3,
@@ -1858,11 +2760,18 @@
     34
   ],
   "answerProvenance": {
+    "circled": 83,
     "inferred": 57,
+    "unknown": 80,
     "inferredByDeck": {
       "Gynecology": 1,
       "Final 1": 55,
       "Final 2": 1
+    },
+    "unknownByDeck": {
+      "Final 2": 47,
+      "Exam 1": 16,
+      "Exam 2": 17
     }
   }
 }

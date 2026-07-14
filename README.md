@@ -9,9 +9,23 @@ A polished, mobile-first, zero-build static quiz web app for revising OB/GYN MCQ
 - **Keyboard shortcuts** (desktop): `A`–`E` picks an option, `I` marks "I don't know", `←`/`→` moves between questions, `G` opens the question grid, `Esc` closes it.
 - **Likely lecture tags:** every question is matched to the most relevant MED422 lecture. The compact flag opens confidence, rationale, and an alternate lecture when a question genuinely overlaps topics. Lecture context is also retained in wrong-answer exports.
 
-## Verify lecture coverage
+## Verify lecture coverage and rebuild the focus report
 
-Run `node test_lecture_tags.mjs`. The check fails if any source question is unmapped, duplicated, or points to malformed lecture metadata.
+Run:
+
+```bash
+node test_lecture_tags.mjs
+node scripts/build_lecture_report.mjs
+```
+
+The coverage test fails if any of the 220 source questions is unmapped, duplicated, or points to non-canonical lecture metadata. The report command rebuilds:
+
+- `reports/lecture-focus-report.md` — mock-only and all-bank lecture clustering, cross-paper recurrence, test-group distribution, deck matrix, and coverage gaps.
+- `reports/question-to-lecture-map.md` — compact human-readable mapping for every question.
+- `reports/question-to-lecture-map.csv` — spreadsheet-ready mapping with full question text.
+- `reports/lecture-focus-data.json` — machine-readable counts.
+
+Curated review evidence is preserved separately in `reports/mapping-audit-notes.md` and `reports/audits/`, including approved corrections and source-question caveats. The presentation-ready summary is `reports/S3-Ghana_MED422_Lecture_Focus_Report.pdf`.
 
 ## Progress, resume and backups
 
@@ -37,4 +51,4 @@ Each file in `data/` pushes one deck onto `window.QUIZ_DECKS` and is loaded by a
 
 Decks are grouped by id in `js/app.js`: `obs` and `gyn` are the **Reviews**, and everything else falls under **Mock Exams** (currently `womens-health` shown as "Final 1", `mock-final` as "Final 2", `mock-exam-1` as "Exam 1", `mock-exam-2` as "Exam 2"). A deck's display name is its `title`; its category is derived from its id, so retitling a deck never moves it between tabs.
 
-The lecture-tagged source decks are `obs`, `gyn` and `womens-health`: when their questions are added, removed, or renumbered, update `data/lecture-tags.js` and run `node test_lecture_tags.mjs` before deployment. The remaining exam decks are standalone past papers with no lecture tags, so the app simply renders no lecture flag for them.
+All six decks are lecture-tagged. When questions are added, removed, or renumbered, update `data/lecture-tags.js`, run `node test_lecture_tags.mjs`, rebuild the reports, and review every low/medium-confidence or retrieval-disagreement case before deployment. `data/lecture-catalog.json` is the canonical 50-lecture metadata roster used to reject stale IDs, titles, or test numbers.

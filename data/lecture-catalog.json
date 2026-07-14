@@ -1,0 +1,302 @@
+[
+  {
+    "id": 2,
+    "test_group": 1,
+    "official_number": 1,
+    "title": "The menstrual cycle & reproductive endocrinology"
+  },
+  {
+    "id": 1,
+    "test_group": 1,
+    "official_number": 2,
+    "title": "Fetus, placenta, membranes and amniotic fluid"
+  },
+  {
+    "id": 4,
+    "test_group": 1,
+    "official_number": 3,
+    "title": "Sexual development & Puberty"
+  },
+  {
+    "id": 3,
+    "test_group": 1,
+    "official_number": 4,
+    "title": "Preconceptional counselling and antenatal care"
+  },
+  {
+    "id": 5,
+    "test_group": 1,
+    "official_number": 5,
+    "title": "Prenatal screening and diagnosis"
+  },
+  {
+    "id": 6,
+    "test_group": 1,
+    "official_number": 6,
+    "title": "Amenorrhea\u2013dysmenorrhea\u2013PMS"
+  },
+  {
+    "id": 7,
+    "test_group": 1,
+    "official_number": 7,
+    "title": "Polycystic ovary syndrome"
+  },
+  {
+    "id": 8,
+    "test_group": 1,
+    "official_number": 8,
+    "title": "Bleeding in early pregnancy"
+  },
+  {
+    "id": 9,
+    "test_group": 1,
+    "official_number": 9,
+    "title": "Antepartum hemorrhage"
+  },
+  {
+    "id": 10,
+    "test_group": 1,
+    "official_number": 10,
+    "title": "Multifetal gestation"
+  },
+  {
+    "id": 11,
+    "test_group": 1,
+    "official_number": 11,
+    "title": "Hyperemesis gravidarum"
+  },
+  {
+    "id": 12,
+    "test_group": 1,
+    "official_number": 12,
+    "title": "Abnormal uterine bleeding"
+  },
+  {
+    "id": 13,
+    "test_group": 1,
+    "official_number": 13,
+    "title": "Hypertension in pregnancy"
+  },
+  {
+    "id": 14,
+    "test_group": 1,
+    "official_number": 14,
+    "title": "Medical Diseases & Pregnancy 1"
+  },
+  {
+    "id": 15,
+    "test_group": 1,
+    "official_number": 15,
+    "title": "Medical Diseases & Pregnancy 2"
+  },
+  {
+    "id": 16,
+    "test_group": 1,
+    "official_number": 16,
+    "title": "Medical Diseases & Pregnancy 3"
+  },
+  {
+    "id": 18,
+    "test_group": 2,
+    "official_number": 1,
+    "title": "Infections & vaccinations in pregnancy"
+  },
+  {
+    "id": 19,
+    "test_group": 2,
+    "official_number": 2,
+    "title": "Menopause"
+  },
+  {
+    "id": 20,
+    "test_group": 2,
+    "official_number": 3,
+    "title": "RH isoimmunization"
+  },
+  {
+    "id": 21,
+    "test_group": 2,
+    "official_number": 4,
+    "title": "Benign lesions of uterus & Cervix"
+  },
+  {
+    "id": 22,
+    "test_group": 2,
+    "official_number": 5,
+    "title": "Anatomy of the pelvis & mechanism of normal labor"
+  },
+  {
+    "id": 23,
+    "test_group": 2,
+    "official_number": 6,
+    "title": "Infections of the genital tract"
+  },
+  {
+    "id": 24,
+    "test_group": 2,
+    "official_number": 7,
+    "title": "Management of normal labour"
+  },
+  {
+    "id": 25,
+    "test_group": 2,
+    "official_number": 8,
+    "title": "Disorders of fetal growth"
+  },
+  {
+    "id": 26,
+    "test_group": 2,
+    "official_number": 9,
+    "title": "Role of Ultrasound in obstetric"
+  },
+  {
+    "id": 27,
+    "test_group": 2,
+    "official_number": 10,
+    "title": "Psychosocial problems & women\u2019s health"
+  },
+  {
+    "id": 28,
+    "test_group": 2,
+    "official_number": 11,
+    "title": "Benign diseases of the ovary"
+  },
+  {
+    "id": 29,
+    "test_group": 2,
+    "official_number": 12,
+    "title": "Endometriosis and adenomyosis"
+  },
+  {
+    "id": 30,
+    "test_group": 2,
+    "official_number": 13,
+    "title": "Fetal malposition & malpresentations"
+  },
+  {
+    "id": 31,
+    "test_group": 2,
+    "official_number": 14,
+    "title": "Endometrial hyperplasia and endometrial cancer"
+  },
+  {
+    "id": 32,
+    "test_group": 2,
+    "official_number": 15,
+    "title": "Pelvic organ prolapse"
+  },
+  {
+    "id": 33,
+    "test_group": 2,
+    "official_number": 16,
+    "title": "Urinary incontinence"
+  },
+  {
+    "id": 35,
+    "test_group": 2,
+    "official_number": 17,
+    "title": "Operative vaginal delivery (case-based)"
+  },
+  {
+    "id": 36,
+    "test_group": 3,
+    "official_number": 1,
+    "title": "Subfertility"
+  },
+  {
+    "id": 37,
+    "test_group": 3,
+    "official_number": 2,
+    "title": "Gynecological problems in childhood & adolescence"
+  },
+  {
+    "id": 40,
+    "test_group": 3,
+    "official_number": 3,
+    "title": "Anesthesia and analgesia in labour"
+  },
+  {
+    "id": 41,
+    "test_group": 3,
+    "official_number": 4,
+    "title": "Postmaturity and induction of labor"
+  },
+  {
+    "id": 42,
+    "test_group": 3,
+    "official_number": 5,
+    "title": "Cesarean section"
+  },
+  {
+    "id": 44,
+    "test_group": 3,
+    "official_number": 6,
+    "title": "Contraception"
+  },
+  {
+    "id": 45,
+    "test_group": 3,
+    "official_number": 7,
+    "title": "Cervical cancer & screening"
+  },
+  {
+    "id": 34,
+    "test_group": 3,
+    "official_number": 8,
+    "title": "Communication skills and breaking bad news (case-based)"
+  },
+  {
+    "id": 17,
+    "test_group": 3,
+    "official_number": 9,
+    "title": "Preterm labour and PROM"
+  },
+  {
+    "id": 38,
+    "test_group": 3,
+    "official_number": 10,
+    "title": "Abnormal labour and its management (case-based)"
+  },
+  {
+    "id": 39,
+    "test_group": 3,
+    "official_number": 11,
+    "title": "Emergency gynecology (case-based)"
+  },
+  {
+    "id": 43,
+    "test_group": 3,
+    "official_number": 12,
+    "title": "Postnatal care and puerperal sepsis"
+  },
+  {
+    "id": 46,
+    "test_group": 3,
+    "official_number": 13,
+    "title": "Atrophic & dystrophic conditions of the vulva"
+  },
+  {
+    "id": 47,
+    "test_group": 3,
+    "official_number": 14,
+    "title": "Minimally invasive surgery in gynecology"
+  },
+  {
+    "id": 48,
+    "test_group": 3,
+    "official_number": 15,
+    "title": "Malignant ovarian tumors"
+  },
+  {
+    "id": 49,
+    "test_group": 3,
+    "official_number": 16,
+    "title": "Maternal collapse and its management (case-based)"
+  },
+  {
+    "id": 50,
+    "test_group": 3,
+    "official_number": 17,
+    "title": "PPH & other Obstetric emergencies (case-based)"
+  }
+]

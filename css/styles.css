@@ -108,7 +108,15 @@ button {
    pinned on the bottom, and only the question area in between scrolls.
    Buttons never move. */
 .screen.quiz {
-  height: calc(100vh / var(--ui-scale, 1));
+  /* Pin the quiz frame to the viewport with fixed insets rather than vh math.
+     vh interacts inconsistently with CSS zoom across browsers, which let the
+     bottom Prev/Next bar slide off-screen when zoomed out. inset:0 fills the
+     visible viewport at any zoom, so the header and nav bar always stay put
+     while only the question area between them scrolls. */
+  position: fixed;
+  inset: 0;
+  min-height: 0;
+  height: auto;
   overflow: hidden;
 }
 .screen.quiz .content {
@@ -119,7 +127,6 @@ button {
 /* dvh tracks the *visible* viewport on mobile (URL bar shown/hidden). */
 @supports (height: 100dvh) {
   body, #app, .screen { min-height: calc(100dvh / var(--ui-scale, 1)); }
-  .screen.quiz { height: calc(100dvh / var(--ui-scale, 1)); }
 }
 
 /* ============================================================

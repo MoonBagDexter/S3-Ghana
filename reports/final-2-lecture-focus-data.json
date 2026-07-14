@@ -1,0 +1,814 @@
+{
+  "deckId": "mock-final",
+  "deckTitle": "Final 2",
+  "questions": 48,
+  "canonicalLectures": 50,
+  "distinctPrimaryLectures": 43,
+  "alternateMappings": 17,
+  "confidence": {
+    "high": 45,
+    "medium": 3
+  },
+  "answerProvenance": {
+    "unknown": 47,
+    "inferred": 1
+  },
+  "testGroups": {
+    "1": 16,
+    "2": 16,
+    "3": 16
+  },
+  "maxPrimaryCount": 2,
+  "lectures": [
+    {
+      "lectureId": 3,
+      "testGroup": 1,
+      "officialNumber": 4,
+      "title": "Preconceptional counselling and antenatal care",
+      "total": 2,
+      "alternates": 0,
+      "questionNumbers": [
+        8,
+        23
+      ]
+    },
+    {
+      "lectureId": 7,
+      "testGroup": 1,
+      "officialNumber": 7,
+      "title": "Polycystic ovary syndrome",
+      "total": 2,
+      "alternates": 1,
+      "questionNumbers": [
+        16,
+        48
+      ]
+    },
+    {
+      "lectureId": 19,
+      "testGroup": 2,
+      "officialNumber": 2,
+      "title": "Menopause",
+      "total": 2,
+      "alternates": 1,
+      "questionNumbers": [
+        10,
+        14
+      ]
+    },
+    {
+      "lectureId": 30,
+      "testGroup": 2,
+      "officialNumber": 13,
+      "title": "Fetal malposition & malpresentations",
+      "total": 2,
+      "alternates": 1,
+      "questionNumbers": [
+        4,
+        45
+      ]
+    },
+    {
+      "lectureId": 37,
+      "testGroup": 3,
+      "officialNumber": 2,
+      "title": "Gynecological problems in childhood & adolescence",
+      "total": 2,
+      "alternates": 0,
+      "questionNumbers": [
+        31,
+        42
+      ]
+    },
+    {
+      "lectureId": 2,
+      "testGroup": 1,
+      "officialNumber": 1,
+      "title": "The menstrual cycle & reproductive endocrinology",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        35
+      ]
+    },
+    {
+      "lectureId": 1,
+      "testGroup": 1,
+      "officialNumber": 2,
+      "title": "Fetus, placenta, membranes and amniotic fluid",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        24
+      ]
+    },
+    {
+      "lectureId": 4,
+      "testGroup": 1,
+      "officialNumber": 3,
+      "title": "Sexual development & Puberty",
+      "total": 1,
+      "alternates": 2,
+      "questionNumbers": [
+        1
+      ]
+    },
+    {
+      "lectureId": 5,
+      "testGroup": 1,
+      "officialNumber": 5,
+      "title": "Prenatal screening and diagnosis",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        21
+      ]
+    },
+    {
+      "lectureId": 6,
+      "testGroup": 1,
+      "officialNumber": 6,
+      "title": "Amenorrhea–dysmenorrhea–PMS",
+      "total": 1,
+      "alternates": 1,
+      "questionNumbers": [
+        47
+      ]
+    },
+    {
+      "lectureId": 8,
+      "testGroup": 1,
+      "officialNumber": 8,
+      "title": "Bleeding in early pregnancy",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        38
+      ]
+    },
+    {
+      "lectureId": 9,
+      "testGroup": 1,
+      "officialNumber": 9,
+      "title": "Antepartum hemorrhage",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        11
+      ]
+    },
+    {
+      "lectureId": 10,
+      "testGroup": 1,
+      "officialNumber": 10,
+      "title": "Multifetal gestation",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        13
+      ]
+    },
+    {
+      "lectureId": 11,
+      "testGroup": 1,
+      "officialNumber": 11,
+      "title": "Hyperemesis gravidarum",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        34
+      ]
+    },
+    {
+      "lectureId": 13,
+      "testGroup": 1,
+      "officialNumber": 13,
+      "title": "Hypertension in pregnancy",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        46
+      ]
+    },
+    {
+      "lectureId": 14,
+      "testGroup": 1,
+      "officialNumber": 14,
+      "title": "Medical Diseases & Pregnancy 1",
+      "total": 1,
+      "alternates": 1,
+      "questionNumbers": [
+        19
+      ]
+    },
+    {
+      "lectureId": 16,
+      "testGroup": 1,
+      "officialNumber": 16,
+      "title": "Medical Diseases & Pregnancy 3",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        9
+      ]
+    },
+    {
+      "lectureId": 18,
+      "testGroup": 2,
+      "officialNumber": 1,
+      "title": "Infections & vaccinations in pregnancy",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        37
+      ]
+    },
+    {
+      "lectureId": 20,
+      "testGroup": 2,
+      "officialNumber": 3,
+      "title": "RH isoimmunization",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        20
+      ]
+    },
+    {
+      "lectureId": 21,
+      "testGroup": 2,
+      "officialNumber": 4,
+      "title": "Benign lesions of uterus & Cervix",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        36
+      ]
+    },
+    {
+      "lectureId": 23,
+      "testGroup": 2,
+      "officialNumber": 6,
+      "title": "Infections of the genital tract",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        15
+      ]
+    },
+    {
+      "lectureId": 24,
+      "testGroup": 2,
+      "officialNumber": 7,
+      "title": "Management of normal labour",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        18
+      ]
+    },
+    {
+      "lectureId": 25,
+      "testGroup": 2,
+      "officialNumber": 8,
+      "title": "Disorders of fetal growth",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        5
+      ]
+    },
+    {
+      "lectureId": 28,
+      "testGroup": 2,
+      "officialNumber": 11,
+      "title": "Benign diseases of the ovary",
+      "total": 1,
+      "alternates": 1,
+      "questionNumbers": [
+        44
+      ]
+    },
+    {
+      "lectureId": 29,
+      "testGroup": 2,
+      "officialNumber": 12,
+      "title": "Endometriosis and adenomyosis",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        41
+      ]
+    },
+    {
+      "lectureId": 31,
+      "testGroup": 2,
+      "officialNumber": 14,
+      "title": "Endometrial hyperplasia and endometrial cancer",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        6
+      ]
+    },
+    {
+      "lectureId": 32,
+      "testGroup": 2,
+      "officialNumber": 15,
+      "title": "Pelvic organ prolapse",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        17
+      ]
+    },
+    {
+      "lectureId": 33,
+      "testGroup": 2,
+      "officialNumber": 16,
+      "title": "Urinary incontinence",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        27
+      ]
+    },
+    {
+      "lectureId": 35,
+      "testGroup": 2,
+      "officialNumber": 17,
+      "title": "Operative vaginal delivery (case-based)",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        32
+      ]
+    },
+    {
+      "lectureId": 40,
+      "testGroup": 3,
+      "officialNumber": 3,
+      "title": "Anesthesia and analgesia in labour",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        33
+      ]
+    },
+    {
+      "lectureId": 41,
+      "testGroup": 3,
+      "officialNumber": 4,
+      "title": "Postmaturity and induction of labor",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        25
+      ]
+    },
+    {
+      "lectureId": 42,
+      "testGroup": 3,
+      "officialNumber": 5,
+      "title": "Cesarean section",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        30
+      ]
+    },
+    {
+      "lectureId": 44,
+      "testGroup": 3,
+      "officialNumber": 6,
+      "title": "Contraception",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        3
+      ]
+    },
+    {
+      "lectureId": 45,
+      "testGroup": 3,
+      "officialNumber": 7,
+      "title": "Cervical cancer & screening",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        7
+      ]
+    },
+    {
+      "lectureId": 17,
+      "testGroup": 3,
+      "officialNumber": 9,
+      "title": "Preterm labour and PROM",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        28
+      ]
+    },
+    {
+      "lectureId": 38,
+      "testGroup": 3,
+      "officialNumber": 10,
+      "title": "Abnormal labour and its management (case-based)",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        40
+      ]
+    },
+    {
+      "lectureId": 39,
+      "testGroup": 3,
+      "officialNumber": 11,
+      "title": "Emergency gynecology (case-based)",
+      "total": 1,
+      "alternates": 1,
+      "questionNumbers": [
+        26
+      ]
+    },
+    {
+      "lectureId": 43,
+      "testGroup": 3,
+      "officialNumber": 12,
+      "title": "Postnatal care and puerperal sepsis",
+      "total": 1,
+      "alternates": 1,
+      "questionNumbers": [
+        29
+      ]
+    },
+    {
+      "lectureId": 46,
+      "testGroup": 3,
+      "officialNumber": 13,
+      "title": "Atrophic & dystrophic conditions of the vulva",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        22
+      ]
+    },
+    {
+      "lectureId": 47,
+      "testGroup": 3,
+      "officialNumber": 14,
+      "title": "Minimally invasive surgery in gynecology",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        39
+      ]
+    },
+    {
+      "lectureId": 48,
+      "testGroup": 3,
+      "officialNumber": 15,
+      "title": "Malignant ovarian tumors",
+      "total": 1,
+      "alternates": 0,
+      "questionNumbers": [
+        43
+      ]
+    },
+    {
+      "lectureId": 49,
+      "testGroup": 3,
+      "officialNumber": 16,
+      "title": "Maternal collapse and its management (case-based)",
+      "total": 1,
+      "alternates": 1,
+      "questionNumbers": [
+        12
+      ]
+    },
+    {
+      "lectureId": 50,
+      "testGroup": 3,
+      "officialNumber": 17,
+      "title": "PPH & other Obstetric emergencies (case-based)",
+      "total": 1,
+      "alternates": 1,
+      "questionNumbers": [
+        2
+      ]
+    }
+  ],
+  "lowerConfidenceQuestions": [
+    {
+      "questionId": "18",
+      "questionNumber": 18,
+      "confidence": "medium",
+      "primary": {
+        "lectureId": 24,
+        "testGroup": 2,
+        "officialNumber": 7,
+        "title": "Management of normal labour"
+      },
+      "rationale": "The normal-labour lecture covers intrapartum intermittent FHR auscultation and fetal surveillance; the item tests IA technique."
+    },
+    {
+      "questionId": "22",
+      "questionNumber": 22,
+      "confidence": "medium",
+      "primary": {
+        "lectureId": 46,
+        "testGroup": 3,
+        "officialNumber": 13,
+        "title": "Atrophic & dystrophic conditions of the vulva"
+      },
+      "rationale": "The vulval-conditions lecture is the corpus's dedicated benign noninfectious vulval symptom/dermatosis topic, making it the closest source."
+    },
+    {
+      "questionId": "47",
+      "questionNumber": 47,
+      "confidence": "medium",
+      "primary": {
+        "lectureId": 6,
+        "testGroup": 1,
+        "officialNumber": 6,
+        "title": "Amenorrhea–dysmenorrhea–PMS"
+      },
+      "rationale": "Amenorrhea covers hypothalamic low-FSH/LH stress amenorrhea; PCOS is the better alternate because it contrasts this pattern with PCOS."
+    }
+  ],
+  "alternateQuestions": [
+    {
+      "questionId": "1",
+      "questionNumber": 1,
+      "primary": {
+        "lectureId": 4,
+        "testGroup": 1,
+        "officialNumber": 3,
+        "title": "Sexual development & Puberty"
+      },
+      "alternate": {
+        "lectureId": 6,
+        "testGroup": 1,
+        "officialNumber": 6,
+        "title": "Amenorrhea–dysmenorrhea–PMS"
+      }
+    },
+    {
+      "questionId": "2",
+      "questionNumber": 2,
+      "primary": {
+        "lectureId": 50,
+        "testGroup": 3,
+        "officialNumber": 17,
+        "title": "PPH & other Obstetric emergencies (case-based)"
+      },
+      "alternate": {
+        "lectureId": 49,
+        "testGroup": 3,
+        "officialNumber": 16,
+        "title": "Maternal collapse and its management (case-based)"
+      }
+    },
+    {
+      "questionId": "3",
+      "questionNumber": 3,
+      "primary": {
+        "lectureId": 44,
+        "testGroup": 3,
+        "officialNumber": 6,
+        "title": "Contraception"
+      },
+      "alternate": {
+        "lectureId": 43,
+        "testGroup": 3,
+        "officialNumber": 12,
+        "title": "Postnatal care and puerperal sepsis"
+      }
+    },
+    {
+      "questionId": "4",
+      "questionNumber": 4,
+      "primary": {
+        "lectureId": 30,
+        "testGroup": 2,
+        "officialNumber": 13,
+        "title": "Fetal malposition & malpresentations"
+      },
+      "alternate": {
+        "lectureId": 22,
+        "testGroup": 2,
+        "officialNumber": 5,
+        "title": "Anatomy of the pelvis & mechanism of normal labor"
+      }
+    },
+    {
+      "questionId": "10",
+      "questionNumber": 10,
+      "primary": {
+        "lectureId": 19,
+        "testGroup": 2,
+        "officialNumber": 2,
+        "title": "Menopause"
+      },
+      "alternate": {
+        "lectureId": 27,
+        "testGroup": 2,
+        "officialNumber": 10,
+        "title": "Psychosocial problems & women’s health"
+      }
+    },
+    {
+      "questionId": "13",
+      "questionNumber": 13,
+      "primary": {
+        "lectureId": 10,
+        "testGroup": 1,
+        "officialNumber": 10,
+        "title": "Multifetal gestation"
+      },
+      "alternate": {
+        "lectureId": 26,
+        "testGroup": 2,
+        "officialNumber": 9,
+        "title": "Role of Ultrasound in obstetric"
+      }
+    },
+    {
+      "questionId": "17",
+      "questionNumber": 17,
+      "primary": {
+        "lectureId": 32,
+        "testGroup": 2,
+        "officialNumber": 15,
+        "title": "Pelvic organ prolapse"
+      },
+      "alternate": {
+        "lectureId": 19,
+        "testGroup": 2,
+        "officialNumber": 2,
+        "title": "Menopause"
+      }
+    },
+    {
+      "questionId": "23",
+      "questionNumber": 23,
+      "primary": {
+        "lectureId": 3,
+        "testGroup": 1,
+        "officialNumber": 4,
+        "title": "Preconceptional counselling and antenatal care"
+      },
+      "alternate": {
+        "lectureId": 26,
+        "testGroup": 2,
+        "officialNumber": 9,
+        "title": "Role of Ultrasound in obstetric"
+      }
+    },
+    {
+      "questionId": "26",
+      "questionNumber": 26,
+      "primary": {
+        "lectureId": 39,
+        "testGroup": 3,
+        "officialNumber": 11,
+        "title": "Emergency gynecology (case-based)"
+      },
+      "alternate": {
+        "lectureId": 28,
+        "testGroup": 2,
+        "officialNumber": 11,
+        "title": "Benign diseases of the ovary"
+      }
+    },
+    {
+      "questionId": "31",
+      "questionNumber": 31,
+      "primary": {
+        "lectureId": 37,
+        "testGroup": 3,
+        "officialNumber": 2,
+        "title": "Gynecological problems in childhood & adolescence"
+      },
+      "alternate": {
+        "lectureId": 4,
+        "testGroup": 1,
+        "officialNumber": 3,
+        "title": "Sexual development & Puberty"
+      }
+    },
+    {
+      "questionId": "32",
+      "questionNumber": 32,
+      "primary": {
+        "lectureId": 35,
+        "testGroup": 2,
+        "officialNumber": 17,
+        "title": "Operative vaginal delivery (case-based)"
+      },
+      "alternate": {
+        "lectureId": 30,
+        "testGroup": 2,
+        "officialNumber": 13,
+        "title": "Fetal malposition & malpresentations"
+      }
+    },
+    {
+      "questionId": "33",
+      "questionNumber": 33,
+      "primary": {
+        "lectureId": 40,
+        "testGroup": 3,
+        "officialNumber": 3,
+        "title": "Anesthesia and analgesia in labour"
+      },
+      "alternate": {
+        "lectureId": 14,
+        "testGroup": 1,
+        "officialNumber": 14,
+        "title": "Medical Diseases & Pregnancy 1"
+      }
+    },
+    {
+      "questionId": "40",
+      "questionNumber": 40,
+      "primary": {
+        "lectureId": 38,
+        "testGroup": 3,
+        "officialNumber": 10,
+        "title": "Abnormal labour and its management (case-based)"
+      },
+      "alternate": {
+        "lectureId": 50,
+        "testGroup": 3,
+        "officialNumber": 17,
+        "title": "PPH & other Obstetric emergencies (case-based)"
+      }
+    },
+    {
+      "questionId": "42",
+      "questionNumber": 42,
+      "primary": {
+        "lectureId": 37,
+        "testGroup": 3,
+        "officialNumber": 2,
+        "title": "Gynecological problems in childhood & adolescence"
+      },
+      "alternate": {
+        "lectureId": 4,
+        "testGroup": 1,
+        "officialNumber": 3,
+        "title": "Sexual development & Puberty"
+      }
+    },
+    {
+      "questionId": "44",
+      "questionNumber": 44,
+      "primary": {
+        "lectureId": 28,
+        "testGroup": 2,
+        "officialNumber": 11,
+        "title": "Benign diseases of the ovary"
+      },
+      "alternate": {
+        "lectureId": 39,
+        "testGroup": 3,
+        "officialNumber": 11,
+        "title": "Emergency gynecology (case-based)"
+      }
+    },
+    {
+      "questionId": "47",
+      "questionNumber": 47,
+      "primary": {
+        "lectureId": 6,
+        "testGroup": 1,
+        "officialNumber": 6,
+        "title": "Amenorrhea–dysmenorrhea–PMS"
+      },
+      "alternate": {
+        "lectureId": 7,
+        "testGroup": 1,
+        "officialNumber": 7,
+        "title": "Polycystic ovary syndrome"
+      }
+    },
+    {
+      "questionId": "48",
+      "questionNumber": 48,
+      "primary": {
+        "lectureId": 7,
+        "testGroup": 1,
+        "officialNumber": 7,
+        "title": "Polycystic ovary syndrome"
+      },
+      "alternate": {
+        "lectureId": 36,
+        "testGroup": 3,
+        "officialNumber": 1,
+        "title": "Subfertility"
+      }
+    }
+  ]
+}

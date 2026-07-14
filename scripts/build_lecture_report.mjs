@@ -60,7 +60,18 @@ fs.writeFileSync(path.join(reportDir, "question-to-lecture-map.md"), buildQuesti
 const report = buildFocusReport(rows);
 fs.writeFileSync(path.join(reportDir, "lecture-focus-report.md"), report.markdown);
 fs.writeFileSync(path.join(reportDir, "lecture-focus-data.json"), JSON.stringify(report.data, null, 2) + "\n");
-console.log(`Generated lecture reports for ${rows.length} questions across ${decks.length} decks.`);
+const deckReportDefinitions = [
+  { deckId: "womens-health", slug: "final-1", label: "Final 1" },
+  { deckId: "mock-final", slug: "final-2", label: "Final 2" },
+];
+for (const definition of deckReportDefinitions) {
+  const deckRows = rows.filter((row) => row.deckId === definition.deckId);
+  const deckReport = buildDeckFocusReport(deckRows, definition);
+  fs.writeFileSync(path.join(reportDir, `${definition.slug}-lecture-focus-report.md`), deckReport.markdown);
+  fs.writeFileSync(path.join(reportDir, `${definition.slug}-lecture-focus-data.json`), JSON.stringify(deckReport.data, null, 2) + "\n");
+  fs.writeFileSync(path.join(reportDir, `${definition.slug}-question-to-lecture-map.csv`), buildCsv(deckRows));
+}
+console.log(`Generated lecture reports for ${rows.length} questions across ${decks.length} decks, including Final 1 and Final 2 standalone reports.`);
 
 function validateMatch(match, deckId, questionId) {
   if (!match || !match.primary) throw new Error(`${deckId} ${questionId}: missing primary lecture`);
@@ -314,6 +325,246 @@ function buildFocusReport(sourceRows) {
       answerProvenance: { ...answerProvenance, inferredByDeck, unknownByDeck },
     },
   };
+}
+
+function buildDeckFocusReport(sourceRows, definition) {
+  if (!sourceRows.length) throw new Error(`No rows found for ${definition.deckId}`);
+  if (sourceRows.some((row) => row.deckId !== definition.deckId)) {
+    throw new Error(`${definition.label}: standalone report received rows from another deck`);
+  }
+
+  const lectureRows = countLectures(sourceRows)
+    .filter((row) => row.total > 0)
+    .sort((a, b) => b.total - a.total || officialSort(a, b));
+  const confidence = countBy(sourceRows, (row) => row.confidence);
+  const answerProvenance = countBy(sourceRows, (row) => row.answerSource);
+  const testGroups = groupCounts(sourceRows);
+  const alternateRows = sourceRows.filter((row) => row.alternate);
+  const lowerConfidenceRows = sourceRows.filter((row) => row.confidence !== "high");
+  const questionNumbersByLecture = new Map();
+  for (const row of sourceRows) {
+    const values = questionNumbersByLecture.get(row.primary.lectureId) || [];
+    values.push(row.questionNum);
+    questionNumbersByLecture.set(row.primary.lectureId, values);
+  }
+
+  const repeatedLectures = lectureRows.filter((row) => row.total >= 2);
+  const highPriorityLectures = lectureRows.filter((row) => row.total >= 3);
+  const highPriorityQuestions = highPriorityLectures.reduce((sum, row) => sum + row.total, 0);
+  const maxCount = lectureRows[0].total;
+  const leaders = lectureRows.filter((row) => row.total === maxCount);
+  const singletonLectures = lectureRows.filter((row) => row.total === 1);
+  const title = `S3 Ghana MED422 — ${definition.label} lecture-focus report`;
+  const lines = [
+    `# ${title}`,
+    "",
+    `**Scope:** ${sourceRows.length} questions from ${definition.label} only · ${lectureRows.length}/${catalog.length} canonical lectures represented · ${alternateRows.length} genuine cross-lecture overlaps.`,
+    "",
+    "> Counts use each question’s primary likely lecture. They are revision signals from this paper—not guarantees of future exam weighting. Answer-key provenance and lecture-match confidence are kept separate.",
+    "",
+    "## Bottom line",
+    "",
+  ];
+
+  if (definition.deckId === "womens-health") {
+    lines.push(
+      `- **Concentrated paper:** ${highPriorityLectures.length} lectures with at least 3 questions account for **${highPriorityQuestions}/${sourceRows.length} (${pct(highPriorityQuestions, sourceRows.length)})** of the deck.`,
+      `- **First priority:** ${leaders.map((row) => `${code(row)} ${row.title}`).join(" and ")} lead with **${maxCount} questions each**.`,
+      `- **Test 1 dominates:** ${testGroups[1] || 0}/${sourceRows.length} questions (${pct(testGroups[1] || 0, sourceRows.length)}) map to Test 1 lectures.`,
+      `- Best use: master the ${leaders.length} leaders, then the ${highPriorityLectures.length - leaders.length} other three-question clusters before the two-question and singleton topics.`,
+    );
+  } else {
+    lines.push(
+      `- **Broad-coverage paper:** ${lectureRows.length} distinct primary lectures appear across ${sourceRows.length} questions; no lecture appears more than **${maxCount} times**.`,
+      `- Only **${repeatedLectures.length} lectures** repeat; the other ${singletonLectures.length} represented lectures appear once each.`,
+      `- **Even test-group spread:** Test 1, Test 2, and Test 3 each contribute **${testGroups[1] || 0} questions**.`,
+      `- Best use: revise broadly across all three tests, then give the ${repeatedLectures.length} repeated lectures a short extra pass. Do not overfit to a narrow cluster.`,
+    );
+  }
+
+  lines.push("", "## Recommended revision order", "");
+  if (definition.deckId === "womens-health") {
+    const tiers = [
+      ["Tier 1 — highest", lectureRows.filter((row) => row.total >= 4)],
+      ["Tier 2 — major clusters", lectureRows.filter((row) => row.total === 3)],
+      ["Tier 3 — supporting", lectureRows.filter((row) => row.total === 2)],
+      ["Tier 4 — singletons", lectureRows.filter((row) => row.total === 1)],
+    ];
+    lines.push("| Priority | Lectures | Questions covered | Deck share |", "|---|---|---:|---:|");
+    for (const [tier, tierRows] of tiers) {
+      const questions = tierRows.reduce((sum, row) => sum + row.total, 0);
+      lines.push(`| ${tier} | ${tierRows.map((row) => `${code(row)} ${md(row.title)} (${row.total})`).join("; ")} | ${questions} | ${pct(questions, sourceRows.length)} |`);
+    }
+  } else {
+    lines.push(
+      "### Extra-pass lectures",
+      "",
+      "These are the only lectures repeated in Final 2. Each contributes two questions.",
+      "",
+      "| Lecture | Questions | Deck share |",
+      "|---|---:|---:|",
+    );
+    for (const row of repeatedLectures) {
+      lines.push(`| ${code(row)} — ${md(row.title)} | ${formatQuestionList(questionNumbersByLecture.get(row.lectureId))} | ${pct(row.total, sourceRows.length)} |`);
+    }
+    lines.push(
+      "",
+      `After these ${repeatedLectures.length}, use a **broad-sweep strategy**: the remaining ${singletonLectures.length} questions each map to a different lecture, so breadth matters more than ranking among the singletons.`,
+    );
+  }
+
+  lines.push(
+    "",
+    "## Test-group distribution",
+    "",
+    "| Test group | Questions | Share | Distinct primary lectures |",
+    "|---|---:|---:|---:|",
+  );
+  for (const testGroup of [1, 2, 3]) {
+    const groupRows = lectureRows.filter((row) => row.testGroup === testGroup);
+    lines.push(`| Test ${testGroup} | ${testGroups[testGroup] || 0} | ${pct(testGroups[testGroup] || 0, sourceRows.length)} | ${groupRows.length} |`);
+  }
+
+  lines.push(
+    "",
+    "## Complete primary lecture footprint",
+    "",
+    "Every question is represented in the question-number column; repeated numbers are not hidden by the ranking.",
+    "",
+    "| Lecture | Questions | Count | Share |",
+    "|---|---:|---:|---:|",
+  );
+  for (const row of lectureRows) {
+    lines.push(`| ${code(row)} — ${md(row.title)} | ${formatQuestionList(questionNumbersByLecture.get(row.lectureId))} | ${row.total} | ${pct(row.total, sourceRows.length)} |`);
+  }
+
+  if (definition.deckId === "mock-final") lines.push("", '<div class="page-break"></div>');
+  lines.push(
+    "",
+    "## Mapping quality and answer provenance",
+    "",
+    "| Measure | Questions | Share |",
+    "|---|---:|---:|",
+    `| Lecture match — Strong | ${confidence.high || 0} | ${pct(confidence.high || 0, sourceRows.length)} |`,
+    `| Lecture match — Likely | ${confidence.medium || 0} | ${pct(confidence.medium || 0, sourceRows.length)} |`,
+    `| Lecture match — Possible | ${confidence.low || 0} | ${pct(confidence.low || 0, sourceRows.length)} |`,
+    `| Answer provenance — Circled in captured paper | ${answerProvenance.circled || 0} | ${pct(answerProvenance.circled || 0, sourceRows.length)} |`,
+    `| Answer provenance — Inferred/reconstructed | ${answerProvenance.inferred || 0} | ${pct(answerProvenance.inferred || 0, sourceRows.length)} |`,
+    `| Answer provenance — Unknown/unrecorded | ${answerProvenance.unknown || 0} | ${pct(answerProvenance.unknown || 0, sourceRows.length)} |`,
+    "",
+  );
+
+  if (definition.deckId === "womens-health") {
+    lines.push("All 55 Final 1 answer keys are marked **inferred** in the legacy deck data. This is a provenance limitation, not a downgrade of the lecture mapping: 51/55 lecture matches are strong.", "");
+  } else {
+    lines.push("Final 2 has 47 questions with **unknown/unrecorded** answer provenance. Q41 alone is explicitly inferred/reconstructed from a truncated capture. Unknown is not treated as source-confirmed.", "");
+  }
+
+  lines.push("## Lower-confidence mappings to review carefully", "");
+  if (lowerConfidenceRows.length) {
+    lines.push("| Likely lecture | Q | Match | Why confidence is lower |", "|---|---:|---:|---|");
+    for (const row of lowerConfidenceRows) {
+      lines.push(`| ${lectureLabel(row.primary)} | ${md(row.questionNum)} | ${confidenceLabel(row.confidence)} | ${md(deckLowerConfidenceRationale(row, definition.deckId))} |`);
+    }
+  } else {
+    lines.push("- None; every lecture match is strong.");
+  }
+
+  lines.push(
+    "",
+    `## Genuine cross-lecture overlaps — ${alternateRows.length}/${sourceRows.length} questions`,
+    "",
+  );
+  if (alternateRows.length) {
+    lines.push("| Primary → alternate | Q |", "|---|---:|");
+    for (const row of alternateRows) {
+      lines.push(`| ${lectureLabel(row.primary)} → ${lectureLabel(row.alternate)} | ${md(row.questionNum)} |`);
+    }
+  } else {
+    lines.push("- None.");
+  }
+
+  lines.push("", "## Source and item cautions", "");
+  for (const caution of deckCautions(definition.deckId)) lines.push(`- ${caution}`);
+
+  lines.push(
+    "",
+    "## Detailed evidence",
+    "",
+    `- \`${definition.slug}-question-to-lecture-map.csv\` — all ${sourceRows.length} questions with full text, primary/alternate lecture, confidence, rationale, keyed answer, and provenance.`,
+    `- \`${definition.slug}-lecture-focus-data.json\` — machine-readable deck-only counts and mappings.`,
+    "- The quiz’s **Likely lecture** flag shows the same mapping beside each live question.",
+    "",
+  );
+
+  return {
+    markdown: lines.join("\n"),
+    data: {
+      deckId: definition.deckId,
+      deckTitle: definition.label,
+      questions: sourceRows.length,
+      canonicalLectures: catalog.length,
+      distinctPrimaryLectures: lectureRows.length,
+      alternateMappings: alternateRows.length,
+      confidence,
+      answerProvenance,
+      testGroups,
+      maxPrimaryCount: maxCount,
+      lectures: lectureRows.map(({ mock, reviews, decks, ...row }) => ({
+        ...row,
+        questionNumbers: questionNumbersByLecture.get(row.lectureId),
+      })),
+      lowerConfidenceQuestions: lowerConfidenceRows.map((row) => ({
+        questionId: row.questionId,
+        questionNumber: row.questionNum,
+        confidence: row.confidence,
+        primary: row.primary,
+        rationale: row.rationale,
+      })),
+      alternateQuestions: alternateRows.map((row) => ({
+        questionId: row.questionId,
+        questionNumber: row.questionNum,
+        primary: row.primary,
+        alternate: row.alternate,
+      })),
+    },
+  };
+}
+
+function deckCautions(deckId) {
+  if (deckId === "womens-health") {
+    return [
+      "**Answer-key provenance:** all 55 keyed answers are inherited as inferred rather than visibly circled/source-confirmed.",
+      "**Source numbering:** this retained deck contains Q1–36 and Q42–60; Q37–41 are absent from the source, which is why 55 questions extend through Q60.",
+      "**Q19:** low ferritin is not explicitly supported by the verified AUB lecture as a predictor of heavy menstrual bleeding.",
+      "**Q21:** the dysmenorrhea lecture is the topical home, but the exact high-frequency TENS efficacy claim is absent from the verified text.",
+      "**Q46:** the normal-labour lecture is the best topical match, but it does not state the exact warm-compress/controlled-head-delivery detail.",
+    ];
+  }
+  return [
+    "**Q12:** the stem says oxygen “concentration,” while the options are flow rates; 15 L/min is supported by the maternal-collapse lecture.",
+    "**Q18:** the exact Pinard/Doppler and timing technique is not stated in the verified normal-labour lecture.",
+    "**Q19:** the sickle-cell item has potential single-best-answer ambiguity around prophylactic heparin wording.",
+    "**Q22:** “vulvodynia” is absent from the verified corpus; the mapped vulval-conditions lecture is the closest topical source.",
+    "**Q23:** wording differs between the first visible gestational sac and the earliest definitive yolk-sac sign; antenatal care is primary and ultrasound is alternate.",
+    "**Q40:** the captured item has only three options, unlike surrounding four-option questions.",
+    "**Q41:** the source capture was truncated; its options/key were reconstructed, although the Endometriosis lecture independently supports Sampson’s theory.",
+    "**Q43:** the ovarian-cancer lecture strongly supports the topic, but does not explicitly state “transcoelomic” as the most common route.",
+  ];
+}
+
+function deckLowerConfidenceRationale(row, deckId) {
+  if (deckId === "womens-health" && String(row.questionId) === "43") {
+    return "Mechanism and normal-labour lectures both directly support active labour at 7 cm and non-engagement at −2; medium reflects defensible primary/alternate ordering.";
+  }
+  return row.rationale;
+}
+
+function formatQuestionList(values) {
+  return [...values]
+    .sort((a, b) => Number(a) - Number(b) || String(a).localeCompare(String(b)))
+    .map((value) => `Q${value}`)
+    .join(", ");
 }
 
 function buildQuestionAppendix(sourceRows) {

@@ -20,7 +20,7 @@ python3 scripts/render_lecture_report.py
 node test_lecture_report.mjs
 ```
 
-The coverage test fails if any of the 220 source questions is unmapped, duplicated, or points to non-canonical lecture metadata. The report test checks mock-only counting, answer provenance, CSV integrity, and that the tracked PDF was rendered from the current Markdown. PDF rendering requires Python-Markdown and Chrome/Chromium; set `CHROME_BIN` when the browser is not on `PATH`.
+The coverage test fails if any of the 220 source questions is unmapped, duplicated, or points to non-canonical lecture metadata. The report test checks mock-only counting, answer provenance, CSV integrity, and the two-entry checksum manifest that binds each tracked PDF to its current Markdown source and exact rendered PDF bytes. PDF rendering requires Python-Markdown and Chrome/Chromium; set `CHROME_BIN` when the browser is not on `PATH`.
 
 The report command rebuilds:
 
@@ -28,8 +28,11 @@ The report command rebuilds:
 - `reports/question-to-lecture-map.md` — compact human-readable mapping for every question.
 - `reports/question-to-lecture-map.csv` — spreadsheet-ready mapping with full question text.
 - `reports/lecture-focus-data.json` — machine-readable counts.
+- `reports/final-1-lecture-focus-report.md` and `reports/final-2-lecture-focus-report.md` — standalone, paper-specific study-priority reports.
+- `reports/final-1-question-to-lecture-map.csv` and `reports/final-2-question-to-lecture-map.csv` — paper-only detailed mappings.
+- `reports/final-1-lecture-focus-data.json` and `reports/final-2-lecture-focus-data.json` — paper-only machine-readable counts.
 
-Curated decision records are preserved separately in `reports/mapping-audit-notes.md` and `reports/audits/`, including approved corrections, source-question caveats, and a hash manifest for the non-redistributed lecture corpus. The presentation-ready summary is `reports/S3-Ghana_MED422_Lecture_Focus_Report.pdf`.
+Curated decision records are preserved separately in `reports/mapping-audit-notes.md` and `reports/audits/`, including approved corrections, source-question caveats, and a hash manifest for the non-redistributed lecture corpus. The PDF renderer rebuilds the combined presentation report plus separate `S3-Ghana_MED422_Final_1_Lecture_Focus_Report.pdf` and `S3-Ghana_MED422_Final_2_Lecture_Focus_Report.pdf` files; each PDF has a matching `.source.sha256` manifest containing both its Markdown-source hash and exact PDF hash.
 
 ## Progress, resume and backups
 

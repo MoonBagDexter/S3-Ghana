@@ -68,12 +68,89 @@ assert.ok(corpusManifest.lectures.every((lecture) => /^[a-f0-9]{64}$/.test(lectu
 assert.doesNotMatch(corpusManifestText, /\/(?:root|tmp)\//, "audit corpus manifest must not expose machine-local absolute paths");
 
 const sourceHash = crypto.createHash("sha256").update(fs.readFileSync(reportMarkdownPath)).digest("hex");
-const recordedHash = fs.readFileSync(freshnessPath, "utf8").trim().split(/\s+/)[0];
-assert.equal(recordedHash, sourceHash, "tracked PDF is stale; run scripts/render_lecture_report.py");
+const reportChecksums = readChecksums(freshnessPath);
+assert.equal(reportChecksums.get("lecture-focus-report.md"), sourceHash, "tracked PDF source is stale; run scripts/render_lecture_report.py");
 const pdf = fs.readFileSync(pdfPath);
 assert.ok(pdf.length > 10_000 && pdf.subarray(0, 5).toString() === "%PDF-", "tracked PDF is invalid");
+assert.equal(
+  reportChecksums.get("S3-Ghana_MED422_Lecture_Focus_Report.pdf"),
+  crypto.createHash("sha256").update(pdf).digest("hex"),
+  "tracked PDF bytes do not match the renderer manifest",
+);
 
-console.log("PASS: report counts, provenance, mock scoping, CSV, and PDF freshness are valid.");
+const standaloneReports = [
+  {
+    slug: "final-1",
+    deckId: "womens-health",
+    expected: {
+      questions: 55,
+      distinctPrimaryLectures: 22,
+      alternateMappings: 7,
+      confidence: { high: 51, medium: 2, low: 2 },
+      answerProvenance: { inferred: 55 },
+      testGroups: { 1: 38, 2: 11, 3: 6 },
+      maxPrimaryCount: 4,
+    },
+    pdf: "reports/S3-Ghana_MED422_Final_1_Lecture_Focus_Report.pdf",
+    freshness: "reports/S3-Ghana_MED422_Final_1_Lecture_Focus_Report.source.sha256",
+  },
+  {
+    slug: "final-2",
+    deckId: "mock-final",
+    expected: {
+      questions: 48,
+      distinctPrimaryLectures: 43,
+      alternateMappings: 17,
+      confidence: { high: 45, medium: 3 },
+      answerProvenance: { unknown: 47, inferred: 1 },
+      testGroups: { 1: 16, 2: 16, 3: 16 },
+      maxPrimaryCount: 2,
+    },
+    pdf: "reports/S3-Ghana_MED422_Final_2_Lecture_Focus_Report.pdf",
+    freshness: "reports/S3-Ghana_MED422_Final_2_Lecture_Focus_Report.source.sha256",
+  },
+];
+
+for (const report of standaloneReports) {
+  const markdownPath = `reports/${report.slug}-lecture-focus-report.md`;
+  const dataPath = `reports/${report.slug}-lecture-focus-data.json`;
+  const deckCsvPath = `reports/${report.slug}-question-to-lecture-map.csv`;
+  const deckData = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+  for (const [key, value] of Object.entries(report.expected)) {
+    assert.deepEqual(deckData[key], value, `${report.slug} ${key} changed unexpectedly`);
+  }
+  assert.equal(deckData.deckId, report.deckId);
+  assert.equal(deckData.lectures.reduce((sum, lecture) => sum + lecture.total, 0), report.expected.questions);
+  const footprintNumbers = deckData.lectures.flatMap((lecture) => lecture.questionNumbers.map(String));
+  assert.equal(footprintNumbers.length, report.expected.questions, `${report.slug} footprint must include every question`);
+  assert.equal(new Set(footprintNumbers).size, report.expected.questions, `${report.slug} footprint question numbers must be unique`);
+
+  const deckCsvRows = parseCsv(fs.readFileSync(deckCsvPath, "utf8"));
+  const deckHeader = deckCsvRows.shift();
+  const deckIdIndex = deckHeader.indexOf("deck_id");
+  const deckQuestionNumberIndex = deckHeader.indexOf("question_number");
+  assert.ok(deckIdIndex >= 0 && deckQuestionNumberIndex >= 0, `${report.slug} CSV contract columns are missing`);
+  assert.equal(deckCsvRows.length, report.expected.questions, `${report.slug} CSV row count is wrong`);
+  assert.ok(deckCsvRows.every((row) => row[deckIdIndex] === report.deckId), `${report.slug} CSV leaked another deck`);
+  assert.deepEqual(
+    new Set(deckCsvRows.map((row) => row[deckQuestionNumberIndex])),
+    new Set(footprintNumbers),
+    `${report.slug} CSV and lecture footprint question numbers differ`,
+  );
+
+  const deckSourceHash = crypto.createHash("sha256").update(fs.readFileSync(markdownPath)).digest("hex");
+  const deckChecksums = readChecksums(report.freshness);
+  assert.equal(deckChecksums.get(markdownPath.split("/").at(-1)), deckSourceHash, `${report.slug} PDF source is stale; run scripts/render_lecture_report.py`);
+  const deckPdf = fs.readFileSync(report.pdf);
+  assert.ok(deckPdf.length > 10_000 && deckPdf.subarray(0, 5).toString() === "%PDF-", `${report.slug} PDF is invalid`);
+  assert.equal(
+    deckChecksums.get(report.pdf.split("/").at(-1)),
+    crypto.createHash("sha256").update(deckPdf).digest("hex"),
+    `${report.slug} PDF bytes do not match the renderer manifest`,
+  );
+}
+
+console.log("PASS: report counts, provenance, mock scoping, standalone deck reports, CSV, and PDF freshness are valid.");
 
 function byCode(rows) {
   const result = new Map(rows.map((row) => [`${row.testGroup}:${row.officialNumber}`, row]));
@@ -88,6 +165,18 @@ function countBy(items, keyFn) {
     out[key] = (out[key] || 0) + 1;
   }
   return out;
+}
+
+function readChecksums(filePath) {
+  const checksums = new Map();
+  for (const line of fs.readFileSync(filePath, "utf8").trim().split("\n")) {
+    const match = line.match(/^([a-f0-9]{64})  (.+)$/);
+    assert.ok(match, `${filePath} contains an invalid checksum line`);
+    assert.ok(!checksums.has(match[2]), `${filePath} contains a duplicate checksum name`);
+    checksums.set(match[2], match[1]);
+  }
+  assert.equal(checksums.size, 2, `${filePath} must bind one Markdown source and one PDF`);
+  return checksums;
 }
 
 function parseCsv(text) {

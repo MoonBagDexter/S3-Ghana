@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the generated lecture-focus Markdown report to its tracked PDF.
+"""Render the generated lecture-focus Markdown reports to tracked PDFs.
 
 Requires Python-Markdown and a Chromium-compatible browser. Set CHROME_BIN when
 Chrome is not on PATH or in the local agent-browser cache.
@@ -17,9 +17,26 @@ import tempfile
 import markdown
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "reports" / "lecture-focus-report.md"
-OUTPUT = ROOT / "reports" / "S3-Ghana_MED422_Lecture_Focus_Report.pdf"
-FRESHNESS = ROOT / "reports" / "S3-Ghana_MED422_Lecture_Focus_Report.source.sha256"
+REPORTS = [
+    {
+        "source": ROOT / "reports" / "lecture-focus-report.md",
+        "output": ROOT / "reports" / "S3-Ghana_MED422_Lecture_Focus_Report.pdf",
+        "freshness": ROOT / "reports" / "S3-Ghana_MED422_Lecture_Focus_Report.source.sha256",
+        "title": "S3 Ghana MED422 Lecture Focus Report",
+    },
+    {
+        "source": ROOT / "reports" / "final-1-lecture-focus-report.md",
+        "output": ROOT / "reports" / "S3-Ghana_MED422_Final_1_Lecture_Focus_Report.pdf",
+        "freshness": ROOT / "reports" / "S3-Ghana_MED422_Final_1_Lecture_Focus_Report.source.sha256",
+        "title": "S3 Ghana MED422 Final 1 Lecture Focus Report",
+    },
+    {
+        "source": ROOT / "reports" / "final-2-lecture-focus-report.md",
+        "output": ROOT / "reports" / "S3-Ghana_MED422_Final_2_Lecture_Focus_Report.pdf",
+        "freshness": ROOT / "reports" / "S3-Ghana_MED422_Final_2_Lecture_Focus_Report.source.sha256",
+        "title": "S3 Ghana MED422 Final 2 Lecture Focus Report",
+    },
+]
 
 CSS = r"""
 @page { size: A4 landscape; margin: 11mm 12mm 12mm; }
@@ -48,6 +65,7 @@ a { color:var(--blue); }
 body > h2:last-of-type { margin-top:2mm; margin-bottom:.8mm; padding-bottom:.8mm; }
 body > h2:last-of-type + ul { margin-top:.8mm; margin-bottom:0; }
 body > h2:last-of-type + ul li { margin:.3mm 0; }
+.page-break { break-before:page; height:0; }
 @media print { h2 { break-before:auto; } }
 """
 
@@ -71,12 +89,22 @@ def find_chrome() -> str:
     raise SystemExit("No Chrome/Chromium binary found; set CHROME_BIN")
 
 
-def main() -> None:
-    source_text = SOURCE.read_text(encoding="utf-8")
+def render_report(report: dict[str, Path | str], chrome: str) -> None:
+    source = report["source"]
+    output = report["output"]
+    freshness = report["freshness"]
+    title = report["title"]
+    assert isinstance(source, Path)
+    assert isinstance(output, Path)
+    assert isinstance(freshness, Path)
+    assert isinstance(title, str)
+
+    source_bytes = source.read_bytes()
+    source_text = source_bytes.decode("utf-8")
     body = markdown.markdown(source_text, extensions=["tables", "fenced_code", "toc"])
     document = (
         '<!doctype html><html><head><meta charset="utf-8">'
-        f"<title>S3 Ghana MED422 Lecture Focus Report</title><style>{CSS}</style>"
+        f"<title>{title}</title><style>{CSS}</style>"
         f"</head><body>{body}</body></html>"
     )
 
@@ -86,7 +114,7 @@ def main() -> None:
         pdf_path = temp / "report.pdf"
         html_path.write_text(document, encoding="utf-8")
         command = [
-            find_chrome(),
+            chrome,
             "--headless=new",
             "--no-sandbox",
             "--disable-gpu",
@@ -100,15 +128,27 @@ def main() -> None:
         result = subprocess.run(command, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=120)
         if result.returncode != 0 or not pdf_path.exists():
             raise SystemExit(f"Chrome PDF render failed ({result.returncode}):\n{result.stdout}")
-        if not pdf_path.read_bytes().startswith(b"%PDF-") or pdf_path.stat().st_size < 10_000:
+        rendered_pdf = pdf_path.read_bytes()
+        if not rendered_pdf.startswith(b"%PDF-") or len(rendered_pdf) < 10_000:
             raise SystemExit("Chrome produced an invalid or unexpectedly small PDF")
-        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-        pdf_path.replace(OUTPUT)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        pdf_path.replace(output)
 
-    source_hash = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
-    FRESHNESS.write_text(f"{source_hash}  lecture-focus-report.md\n", encoding="utf-8")
-    print(f"Rendered {OUTPUT.relative_to(ROOT)} ({OUTPUT.stat().st_size} bytes)")
+    source_hash = hashlib.sha256(source_bytes).hexdigest()
+    pdf_hash = hashlib.sha256(output.read_bytes()).hexdigest()
+    freshness.write_text(
+        f"{source_hash}  {source.name}\n{pdf_hash}  {output.name}\n",
+        encoding="utf-8",
+    )
+    print(f"Rendered {output.relative_to(ROOT)} ({output.stat().st_size} bytes)")
     print(f"Source SHA-256: {source_hash}")
+    print(f"PDF SHA-256: {pdf_hash}")
+
+
+def main() -> None:
+    chrome = find_chrome()
+    for report in REPORTS:
+        render_report(report, chrome)
 
 
 if __name__ == "__main__":

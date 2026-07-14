@@ -512,8 +512,10 @@
         '<button class="icon-btn zoom-btn" id="zoomIn" title="Make everything bigger" aria-label="Make everything bigger">+</button>' +
         '<button class="icon-btn" id="gridBtn" title="Question grid" aria-label="Question grid">&#9638;</button>' +
       "</div>" +
-      (CATEGORIES.length > 1 ? '<div class="cat-tabs">' + catTabs + "</div>" : "") +
-      '<div class="deck-tabs">' + tabs + "</div>" +
+      '<div class="nav-tabs">' +
+        (CATEGORIES.length > 1 ? '<div class="cat-tabs">' + catTabs + "</div>" : "") +
+        '<div class="deck-tabs">' + tabs + "</div>" +
+      "</div>" +
       '<div class="progress-wrap">' +
         '<div class="progress-track"><div class="progress-fill" style="width:' + pct + '%"></div></div>' +
         '<div class="progress-meta">' + s.answered + "/" + s.total + " &middot; " + s.pctCorrect + "% correct</div>" +

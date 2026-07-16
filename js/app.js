@@ -510,6 +510,7 @@
         '<div class="header-title">OB/GYN Revision</div>' +
         '<button class="icon-btn zoom-btn" id="zoomOut" title="Make everything smaller" aria-label="Make everything smaller">&minus;</button>' +
         '<button class="icon-btn zoom-btn" id="zoomIn" title="Make everything bigger" aria-label="Make everything bigger">+</button>' +
+        '<button class="icon-btn" id="refreshBtn" title="Hard refresh (reload latest questions)" aria-label="Hard refresh">&#10227;</button>' +
         '<button class="icon-btn" id="gridBtn" title="Question grid" aria-label="Question grid">&#9638;</button>' +
       "</div>" +
       '<div class="nav-tabs">' +
@@ -525,6 +526,7 @@
     hdr.querySelector("#zoomOut").addEventListener("click", function () { changeScale(-1); });
     hdr.querySelector("#zoomIn").addEventListener("click", function () { changeScale(1); });
     hdr.querySelector("#gridBtn").addEventListener("click", openGrid);
+    hdr.querySelector("#refreshBtn").addEventListener("click", hardRefresh);
     applyScale(); // sync the +/- disabled states with the current scale
     hdr.querySelectorAll(".cat-tab").forEach(function (t) {
       t.addEventListener("click", function () { switchCategory(t.getAttribute("data-cat")); });
@@ -539,6 +541,56 @@
     state.pendingProfile = null;
     state.showCompletion = false;
     renderProfilePicker();
+  }
+
+  /* ---------- Hard refresh ----------
+     Pulls the latest deployed questions when the site is used as a home-screen
+     app (where the browser otherwise serves stale cached data files). Clears any
+     PWA/service-worker caches, then reloads with a fresh "?r=" cache-buster so
+     index.html refetches every data file from the network. Progress lives in
+     localStorage and is untouched. */
+  function hardRefresh() {
+    var btn = document.getElementById("refreshBtn");
+    if (btn) { btn.classList.add("spinning"); btn.disabled = true; }
+
+    var navigated = false;
+    function reloadFresh() {
+      if (navigated) return;
+      navigated = true;
+      var http = location.protocol === "http:" || location.protocol === "https:";
+      if (!http) { location.reload(); return; } // file:// can't carry a query
+      try {
+        var url = new URL(location.href);
+        url.searchParams.set("r", Date.now().toString(36));
+        url.hash = "";
+        location.replace(url.toString());
+      } catch (e) {
+        location.reload();
+      }
+    }
+
+    var tasks = [];
+    try {
+      if (window.caches && caches.keys) {
+        tasks.push(caches.keys().then(function (keys) {
+          return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+        }).catch(function () {}));
+      }
+    } catch (e) {}
+    try {
+      if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+        tasks.push(navigator.serviceWorker.getRegistrations().then(function (regs) {
+          return Promise.all(regs.map(function (reg) { return reg.unregister(); }));
+        }).catch(function () {}));
+      }
+    } catch (e) {}
+
+    if (tasks.length && window.Promise) {
+      Promise.all(tasks).then(reloadFresh, reloadFresh);
+      setTimeout(reloadFresh, 1500); // safety net if a clear-cache call hangs
+    } else {
+      reloadFresh();
+    }
   }
 
   function switchCategory(catId) {

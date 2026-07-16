@@ -9,28 +9,28 @@ window.QUIZ_DECKS.push({
         3,
         4
       ],
-      "caseStem": "A mother and her 16-year-old daughter present to your office because the daughter has not yet menstruated. They are very concerned that something is wrong. By applying principles of puberty to this patient, it is possible to determine if the teen is simply undergoing a slightly delayed puberty versus potentially manifesting a significant endocrine or anatomical problem.",
-      "question": "Which of the following best describes the normal sequence of pubertal changes in the female?",
+      "caseStem": "A 16-year-old has not yet had her first menstrual period.",
+      "question": "What is the usual order of these pubertal events?",
       "options": [
         {
           "key": "A",
-          "text": "maximal growth velocity, menarche, thelarche"
+          "text": "Peak height velocity, menarche, breast development"
         },
         {
           "key": "B",
-          "text": "maximal growth velocity, thelarche, menarche"
+          "text": "Peak height velocity, breast development, menarche"
         },
         {
           "key": "C",
-          "text": "menarche, maximal growth velocity, thelarche"
+          "text": "Menarche, peak height velocity, breast development"
         },
         {
           "key": "D",
-          "text": "thelarche, maximal growth velocity, menarche"
+          "text": "Breast development, peak height velocity, menarche"
         },
         {
           "key": "E",
-          "text": "thelarche, menarche, maximal growth velocity"
+          "text": "Breast development, menarche, peak height velocity"
         }
       ],
       "correct": "D",
@@ -42,8 +42,9 @@ window.QUIZ_DECKS.push({
         "D": "Correct. The normal order is thelarche (breast budding), followed by the peak growth spurt (maximal growth velocity), and finally menarche, which occurs after the growth velocity has already peaked and begun to decline.",
         "E": "Incorrect. Maximal growth velocity actually precedes menarche; a girl's peak height velocity is reached before she starts menstruating, so menarche cannot come before the growth spurt."
       },
-      "teaching": "The classic female pubertal sequence is thelarche -> adrenarche/pubarche -> peak height velocity (maximal growth spurt) -> menarche. A key clinical point is that peak growth velocity occurs BEFORE menarche, so once a girl reaches menarche most of her linear growth is nearly complete. Knowing this order lets you judge whether a teen who has not yet menstruated is simply delayed or has an underlying endocrine/anatomic problem.",
-      "id": 1
+      "teaching": "Breast development usually starts first, peak height velocity follows, and menarche occurs after growth has begun to slow.",
+      "id": 1,
+      "examTip": "Remember: breasts, growth spurt, then first period."
     },
     {
       "num": 2,
@@ -51,36 +52,37 @@ window.QUIZ_DECKS.push({
         5,
         6
       ],
-      "caseStem": "A mother and her 16-year-old daughter present to your office because the daughter has not yet menstruated. They are very concerned that something is wrong. By applying principles of puberty to this patient, it is possible to determine if the teen is simply undergoing a slightly delayed puberty versus potentially manifesting a significant endocrine or anatomical problem.",
-      "question": "Menarche usually occurs between which years of age?",
+      "caseStem": "A 16-year-old has not yet had her first menstrual period.",
+      "question": "At what age does menarche most often occur?",
       "options": [
         {
           "key": "A",
-          "text": "8 and 10 years"
+          "text": "8–10 years"
         },
         {
           "key": "B",
-          "text": "11 and 13 years"
+          "text": "11–13 years"
         },
         {
           "key": "C",
-          "text": "14 and 16 years"
+          "text": "14–16 years"
         },
         {
           "key": "D",
-          "text": "17 and 18 years"
+          "text": "17–18 years"
         }
       ],
       "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Menstruation beginning at 8-10 years would be considered early/precocious rather than the usual age of menarche.",
-        "B": "Correct. Menarche normally occurs between about 11 and 13 years, with an average age of roughly 12.5 years.",
-        "C": "Incorrect. Menarche at 14-16 years is later than average; absence of menses by 15-16 warrants evaluation for delayed puberty.",
-        "D": "Incorrect. No menarche by 17-18 years is well outside the normal range and defines primary amenorrhea requiring workup."
+        "A": "Menarche at 8 is unusually early; age 10 can occur but is earlier than the usual 11–13-year range.",
+        "B": "Correct. Menarche most often occurs around ages 11–13, with a mean near 12–13.",
+        "C": "This range is later than average; no menarche by age 15 should be evaluated.",
+        "D": "This is far later than expected and requires evaluation for primary amenorrhea."
       },
-      "teaching": "Average age of menarche is about 12.5 years, typically falling within the 11-13 year window. Primary amenorrhea should be evaluated if there is no menarche by age 15 with normal secondary sexual characteristics, or by age 13 with no secondary sexual development. This 16-year-old with no menses is therefore beyond the normal window and merits investigation.",
-      "id": 2
+      "teaching": "Menarche occurs at a mean age of about 12–13 years. Evaluate primary amenorrhea by age 15, or by age 13 if secondary sexual characteristics are absent.",
+      "id": 2,
+      "examTip": "No menarche by age 15 needs evaluation."
     },
     {
       "num": 3,
@@ -88,41 +90,42 @@ window.QUIZ_DECKS.push({
         7,
         8
       ],
-      "caseStem": "A mother and her 16-year-old daughter present to your office because the daughter has not yet menstruated. They are very concerned that something is wrong. By applying principles of puberty to this patient, it is possible to determine if the teen is simply undergoing a slightly delayed puberty versus potentially manifesting a significant endocrine or anatomical problem.",
-      "question": "Which of the following pubertal events is not mediated by gonadal estrogen production and therefore would occur even in the absence of estrogen production?",
+      "caseStem": "A teenager is being assessed for delayed puberty and very low estrogen production.",
+      "question": "Which pubertal change can still occur without ovarian estrogen?",
       "options": [
         {
           "key": "A",
-          "text": "breast development"
+          "text": "Breast development"
         },
         {
           "key": "B",
-          "text": "menstruation"
+          "text": "Menstruation"
         },
         {
           "key": "C",
-          "text": "pubic hair growth"
+          "text": "Pubic hair growth"
         },
         {
           "key": "D",
-          "text": "accelerated skeletal growth"
+          "text": "Peak pubertal growth spurt"
         },
         {
           "key": "E",
-          "text": "vaginal cornification"
+          "text": "Maturation of the vaginal lining"
         }
       ],
       "correct": "C",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Breast (glandular) development is estrogen-dependent and would not occur normally without ovarian estrogen.",
-        "B": "Incorrect. Menstruation requires estrogen-driven endometrial proliferation followed by progesterone; without estrogen there is no endometrial lining to shed.",
-        "C": "Correct. Pubic (and axillary) hair growth is driven by adrenal and gonadal ANDROGENS (adrenarche), not estrogen, so it can occur even when estrogen production is absent (e.g., gonadal dysgenesis or androgen exposure).",
-        "D": "Incorrect. The pubertal skeletal growth spurt and epiphyseal maturation are strongly influenced by estrogen (together with GH/IGF-1), so it is estrogen-dependent.",
-        "E": "Incorrect. Vaginal cornification (maturation of the vaginal epithelium) is a classic estrogen effect and reflects estrogen action."
+        "A": "Breast development requires estrogen action.",
+        "B": "Normal cyclic menstruation requires estrogen-stimulated endometrium and ovarian steroid withdrawal.",
+        "C": "Correct. Adrenal androgens can produce pubic hair even when ovarian estrogen is absent.",
+        "D": "Estrogen contributes importantly to the pubertal growth spurt and epiphyseal maturation.",
+        "E": "Maturation of the vaginal epithelium is an estrogen effect."
       },
-      "teaching": "Sexual maturation is driven by two hormone axes: the adrenal androgen axis (adrenarche) producing pubic and axillary hair, and the gonadal estrogen axis producing breast development, endometrial growth/menstruation, vaginal cornification, and contributing to the growth spurt. Because pubic hair is androgen-mediated, a girl with ovarian failure can still develop pubic hair while lacking breast development and menses. This dissociation is a useful clue when evaluating delayed puberty.",
-      "id": 3
+      "teaching": "Adrenal androgens cause pubic and axillary hair. Estrogen drives breast, vaginal, endometrial, and much of skeletal maturation.",
+      "id": 3,
+      "examTip": "Pubic hair reflects androgens; breast development reflects estrogen."
     },
     {
       "num": 4,
@@ -130,20 +133,20 @@ window.QUIZ_DECKS.push({
         9,
         10
       ],
-      "caseStem": "A mother and her 16-year-old daughter present to your office because the daughter has not yet menstruated. They are very concerned that something is wrong. By applying principles of puberty to this patient, it is possible to determine if the teen is simply undergoing a slightly delayed puberty versus potentially manifesting a significant endocrine or anatomical problem.",
-      "question": "The appearance of external genitalia is of a normal prepubertal female. Laboratory studies show markedly elevated FSH and LH levels. Which of the following causes of delayed puberty accompanies elevated circulating gonadotropin levels?",
+      "caseStem": "A 16-year-old has delayed puberty, prepubertal external genitalia, and markedly raised follicle-stimulating hormone and luteinizing hormone levels.",
+      "question": "Which condition best explains these findings?",
       "options": [
         {
           "key": "A",
-          "text": "chronic illness"
+          "text": "Chronic systemic illness"
         },
         {
           "key": "B",
-          "text": "gonadal dysgenesis"
+          "text": "Gonadal dysgenesis"
         },
         {
           "key": "C",
-          "text": "hypothalamic tumors"
+          "text": "A hypothalamic tumor"
         },
         {
           "key": "D",
@@ -151,7 +154,7 @@ window.QUIZ_DECKS.push({
         },
         {
           "key": "E",
-          "text": "malnutrition"
+          "text": "Malnutrition"
         }
       ],
       "correct": "B",
@@ -163,8 +166,9 @@ window.QUIZ_DECKS.push({
         "D": "Incorrect. Kallmann syndrome is congenital GnRH deficiency with anosmia, giving low FSH/LH (hypogonadotropic hypogonadism).",
         "E": "Incorrect. Malnutrition suppresses the hypothalamic-pituitary axis, lowering gonadotropins (hypogonadotropic hypogonadism)."
       },
-      "teaching": "Delayed puberty is classified by gonadotropin levels. Elevated FSH/LH (hypergonadotropic hypogonadism) points to a problem at the gonad itself, such as gonadal dysgenesis/Turner syndrome, because the failing ovary cannot produce estrogen to suppress the pituitary. Low FSH/LH (hypogonadotropic hypogonadism) points to a central problem such as Kallmann syndrome, hypothalamic tumors, chronic illness, or malnutrition. Measuring gonadotropins is the key first step in localizing the lesion.",
-      "id": 4
+      "teaching": "High gonadotropins indicate primary ovarian failure; low gonadotropins suggest hypothalamic or pituitary suppression.",
+      "id": 4,
+      "examTip": "High FSH plus low estrogen means the ovary is failing."
     },
     {
       "num": 5,
@@ -172,28 +176,28 @@ window.QUIZ_DECKS.push({
         12,
         13
       ],
-      "caseStem": "A 31-year-old G3P0Ab 3 woman is counseled to have an HSG for further evaluation of recurrent pregnancy loss and infertility? She has had three prior miscarriages requiring dilation and curettage. Otherwise, she is healthy. She has been attempting pregnancy for 13 months.",
-      "question": "Which of the following is the HSG likely to reveal given her history?",
+      "caseStem": "A 31-year-old has infertility after three miscarriages, each managed with dilation and curettage. Hysterosalpingography is planned.",
+      "question": "Which finding is most likely?",
       "options": [
         {
           "key": "A",
-          "text": "unicornuate uterus"
+          "text": "Unicornuate uterus"
         },
         {
           "key": "B",
-          "text": "distal tubal obstruction"
+          "text": "Distal tubal blockage"
         },
         {
           "key": "C",
-          "text": "proximal tubal obstruction"
+          "text": "Proximal tubal blockage"
         },
         {
           "key": "D",
-          "text": "hydrosalpinx"
+          "text": "Hydrosalpinx"
         },
         {
           "key": "E",
-          "text": "intrauterine synechiae"
+          "text": "Intrauterine adhesions"
         }
       ],
       "correct": "E",
@@ -205,8 +209,9 @@ window.QUIZ_DECKS.push({
         "D": "Incorrect. Hydrosalpinx is a fluid-filled, distally blocked tube from prior tubal infection, unrelated to her history of repeated D&C.",
         "E": "Correct. Three miscarriages each requiring dilation and curettage strongly predispose to intrauterine adhesions (Asherman syndrome); HSG would reveal intrauterine synechiae, which cause both recurrent pregnancy loss and infertility."
       },
-      "teaching": "Repeated instrumentation of the uterine cavity, especially dilation and curettage after pregnancy loss, damages the basalis layer of the endometrium and leads to intrauterine adhesions (Asherman syndrome). Clinically this causes menstrual abnormalities (hypomenorrhea/amenorrhea), infertility, and recurrent pregnancy loss. On hysterosalpingography, adhesions appear as filling defects/synechiae within the cavity, making intrauterine synechiae the expected finding in a woman with multiple prior D&Cs.",
-      "id": 5
+      "teaching": "Pregnancy-related uterine curettage can damage the endometrial basalis and cause intrauterine adhesions (Asherman syndrome).",
+      "id": 5,
+      "examTip": "After repeated curettage, think intrauterine adhesions."
     },
     {
       "num": 6,
@@ -214,41 +219,42 @@ window.QUIZ_DECKS.push({
         13,
         14
       ],
-      "caseStem": "A 31-year-old G3P0Ab 3 woman is counseled to have an HSG for further evaluation of recurrent pregnancy loss and infertility? She has had three prior miscarriages requiring dilation and curettage. Otherwise, she is healthy. She has been attempting pregnancy for 13 months.",
-      "question": "What would be the next step of management for evaluation of cause of RPL?",
+      "caseStem": "A 31-year-old with infertility and repeated uterine curettage has a hysterosalpingogram suggesting intrauterine adhesions.",
+      "question": "What is the best next procedure?",
       "options": [
         {
           "key": "A",
-          "text": "Thrombophilia screening."
+          "text": "Inherited thrombophilia testing"
         },
         {
           "key": "B",
-          "text": "Laparoscopy."
+          "text": "Laparoscopy"
         },
         {
           "key": "C",
-          "text": "Laparoscopy and hysteroscopy."
+          "text": "Combined laparoscopy and hysteroscopy"
         },
         {
           "key": "D",
-          "text": "3D ultrasound."
+          "text": "Three-dimensional pelvic ultrasound"
         },
         {
           "key": "E",
-          "text": "Hysteroscopy."
+          "text": "Hysteroscopy"
         }
       ],
       "correct": "E",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Thrombophilia screening evaluates second-trimester/recurrent loss from a hematologic cause, but given HSG findings suggesting intrauterine adhesions the cavity itself must be assessed directly.",
-        "B": "Incorrect. Laparoscopy visualizes the external pelvis/peritoneum and tubes but cannot inspect or treat adhesions inside the uterine cavity.",
-        "C": "Incorrect. Adding laparoscopy is unnecessary here because the suspected pathology (intrauterine synechiae) is intracavitary; laparoscopy adds morbidity without addressing it.",
-        "D": "Incorrect. 3D ultrasound is excellent for congenital uterine anomalies but is inferior to direct visualization for diagnosing and treating intrauterine adhesions.",
-        "E": "Correct. Hysteroscopy is the gold standard to directly visualize the uterine cavity, confirm intrauterine synechiae/Asherman syndrome, and simultaneously treat them by adhesiolysis; it is the appropriate next step after an abnormal HSG."
+        "A": "Routine inherited thrombophilia screening is not indicated here; the history points to an acquired uterine-cavity lesion.",
+        "B": "Laparoscopy examines the pelvis but not the inside of the uterine cavity.",
+        "C": "Laparoscopy adds no clear benefit when isolated intracavitary adhesions are suspected.",
+        "D": "Three-dimensional ultrasound can assess uterine shape but cannot treat adhesions.",
+        "E": "Correct. Hysteroscopy directly confirms and can treat intrauterine adhesions."
       },
-      "teaching": "When HSG suggests an intrauterine abnormality such as adhesions (Asherman syndrome), hysteroscopy is both the diagnostic gold standard and the therapeutic tool, allowing direct visualization and operative adhesiolysis in the same setting. HSG is a good screening test but has limited sensitivity/specificity for cavity lesions, so an abnormal or suspicious HSG is confirmed by hysteroscopy. In this RPL patient with multiple prior D&Cs, hysteroscopy is the logical next step to establish and treat the cause.",
-      "id": 6
+      "teaching": "Hysteroscopy directly confirms intrauterine adhesions and permits adhesiolysis during the same procedure.",
+      "id": 6,
+      "examTip": "An intracavitary lesion is best seen—and treated—by hysteroscopy."
     },
     {
       "num": 7,
@@ -256,41 +262,42 @@ window.QUIZ_DECKS.push({
         15,
         16
       ],
-      "caseStem": null,
-      "question": "A 22-year-old woman with amenorrhea of 6 weeks' duration undergoes surgery for acute appendicitis. At the time of surgery, a 3-cm semisolid left ovarian cyst is discovered. It is vascular and appears to contain a blood-filled central cavity. A serum pregnancy test is positive. Which of the following is the most appropriate next step in this patient's management?",
+      "caseStem": "During appendectomy, a 22-year-old at 6 weeks of pregnancy is found to have a 3 cm vascular ovarian cyst with a blood-filled center.",
+      "question": "What should be done about the cyst?",
       "options": [
         {
           "key": "A",
-          "text": "ovarian cystectomy"
+          "text": "Ovarian cystectomy"
         },
         {
           "key": "B",
-          "text": "ovarian wedge resection"
+          "text": "Ovarian wedge resection"
         },
         {
           "key": "C",
-          "text": "oophorectomy"
+          "text": "Oophorectomy"
         },
         {
           "key": "D",
-          "text": "salpingo-oophorectomy"
+          "text": "Salpingo-oophorectomy"
         },
         {
           "key": "E",
-          "text": "no additional therapy indicated"
+          "text": "No treatment of the cyst"
         }
       ],
       "correct": "E",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. A 3-cm vascular cyst with a blood-filled central cavity in a woman who is 6 weeks pregnant is a corpus luteum of pregnancy, a normal physiologic structure; removing it (cystectomy) is unnecessary and risks disrupting progesterone support of the early pregnancy.",
+        "A": "A cystectomy is unnecessary and could disrupt progesterone support in very early pregnancy.",
         "B": "Incorrect. Wedge resection is a destructive procedure with no role here; the corpus luteum is a normal functional finding, not a pathologic mass requiring debulking.",
         "C": "Incorrect. Oophorectomy would remove a healthy ovary and the corpus luteum that supports the pregnancy until placental takeover, and is not indicated for a benign physiologic cyst.",
         "D": "Incorrect. Salpingo-oophorectomy is even more radical, sacrificing the tube and ovary, and is unwarranted for an incidental corpus luteum of pregnancy.",
-        "E": "Correct. The description is classic for a corpus luteum of pregnancy, a benign self-limited structure that regresses after the first trimester; it should be left undisturbed and no additional therapy is indicated."
+        "E": "Correct. This is a small physiologic corpus luteum of pregnancy; no intervention is needed without torsion, rupture, or suspicious features."
       },
-      "teaching": "In early pregnancy the corpus luteum is essential for progesterone production until the placenta takes over around 8-10 weeks. A small (typically <5 cm), vascular, blood-containing ovarian cyst found incidentally in a pregnant woman is almost always a corpus luteum and should simply be left alone. Removing it can precipitate miscarriage by withdrawing hormonal support, so conservative observation is the rule unless there is torsion, rupture, or features suggesting malignancy.",
-      "id": 7
+      "teaching": "A small vascular cyst in early pregnancy is usually the corpus luteum. Leave it intact unless complications or malignant features are present.",
+      "id": 7,
+      "examTip": "Do not remove an uncomplicated corpus luteum in early pregnancy."
     },
     {
       "num": 8,
@@ -298,41 +305,42 @@ window.QUIZ_DECKS.push({
         17,
         18
       ],
-      "caseStem": null,
-      "question": "Female pseudohermaphroditism refers to individuals who have which of the following?",
+      "caseStem": "A newborn with a 46,XX karyotype has ovaries and virilized external genitalia after prenatal androgen exposure.",
+      "question": "Which description best fits this condition?",
       "options": [
         {
           "key": "A",
-          "text": "ovaries, an XX karyotype, and varying degrees of masculinization"
+          "text": "46,XX difference of sex development due to androgen excess"
         },
         {
           "key": "B",
-          "text": "testes, an XY karyotype, and varying degrees of masculinization failure"
+          "text": "46,XY difference of sex development with undervirilization"
         },
         {
           "key": "C",
-          "text": "ovaries, an XY karyotype, and varying degrees of masculinization failure"
+          "text": "46,XY individual with ovaries"
         },
         {
           "key": "D",
-          "text": "testes, an XX karyotype, and severe masculinization"
+          "text": "46,XX individual with testes"
         },
         {
           "key": "E",
-          "text": "both ovarian and testicular tissue"
+          "text": "Ovotesticular difference of sex development"
         }
       ],
       "correct": "A",
       "answerSource": "circled",
       "explanations": {
-        "A": "Correct. Female pseudohermaphroditism (46,XX DSD) describes a genetically and gonadally female individual (ovaries, XX karyotype) whose external genitalia are virilized/masculinized, most commonly due to excess androgen exposure such as in congenital adrenal hyperplasia.",
-        "B": "Incorrect. Testes with an XY karyotype and failure of masculinization describes male pseudohermaphroditism (46,XY DSD), not female pseudohermaphroditism.",
-        "C": "Incorrect. Ovaries do not coexist with an XY karyotype in this classic definition; this combination is internally inconsistent and does not describe female pseudohermaphroditism.",
-        "D": "Incorrect. Testes with an XX karyotype describes a disorder of sex development such as XX male syndrome, not female pseudohermaphroditism.",
-        "E": "Incorrect. The presence of both ovarian and testicular tissue defines a true hermaphrodite (ovotesticular DSD), a separate entity."
+        "A": "Correct. A 46,XX individual with ovaries may have virilized external genitalia from excess prenatal androgen.",
+        "B": "This describes undervirilization in a 46,XY individual, not a 46,XX androgen-excess condition.",
+        "C": "An XY karyotype with ovaries does not fit this condition.",
+        "D": "An XX individual with testes represents a different sex-development condition.",
+        "E": "Ovotesticular difference of sex development requires both ovarian and testicular tissue."
       },
-      "teaching": "In the older terminology, 'pseudohermaphroditism' is defined by the gonad the person actually has. A female pseudohermaphrodite has ovaries and a 46,XX karyotype but virilized external genitalia, classically from congenital adrenal hyperplasia (21-hydroxylase deficiency) exposing the fetus to excess androgens. Contrast this with male pseudohermaphroditism (testes, 46,XY, undervirilized) and true hermaphroditism (both ovarian and testicular tissue present).",
-      "id": 8
+      "teaching": "A 46,XX fetus with ovaries can develop virilized external genitalia after excess androgen exposure, most often from congenital adrenal hyperplasia.",
+      "id": 8,
+      "examTip": "Classify sex development conditions by chromosomes, gonads, hormones, and anatomy—not outdated labels."
     },
     {
       "num": 9,
@@ -340,41 +348,42 @@ window.QUIZ_DECKS.push({
         19,
         20
       ],
-      "caseStem": null,
-      "question": "A 14-year-old girl is brought to you for evaluation of lower abdominal pain that has been progressive over the preceding 4 months. History indicates that she experienced a growth spurt at age 11 and has had normal breast and pubic hair growth that began approximately 2 years ago. She appears to be of appropriate height. She has no other medical conditions and takes no medications. She has not had a menstrual period and is not sexually active.\nWhat is the most appropriate next step in the evaluation of this patient?",
+      "caseStem": "A 14-year-old has normal breast and pubic hair development, primary amenorrhea, and 4 months of worsening monthly lower abdominal pain. She has never been sexually active.",
+      "question": "What is the best first step in her evaluation?",
       "options": [
         {
           "key": "A",
-          "text": "measurement of serum hCG"
+          "text": "Serum pregnancy test"
         },
         {
           "key": "B",
-          "text": "measurement of serum FSH"
+          "text": "Serum follicle-stimulating hormone"
         },
         {
           "key": "C",
-          "text": "imaging of the pituitary and sella turcica"
+          "text": "Pituitary imaging"
         },
         {
           "key": "D",
-          "text": "pelvic ultrasonography"
+          "text": "Pelvic ultrasound"
         },
         {
           "key": "E",
-          "text": "pelvic examination"
+          "text": "Inspection of the external genitalia"
         }
       ],
       "correct": "E",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. She is not sexually active and the picture is one of primary amenorrhea with normal secondary sexual characteristics and cyclic-type pain from outflow obstruction; a pregnancy test is not the most appropriate first step here.",
-        "B": "Incorrect. Serum FSH evaluates ovarian/pituitary function, but her breast and pubic hair development are normal, indicating intact hormonal axis; the problem is an anatomic outflow obstruction, not hypogonadism.",
-        "C": "Incorrect. Pituitary/sella imaging is used when a central endocrine cause (e.g., hyperprolactinemia, hypogonadotropism) is suspected; her normal puberty makes this unnecessary.",
-        "D": "Incorrect. Ultrasonography may follow, but the diagnosis of an imperforate hymen or hematocolpos is usually made first on simple physical/pelvic examination, which is quicker and less costly.",
-        "E": "Correct. Primary amenorrhea with normal secondary sexual characteristics plus progressive cyclic lower abdominal pain suggests obstructed menstrual outflow (e.g., imperforate hymen with hematocolpos); a pelvic/genital examination will reveal the bulging membrane and is the appropriate next step."
+        "A": "Pregnancy testing is usually part of amenorrhea evaluation, but the history and cyclic obstructive symptoms make genital inspection the best first step in this non-sexually-active patient.",
+        "B": "Normal secondary sexual development makes primary ovarian failure less likely.",
+        "C": "There is no sign of a central endocrine disorder to justify pituitary imaging first.",
+        "D": "Ultrasound can define retained blood and internal anatomy, but external inspection can immediately identify an imperforate hymen.",
+        "E": "Correct. External genital inspection may show a bulging imperforate hymen causing obstructed menses."
       },
-      "teaching": "When a teenager has normal breast and pubic hair development but no menses and cyclic/progressive pelvic pain, think anatomic outflow obstruction such as an imperforate hymen causing hematocolpos. Because puberty (and thus the hormonal axis) is clearly normal, the workup should start with inspection of the genitalia/pelvic examination rather than expensive hormonal or imaging tests. The classic finding is a bluish bulging hymenal membrane from retained menstrual blood.",
-      "id": 9
+      "teaching": "Normal secondary sexual characteristics plus cyclic pain and amenorrhea suggests an outflow obstruction such as an imperforate hymen.",
+      "id": 9,
+      "examTip": "Look for a bulging hymen before ordering endocrine tests."
     },
     {
       "num": 10,
@@ -382,8 +391,8 @@ window.QUIZ_DECKS.push({
         21,
         22
       ],
-      "caseStem": null,
-      "question": "A 55-year-old woman presents to the clinic enquiring about the use of hormone replacement therapy (HRT). She had a hysterectomy 8 years ago for fibroids. She has no contraindications or other past medical history, except a strong family history of osteoporosis. Her main symptoms are hot flushes and vaginal dryness. What would be your first treatment option?",
+      "caseStem": "A healthy 55-year-old has hot flushes and vaginal dryness. She had a total hysterectomy for fibroids and has no contraindication to menopausal hormone therapy.",
+      "question": "Which treatment is most appropriate?",
       "options": [
         {
           "key": "A",
@@ -391,19 +400,19 @@ window.QUIZ_DECKS.push({
         },
         {
           "key": "B",
-          "text": "Combined sequential HRT"
+          "text": "Sequential estrogen plus progestogen"
         },
         {
           "key": "C",
-          "text": "Estrogen-only HRT"
+          "text": "Estrogen-only therapy"
         },
         {
           "key": "D",
-          "text": "Oral calcium therapy only"
+          "text": "Calcium alone"
         },
         {
           "key": "E",
-          "text": "Selective serotonin reuptake inhibitor"
+          "text": "A selective serotonin reuptake inhibitor"
         }
       ],
       "correct": "C",
@@ -411,12 +420,13 @@ window.QUIZ_DECKS.push({
       "explanations": {
         "A": "Incorrect. SERMs (e.g., raloxifene) protect bone but do not relieve vasomotor symptoms and can actually worsen hot flushes, so they do not address her main complaint.",
         "B": "Incorrect. Combined (estrogen plus progestogen) HRT is required only for women with an intact uterus to protect the endometrium; she has had a hysterectomy, so adding a progestogen is unnecessary.",
-        "C": "Correct. Because she has had a hysterectomy she does not need endometrial protection, so unopposed estrogen-only HRT is the first-line choice; it relieves her hot flushes and vaginal dryness and also protects against osteoporosis, for which she has a strong family history.",
+        "C": "Correct. After total hysterectomy, estrogen-only therapy can treat hot flushes and vaginal dryness without adding a progestogen for endometrial protection.",
         "D": "Incorrect. Calcium alone does not treat vasomotor symptoms or vaginal dryness and is inadequate management for her presenting menopausal complaints.",
         "E": "Incorrect. SSRIs are a non-hormonal option for hot flushes when HRT is contraindicated, but she has no contraindications, so HRT is preferable and SSRIs do not help vaginal dryness."
       },
-      "teaching": "The key rule in prescribing systemic HRT is that a progestogen is added only to protect the endometrium in women who still have a uterus. A woman who has had a hysterectomy should receive estrogen-only HRT, avoiding the unnecessary risks of a progestogen. Estrogen effectively treats vasomotor symptoms and urogenital atrophy and provides bone protection, making it the appropriate first-line choice here.",
-      "id": 10
+      "teaching": "After total hysterectomy, systemic estrogen can treat vasomotor symptoms without added progestogen because there is no endometrium to protect.",
+      "id": 10,
+      "examTip": "No uterus usually means no progestogen is needed."
     },
     {
       "num": 11,
@@ -424,41 +434,42 @@ window.QUIZ_DECKS.push({
         23,
         24
       ],
-      "caseStem": null,
-      "question": "A 27 year old attends clinic as she has been trying to conceive for 18 months but hasn't managed to get pregnant despite regular intercourse. She hasn't used contraception in 3 years, is a non-smoker and her BMI is 24 kg/m2. You organize routine investigations which come back as follows:\nPartners semen analysis: All parameters within normal fertile range on 2 samples FSH 1 IU/L , LH 2 IU/L , Progesterone 1 ng/ml and Prolactin 105 ng/ml\nWhat is likely to be the most effective treatment?",
+      "caseStem": "A 27-year-old has anovulatory infertility. Repeat testing confirms prolactin 105 ng/mL, low gonadotropins, and low luteal progesterone; pregnancy, medication effects, and hypothyroidism have been excluded.",
+      "question": "Which treatment is most likely to restore ovulation?",
       "options": [
         {
           "key": "A",
-          "text": "IVF"
+          "text": "In vitro fertilization"
         },
         {
           "key": "B",
-          "text": "Clomifene"
+          "text": "Clomiphene"
         },
         {
           "key": "C",
-          "text": "Gonadotrophins"
+          "text": "Injectable gonadotropins"
         },
         {
           "key": "D",
-          "text": "Dopamine agonist"
+          "text": "A dopamine agonist"
         },
         {
           "key": "E",
-          "text": "Pulsatile Gonadotrophin releasing hormone (GnRH)"
+          "text": "Pulsatile gonadotropin-releasing hormone"
         }
       ],
       "correct": "D",
       "answerSource": "circled",
       "explanations": {
         "A": "Incorrect. IVF is not first-line when a specific, correctable endocrine cause is identified; correcting the prolactin is simpler, cheaper, and more effective.",
-        "B": "Incorrect. Clomifene stimulates ovulation by blocking estrogen feedback but is ineffective and inappropriate when anovulation is due to hyperprolactinemia suppressing the axis; the low FSH/LH here reflect prolactin suppression.",
+        "B": "Clomiphene does not treat the underlying hyperprolactinemia and is not the preferred first treatment here.",
         "C": "Incorrect. Exogenous gonadotrophins could induce ovulation but are not the most effective initial treatment when the underlying problem is elevated prolactin, which should be corrected directly.",
         "D": "Correct. The prolactin of 105 ng/ml is markedly elevated, indicating hyperprolactinemia that suppresses GnRH and causes anovulation (low FSH, LH, and mid-luteal progesterone); a dopamine agonist (e.g., cabergoline or bromocriptine) normalizes prolactin and restores ovulation, making it the most effective treatment.",
         "E": "Incorrect. Pulsatile GnRH is used for hypothalamic amenorrhea with GnRH deficiency, not for hyperprolactinemia; here the low gonadotrophins are secondary to high prolactin, so treating the prolactin is correct."
       },
-      "teaching": "In an anovulatory infertility workup, a high prolactin with low FSH/LH and low luteal progesterone points to hyperprolactinemia as the cause. Excess prolactin suppresses hypothalamic GnRH pulsatility, shutting down the gonadotrophin-ovarian axis. The definitive treatment is a dopamine agonist (cabergoline or bromocriptine), which lowers prolactin and restores normal ovulation, rather than bypassing the problem with ovulation-induction agents or IVF.",
-      "id": 11
+      "teaching": "Cabergoline or bromocriptine lowers prolactin and usually restores gonadotropin secretion and ovulation.",
+      "id": 11,
+      "examTip": "Treat confirmed hyperprolactinemia before using fertility drugs."
     },
     {
       "num": 12,
@@ -466,12 +477,12 @@ window.QUIZ_DECKS.push({
         25,
         26
       ],
-      "caseStem": null,
-      "question": "A 54-year-old woman undergoes a laparotomy because of a pelvic mass. At exploratory laparotomy, a unilateral ovarian neoplasm is discovered that is accompanied by a large omental metastasis. Frozen section diagnosis confirms metastatic serous cystadenocarcinoma. Which of the following is the most appropriate intraoperative course of action?",
+      "caseStem": "At laparotomy, a 54-year-old has resectable high-grade serous ovarian carcinoma with a large omental metastasis.",
+      "question": "Which operation provides appropriate primary cytoreduction?",
       "options": [
         {
           "key": "A",
-          "text": "Excision of the omental metastasis and ovarian cystectomy"
+          "text": "Remove the omental deposit and perform ovarian cystectomy"
         },
         {
           "key": "B",
@@ -479,7 +490,7 @@ window.QUIZ_DECKS.push({
         },
         {
           "key": "C",
-          "text": "Excision of the omental metastasis and unilateral oophorectomy"
+          "text": "Remove the omental deposit and one ovary"
         },
         {
           "key": "D",
@@ -487,7 +498,7 @@ window.QUIZ_DECKS.push({
         },
         {
           "key": "E",
-          "text": "Omentectomy, total abdominal hysterectomy, and bilateral salpingo-oophorectomy"
+          "text": "Omentectomy, total hysterectomy, and bilateral salpingo-oophorectomy"
         }
       ],
       "correct": "E",
@@ -497,10 +508,11 @@ window.QUIZ_DECKS.push({
         "B": "Incorrect. Although omentectomy is appropriate, ovarian cystectomy is not an oncologically adequate procedure and leaves behind at-risk tissue.",
         "C": "Incorrect. Excising only the omental deposit and one ovary leaves the uterus and contralateral adnexa, which is insufficient staging and debulking for metastatic ovarian cancer.",
         "D": "Incorrect. Bilateral salpingo-oophorectomy with omentectomy is closer but omits the hysterectomy, so it does not constitute complete surgical cytoreduction/staging.",
-        "E": "Correct. Advanced (metastatic) ovarian serous cystadenocarcinoma is managed by maximal cytoreduction: total abdominal hysterectomy, bilateral salpingo-oophorectomy, and omentectomy (with removal of visible tumor), which is the standard debulking procedure."
+        "E": "Correct. For resectable advanced epithelial ovarian cancer, hysterectomy, bilateral salpingo-oophorectomy, omentectomy, and removal of visible disease provide primary cytoreduction."
       },
-      "teaching": "Epithelial ovarian carcinoma that has spread (e.g., to the omentum) is treated with cytoreductive/debulking surgery aiming to remove all visible disease. The standard operation is total abdominal hysterectomy, bilateral salpingo-oophorectomy, and omentectomy, plus resection of peritoneal implants, usually followed by platinum-based chemotherapy. Conservative options like cystectomy are never adequate for invasive ovarian cancer, especially in a postmenopausal woman with metastatic disease.",
-      "id": 12
+      "teaching": "Resectable advanced epithelial ovarian cancer requires maximal cytoreduction, including removal of uterus, both tubes and ovaries, omentum, and visible disease.",
+      "id": 12,
+      "examTip": "Metastatic epithelial ovarian cancer needs staging and debulking, not cystectomy."
     },
     {
       "num": 13,
@@ -508,36 +520,37 @@ window.QUIZ_DECKS.push({
         27,
         28
       ],
-      "caseStem": null,
-      "question": "Gross and microscopic examination of the specimen revealed: serous cystadenocarcinoma in the left ovary, right ovary free, omentum shows micrometastasis and there are no lymph nodes involved.\nWhat is the final FIGO staging ?",
+      "caseStem": "Final pathology shows high-grade serous carcinoma in one ovary and microscopic omental metastasis. The other ovary and retroperitoneal lymph nodes are negative.",
+      "question": "What is the current ovarian cancer stage?",
       "options": [
         {
           "key": "A",
-          "text": "II A."
+          "text": "Stage IIA"
         },
         {
           "key": "B",
-          "text": "III B."
+          "text": "Stage IIIB"
         },
         {
           "key": "C",
-          "text": "II B."
+          "text": "Stage IIB"
         },
         {
           "key": "D",
-          "text": "III A."
+          "text": "Stage IIIA2"
         }
       ],
       "correct": "D",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Stage IIA is tumor limited to the pelvis with extension to the uterus/tubes; here disease has spread to the omentum (upper abdomen), which is beyond the pelvis.",
-        "B": "Incorrect. Stage IIIB denotes macroscopic peritoneal metastasis beyond the pelvis measuring 2 cm or less; this omental deposit is microscopic (micrometastasis), not macroscopic.",
-        "C": "Incorrect. Stage IIB is pelvic extension to other pelvic tissues, which does not fit disease that has reached the omentum outside the pelvis.",
-        "D": "Correct. Microscopic peritoneal metastasis beyond the pelvis (omental micrometastasis) with negative lymph nodes corresponds to FIGO stage IIIA."
+        "A": "Stage IIA is pelvic extension to the uterus or fallopian tubes, not extrapelvic omental spread.",
+        "B": "Stage IIIB requires visible extrapelvic peritoneal metastasis up to 2 cm; this spread is microscopic.",
+        "C": "Stage IIB is extension to other pelvic tissues, not the omentum.",
+        "D": "Correct. Microscopic extrapelvic peritoneal metastasis with negative nodes is FIGO stage IIIA2."
       },
-      "teaching": "FIGO staging of ovarian cancer hinges on the extent and size of spread. Once tumor extends beyond the pelvis to abdominal peritoneal surfaces such as the omentum, it is stage III. Within stage III, microscopic peritoneal deposits beyond the pelvis are IIIA, macroscopic deposits 2 cm or less are IIIB, and deposits over 2 cm (or positive retroperitoneal nodes) are IIIC. Omental micrometastasis with negative nodes therefore equals stage IIIA.",
-      "id": 13
+      "teaching": "Microscopic extrapelvic peritoneal spread is FIGO stage IIIA2. Macroscopic extrapelvic implants are IIIB or IIIC depending on size.",
+      "id": 13,
+      "examTip": "Microscopic spread beyond the pelvis equals stage IIIA2."
     },
     {
       "num": 14,
@@ -545,41 +558,42 @@ window.QUIZ_DECKS.push({
         29,
         30
       ],
-      "caseStem": "A 51-year-old woman is diagnosed with invasive cervical carcinoma by cone biopsy. Pelvic examination and rectal-vaginal examination reveal the parametrium to be free of disease, but the upper portion of the vagina is involved with tumor. Intravenous pyelography (IVP) and sigmoidoscopy are negative, but a computed tomography (CT) scan of the abdomen and pelvis shows grossly enlarged pelvic and periaortic nodes.",
-      "question": "This patient is classified at which of the following stages?",
+      "caseStem": "A 51-year-old has cervical cancer involving the upper vagina but not the parametrium. Imaging shows enlarged pelvic and para-aortic lymph nodes consistent with metastases.",
+      "question": "Using the 2018 cervical cancer staging system, what is the stage?",
       "options": [
         {
           "key": "A",
-          "text": "IIa"
+          "text": "Stage IIA"
         },
         {
           "key": "B",
-          "text": "IIb"
+          "text": "Stage IIB"
         },
         {
           "key": "C",
-          "text": "IIIa"
+          "text": "Stage IIIC1r"
         },
         {
           "key": "D",
-          "text": "IIIb"
+          "text": "Stage IIIC2r"
         },
         {
           "key": "E",
-          "text": "IV"
+          "text": "Stage IVA"
         }
       ],
-      "correct": "A",
+      "correct": "D",
       "answerSource": "circled",
       "explanations": {
-        "A": "Correct. Tumor involves the upper (proximal) vagina while the parametrium is explicitly free of disease, which defines stage IIA. In the classic FIGO clinical staging system used here, radiologically enlarged pelvic/para-aortic nodes on CT do not upstage the tumor.",
-        "B": "Incorrect. Stage IIB requires parametrial involvement, but pelvic and rectovaginal examination show the parametrium to be free of disease.",
-        "C": "Incorrect. Stage IIIA requires spread to the lower third of the vagina; only the upper portion of the vagina is involved here.",
-        "D": "Incorrect. Stage IIIB requires extension to the pelvic sidewall or hydronephrosis/nonfunctioning kidney; IVP is negative and the parametrium is free. Enlarged nodes on CT are not part of the clinical FIGO stage in this system.",
-        "E": "Incorrect. Stage IV requires involvement of bladder or rectal mucosa or distant metastasis; cystoscopy is implied negative, and IVP and sigmoidoscopy are negative."
+        "A": "Upper-vaginal involvement without parametrial disease would be IIA only if nodal metastasis were absent.",
+        "B": "Stage IIB requires parametrial invasion.",
+        "C": "Stage IIIC1 is limited to pelvic nodal metastasis.",
+        "D": "Correct. Para-aortic nodal metastasis makes the disease FIGO 2018 stage IIIC2; “r” denotes imaging evidence.",
+        "E": "Stage IVA requires invasion of bladder or rectal mucosa."
       },
-      "teaching": "Cervical cancer in the classic FIGO system is staged clinically, not by CT/MRI or nodal status. Parametrial involvement separates IIA (no parametrium, upper vagina) from IIB (parametrium involved); lower-third vaginal spread is IIIA, and pelvic sidewall extension or hydronephrosis is IIIB. Here, upper-vagina involvement with free parametria is stage IIA even though CT shows bulky nodes.",
-      "id": 14
+      "teaching": "FIGO 2018 includes nodal disease: pelvic nodes are IIIC1 and para-aortic nodes are IIIC2; suffix “r” indicates imaging-based staging.",
+      "id": 14,
+      "examTip": "Para-aortic nodes make cervical cancer stage IIIC2."
     },
     {
       "num": 15,
@@ -587,36 +601,37 @@ window.QUIZ_DECKS.push({
         31,
         32
       ],
-      "caseStem": "A 51-year-old woman is diagnosed with invasive cervical carcinoma by cone biopsy. Pelvic examination and rectal-vaginal examination reveal the parametrium to be free of disease, but the upper portion of the vagina is involved with tumor. Intravenous pyelography (IVP) and sigmoidoscopy are negative, but a computed tomography (CT) scan of the abdomen and pelvis shows grossly enlarged pelvic and periaortic nodes.",
-      "question": "What would be the appropriate management?",
+      "caseStem": "The 51-year-old with cervical cancer has upper-vaginal involvement and radiologically metastatic pelvic and para-aortic nodes.",
+      "question": "What is the best primary treatment?",
       "options": [
         {
           "key": "A",
-          "text": "External beam radiation."
+          "text": "Concurrent cisplatin-based chemotherapy with extended-field external-beam radiotherapy covering the pelvic and para-aortic nodes, plus brachytherapy"
         },
         {
           "key": "B",
-          "text": "Brachytherapy."
+          "text": "Brachytherapy alone"
         },
         {
           "key": "C",
-          "text": "Modified radical hysterectomy ± adjuvant radiotherapy."
+          "text": "Modified radical hysterectomy with possible postoperative radiotherapy"
         },
         {
           "key": "D",
-          "text": "Pelvic extentration."
+          "text": "Pelvic exenteration"
         }
       ],
-      "correct": "C",
+      "correct": "A",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect as a standalone option. External beam radiation is a component of definitive chemoradiation for locally advanced disease but is not given alone as the appropriate primary management of this early-stage (IIA) surgical candidate.",
-        "B": "Incorrect. Brachytherapy is an adjunct that is combined with external beam radiation in a radiation course; it is never used by itself as the primary treatment.",
-        "C": "Correct (marked answer). For early-stage disease, surgical management with (modified) radical hysterectomy and tailoring of adjuvant radiotherapy according to pathologic risk factors is appropriate primary therapy.",
-        "D": "Incorrect. Pelvic exenteration is reserved for central pelvic recurrence after prior radiotherapy, not for primary management of early cervical cancer."
+        "A": "Correct. Node-positive locally advanced disease is treated with concurrent cisplatin-based chemotherapy and extended-field external-beam radiotherapy covering the involved pelvic and para-aortic nodal regions, plus brachytherapy.",
+        "B": "Brachytherapy is essential but is not adequate alone for this extent of disease.",
+        "C": "Radical surgery is not preferred with bulky pelvic and para-aortic nodal disease because definitive chemoradiation is needed.",
+        "D": "Pelvic exenteration is generally reserved for selected central recurrence, not initial node-positive disease."
       },
-      "teaching": "Early-stage cervical cancer (through IIA) can be managed either by radical surgery or by definitive chemoradiation, with equivalent outcomes; the choice is individualized. After radical hysterectomy, adjuvant radiotherapy (± chemotherapy) is added when high- or intermediate-risk pathologic features are present. Pelvic exenteration is a salvage operation for central recurrence, not first-line therapy.",
-      "id": 15
+      "teaching": "Node-positive locally advanced cervical cancer is treated with definitive concurrent chemoradiation plus brachytherapy; para-aortic fields are included when indicated.",
+      "id": 15,
+      "examTip": "Definitive cervical cancer radiation requires both external beam treatment and brachytherapy, usually with cisplatin."
     },
     {
       "num": 16,
@@ -625,41 +640,42 @@ window.QUIZ_DECKS.push({
         34,
         37
       ],
-      "caseStem": "A 45-year-old G3P3 with a Pap smear showing high-grade squamous intraepithelial lesion of the cervix (CIN III) has an inadequate colposcopy. The patient is a healthy smoker who has no medical problems. Her surgical history is significant for a cesarean section—with bilateral tubal ligation—for delivery of her last child. Cone biopsy of the cervix shows squamous cell cancer that has invaded only 2 mm beyond the basement membrane with a lateral spread of 5 mm. There are no confluent tongues of tumor, and there is no evidence of lymphatic or vascular invasion. The margins of the cone biopsy specimen are free of disease.",
-      "question": "How should you stage this patient's disease?",
+      "caseStem": "Cone biopsy in a 45-year-old shows cervical squamous carcinoma invading 2 mm into stroma. The lesion is microscopic, margins are clear, and there is no lymphovascular invasion.",
+      "question": "What is the cervical cancer stage?",
       "options": [
         {
           "key": "A",
-          "text": "Atypical squamous cells of undetermined invasion"
+          "text": "Atypical squamous cells"
         },
         {
           "key": "B",
-          "text": "Carcinoma in situ of low malignant potential"
+          "text": "Carcinoma in situ"
         },
         {
           "key": "C",
-          "text": "Microinvasive cancer, stage Ia1"
+          "text": "Microinvasive cancer, stage IA1"
         },
         {
           "key": "D",
-          "text": "Invasive cancer, stage Ib"
+          "text": "Invasive cancer, stage IB"
         },
         {
           "key": "E",
-          "text": "Invasive cancer, stage IIa"
+          "text": "Invasive cancer, stage IIA"
         }
       ],
       "correct": "C",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. This is not a valid staging category; it is a fabricated term. The cone biopsy documents true stromal invasion, so an 'atypical/undetermined' label does not apply.",
-        "B": "Incorrect. 'Carcinoma in situ of low malignant potential' is not a real entity, and invasion 2 mm beyond the basement membrane means the lesion is invasive, not in situ.",
-        "C": "Correct. Depth of invasion is 2 mm (≤3 mm) with 5 mm lateral (horizontal) spread (≤7 mm), no confluent tongues, and no lymphovascular invasion, which defines microinvasive carcinoma, stage IA1.",
-        "D": "Incorrect. Stage IB requires a clinically visible lesion or invasion exceeding the IA limits (depth >5 mm); this lesion is only 2 mm deep and microscopic.",
-        "E": "Incorrect. Stage IIA requires extension to the upper vagina; disease is confined to the cervix with clear cone margins."
+        "A": "This cytology label is not a cancer stage.",
+        "B": "Stromal invasion means this is not carcinoma in situ.",
+        "C": "Correct. Microscopic stromal invasion of 2 mm is FIGO stage IA1.",
+        "D": "Stage IB exceeds the stage IA depth limit or is a larger cervical lesion.",
+        "E": "Stage IIA extends beyond the cervix into the upper vagina."
       },
-      "teaching": "Microinvasive cervical cancer (stage IA) is defined microscopically: IA1 is stromal invasion ≤3 mm deep (and, in the older system, ≤7 mm wide), and IA2 is >3 to ≤5 mm deep. Lymphovascular space invasion and confluent tongues of tumor are adverse features that influence treatment. This lesion (2 mm deep, 5 mm wide, no LVSI, clear margins) is a textbook stage IA1.",
-      "id": 16
+      "teaching": "FIGO stage IA1 is microscopic cervical carcinoma with stromal invasion no deeper than 3 mm. Horizontal width is no longer used in FIGO 2018 staging.",
+      "id": 16,
+      "examTip": "For microinvasive cervical cancer, stage by depth: 3 mm or less is IA1."
     },
     {
       "num": 17,
@@ -668,16 +684,16 @@ window.QUIZ_DECKS.push({
         35,
         36
       ],
-      "caseStem": "A 45-year-old G3P3 with a Pap smear showing high-grade squamous intraepithelial lesion of the cervix (CIN III) has an inadequate colposcopy. The patient is a healthy smoker who has no medical problems. Her surgical history is significant for a cesarean section—with bilateral tubal ligation—for delivery of her last child. Cone biopsy of the cervix shows squamous cell cancer that has invaded only 2 mm beyond the basement membrane with a lateral spread of 5 mm. There are no confluent tongues of tumor, and there is no evidence of lymphatic or vascular invasion. The margins of the cone biopsy specimen are free of disease.",
-      "question": "The patient above now asks you for your advice on how to treat her cervical cancer. Your best recommendation is for the patient to undergo which of the following?",
+      "caseStem": "A 45-year-old with completed childbearing has stage IA1 cervical squamous cancer, clear cone margins, and no lymphovascular invasion.",
+      "question": "Which definitive treatment is appropriate?",
       "options": [
         {
           "key": "A",
-          "text": "Treatment with external beam radiation"
+          "text": "External-beam radiotherapy"
         },
         {
           "key": "B",
-          "text": "Implantation of radioactive cesium into the cervical canal"
+          "text": "Intracavitary brachytherapy"
         },
         {
           "key": "C",
@@ -685,7 +701,7 @@ window.QUIZ_DECKS.push({
         },
         {
           "key": "D",
-          "text": "Simple hysterectomy with pelvic lymphadenectomy"
+          "text": "Simple hysterectomy with pelvic lymph-node dissection"
         },
         {
           "key": "E",
@@ -696,13 +712,14 @@ window.QUIZ_DECKS.push({
       "answerSource": "circled",
       "explanations": {
         "A": "Incorrect. External beam radiation is gross overtreatment for stage IA1 disease and carries unnecessary morbidity.",
-        "B": "Incorrect. Intracavitary brachytherapy (radioactive cesium) is also overtreatment for microinvasive IA1 disease and is unnecessary given the excellent surgical cure rates.",
-        "C": "Correct. For stage IA1 without lymphovascular invasion in a woman who has completed childbearing (she has a prior tubal ligation), a simple (extrafascial) hysterectomy is definitive and appropriate.",
-        "D": "Incorrect. The risk of pelvic node metastasis in IA1 without LVSI is under 1%, so pelvic lymphadenectomy is not indicated.",
-        "E": "Incorrect. Radical hysterectomy (with parametrial and upper vaginal resection) is reserved for IA2–IB disease and is excessive for IA1 without LVSI."
+        "B": "Incorrect. Intracavitary brachytherapy is overtreatment for microinvasive IA1 disease and is unnecessary given the excellent surgical cure rates.",
+        "C": "Correct. For stage IA1 without lymphovascular invasion in a woman who has completed childbearing, simple hysterectomy is definitive and appropriate.",
+        "D": "Pelvic nodal risk is very low in stage IA1 without lymphovascular invasion, so lymph-node dissection is not indicated.",
+        "E": "Radical hysterectomy is more extensive than needed for stage IA1 disease without lymphovascular invasion."
       },
-      "teaching": "Treatment of cervical cancer escalates with stage. Stage IA1 without lymphovascular invasion has a negligible nodal metastasis rate, so it is cured by conization (if fertility is desired) or simple/extrafascial hysterectomy (if childbearing is complete), without lymphadenectomy. Radical hysterectomy with pelvic lymphadenectomy is reserved for IA2 through IB disease.",
-      "id": 17
+      "teaching": "Stage IA1 disease without lymphovascular invasion can be treated with conization if fertility is desired or simple hysterectomy if childbearing is complete; nodal dissection is unnecessary.",
+      "id": 17,
+      "examTip": "IA1 without lymphovascular invasion does not need radical surgery."
     },
     {
       "num": 18,
@@ -710,8 +727,8 @@ window.QUIZ_DECKS.push({
         38,
         39
       ],
-      "caseStem": null,
-      "question": "A 17-year-old girl is seen by her primary care physician for the evaluation of left lower quadrant pain. The physician felt a pelvic mass on physical examination and ordered a pelvic ultrasound. You are consulted because an ovarian neoplasm is identified by the ultrasound. Which of the following is the most common ovarian tumor in this type of patient?",
+      "caseStem": "A 17-year-old has an ovarian mass that is suspected to be a malignant germ-cell tumor.",
+      "question": "Which malignant ovarian germ-cell tumor is most common in this age group?",
       "options": [
         {
           "key": "A",
@@ -719,32 +736,33 @@ window.QUIZ_DECKS.push({
         },
         {
           "key": "B",
-          "text": "Papillary serous epithelial"
+          "text": "Yolk sac tumor"
         },
         {
           "key": "C",
-          "text": "Fibrosarcoma"
+          "text": "Immature teratoma"
         },
         {
           "key": "D",
-          "text": "Brenner tumor"
+          "text": "Embryonal carcinoma"
         },
         {
           "key": "E",
-          "text": "Sarcoma botryoides"
+          "text": "Nongestational choriocarcinoma"
         }
       ],
       "correct": "A",
       "answerSource": "circled",
       "explanations": {
-        "A": "Correct. In adolescents and young women, ovarian neoplasms are predominantly germ cell tumors, and dysgerminoma is the most common malignant germ cell tumor in this age group.",
-        "B": "Incorrect. Papillary serous (epithelial) ovarian carcinoma is characteristic of older, peri-/postmenopausal women and is rare in adolescents.",
-        "C": "Incorrect. Fibrosarcoma is a rare malignant stromal tumor seen in older women, not a common tumor of adolescents.",
-        "D": "Incorrect. Brenner tumors are uncommon, usually benign, and typically occur in older women.",
-        "E": "Incorrect. Sarcoma botryoides (embryonal rhabdomyosarcoma) arises in the vagina/cervix of young children, not as an ovarian neoplasm in adolescents."
+        "A": "Correct. Dysgerminoma is the most common malignant ovarian germ-cell tumor in adolescents and young adults.",
+        "B": "Yolk sac tumor is a malignant ovarian germ-cell tumor of children and young women, but dysgerminoma is more common overall.",
+        "C": "Immature teratoma is a malignant ovarian germ-cell tumor in young patients, but it is less common than dysgerminoma.",
+        "D": "Embryonal carcinoma is a rare malignant ovarian germ-cell tumor and is not the most common type.",
+        "E": "Nongestational choriocarcinoma is a rare malignant ovarian germ-cell tumor; dysgerminoma is much more common."
       },
-      "teaching": "The likely histology of an ovarian mass shifts with age. In children and adolescents/young women, germ cell tumors dominate, and among malignant germ cell tumors the dysgerminoma is the most common. Epithelial cancers (serous, mucinous) become the leading ovarian malignancies only in older, postmenopausal women.",
-      "id": 18
+      "teaching": "Dysgerminoma is the most common malignant ovarian germ-cell tumor. Benign mature cystic teratoma is the most common germ-cell tumor overall.",
+      "id": 18,
+      "examTip": "In adolescents, think germ-cell tumors; dysgerminoma is the commonest malignant type."
     },
     {
       "num": 19,
@@ -753,12 +771,12 @@ window.QUIZ_DECKS.push({
         41,
         42
       ],
-      "caseStem": null,
-      "question": "A 26-year-old G2P1 presents to the gynecologist complaining of increasing hair growth on her face, chest, and abdomen, but the hair on her head is receding in the temporal regions. She also has had problems with acne. On physical examination the patient has significant amounts of coarse, dark hair on her face, chest, and abdomen. On pelvic examination she has an enlarged clitoris. She has a 7-cm left adnexal mass",
+      "caseStem": "A 26-year-old develops rapid hirsutism, acne, temporal hair loss, and clitoral enlargement. Examination finds a 7 cm unilateral adnexal mass.",
+      "question": "Which ovarian tumor is most likely?",
       "options": [
         {
           "key": "A",
-          "text": "Granulosa tumor"
+          "text": "Granulosa cell tumor"
         },
         {
           "key": "B",
@@ -783,11 +801,12 @@ window.QUIZ_DECKS.push({
         "A": "Incorrect. Granulosa cell tumors secrete estrogen, producing feminizing effects (precocious puberty, endometrial hyperplasia, postmenopausal bleeding), not the virilization seen here.",
         "B": "Correct. Sertoli-Leydig cell tumors are androgen-secreting sex-cord stromal tumors that cause virilization—hirsutism, temporal balding, acne, and clitoromegaly—together with an adnexal mass in a young woman.",
         "C": "Incorrect. Immature teratomas are malignant germ cell tumors of young women but are not typically hormonally functional and do not cause androgen excess/virilization.",
-        "D": "Incorrect. Gonadoblastomas arise in dysgenetic gonads (often with a Y-containing/abnormal karyotype) rather than in a normally menstruating G2P1, and are not the classic virilizing ovarian tumor.",
+        "D": "Gonadoblastomas characteristically arise in dysgenetic gonads containing Y-chromosome material, not as a typical unilateral virilizing tumor in this setting.",
         "E": "Incorrect. Krukenberg tumors are metastatic signet-ring carcinomas (usually from the stomach) presenting as bilateral ovarian masses in older women; virilization is not their typical presentation."
       },
-      "teaching": "Rapid-onset virilization—hirsutism, temporal balding, acne, and clitoromegaly—plus a unilateral solid adnexal mass points to an androgen-secreting ovarian tumor. The Sertoli-Leydig cell tumor is the classic virilizing sex-cord stromal tumor and secretes testosterone. Contrast this with the granulosa cell tumor, its estrogen-secreting (feminizing) counterpart.",
-      "id": 19
+      "teaching": "Sertoli-Leydig tumors secrete androgens and can cause rapid virilization in a young woman.",
+      "id": 19,
+      "examTip": "Rapid virilization plus an ovarian mass suggests a Sertoli-Leydig tumor."
     },
     {
       "num": 20,
@@ -796,12 +815,12 @@ window.QUIZ_DECKS.push({
         43,
         44
       ],
-      "caseStem": null,
-      "question": "A 56-year-old postmenopausal woman presents complaining of vaginal bleeding. Her uterus is slightly enlarged and she has a 6-cm right adnexal mass. Endometrial biopsy shows adenocarcinoma of the endometrium.",
+      "caseStem": "A 56-year-old has postmenopausal bleeding, endometrial adenocarcinoma, and a 6 cm ovarian mass.",
+      "question": "Which ovarian tumor could explain both findings?",
       "options": [
         {
           "key": "A",
-          "text": "Granulosa tumor"
+          "text": "Granulosa cell tumor"
         },
         {
           "key": "B",
@@ -829,8 +848,9 @@ window.QUIZ_DECKS.push({
         "D": "Incorrect. Gonadoblastoma arises in dysgenetic gonads containing a Y chromosome and presents in young patients with virilization, not in a 56-year-old with estrogen-driven endometrial cancer.",
         "E": "Incorrect. Krukenberg tumor is a metastasis (usually from gastric/GI signet-ring adenocarcinoma), typically bilateral, and does not explain estrogen-driven endometrial adenocarcinoma."
       },
-      "teaching": "This is an extended-matching item where each stem is matched to an ovarian tumor. The pairing of an estrogen effect (postmenopausal bleeding with endometrial hyperplasia/adenocarcinoma) and an ovarian mass points to a granulosa cell tumor, the classic estrogen-secreting sex cord-stromal tumor. Remember the hormone-to-tumor links: estrogen = granulosa, androgen = Sertoli-Leydig.",
-      "id": 20
+      "teaching": "Estrogen from a granulosa cell tumor can stimulate the endometrium, causing hyperplasia or carcinoma and postmenopausal bleeding.",
+      "id": 20,
+      "examTip": "An estrogenic ovarian mass points to a granulosa cell tumor."
     },
     {
       "num": 21,
@@ -839,12 +859,12 @@ window.QUIZ_DECKS.push({
         43,
         44
       ],
-      "caseStem": null,
-      "question": "A 67-year-old woman is found to have bilateral adnexal masses while undergoing evaluation of her recently diagnosed colon cancer.",
+      "caseStem": "A 67-year-old with gastric signet-ring adenocarcinoma is found to have bilateral solid ovarian masses.",
+      "question": "What are the ovarian masses most likely to represent?",
       "options": [
         {
           "key": "A",
-          "text": "Granulosa tumor"
+          "text": "Granulosa cell tumor"
         },
         {
           "key": "B",
@@ -866,14 +886,15 @@ window.QUIZ_DECKS.push({
       "correct": "E",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Granulosa cell tumors are typically unilateral, estrogen-secreting primary ovarian tumors, not bilateral metastatic masses arising from a GI cancer.",
-        "B": "Incorrect. Sertoli-Leydig cell tumors are androgen-secreting primary ovarian tumors and are not the metastatic bilateral masses expected with colon cancer.",
-        "C": "Incorrect. Immature teratoma is a primary germ cell malignancy of young women, unrelated to metastatic colon cancer in a 67-year-old.",
-        "D": "Incorrect. Gonadoblastoma occurs in dysgenetic gonads of young patients with a Y chromosome and has no association with metastatic colon cancer.",
-        "E": "Correct. Krukenberg tumor is a metastasis to the ovaries (classically bilateral) from a GI primary, most often gastric but also colon, characterized by mucin-filled signet-ring cells; bilateral adnexal masses in a woman with known colon cancer fit this diagnosis."
+        "A": "Granulosa tumors are primary estrogen-secreting ovarian tumors and do not contain signet-ring cells.",
+        "B": "Sertoli-Leydig tumors are androgen-secreting primary ovarian tumors.",
+        "C": "Immature teratomas contain immature somatic tissue, not metastatic signet-ring carcinoma.",
+        "D": "Gonadoblastoma occurs in dysgenetic gonads with Y-chromosome material.",
+        "E": "Correct. Bilateral ovarian spread from a gastric signet-ring carcinoma is a Krukenberg tumor."
       },
-      "teaching": "Bilateral solid ovarian masses in a patient with a known GI (gastric or colon) primary are the hallmark of a Krukenberg tumor, an ovarian metastasis containing signet-ring cells. Metastatic ovarian tumors are frequently bilateral, whereas most primary epithelial and sex cord tumors are unilateral.",
-      "id": 21
+      "teaching": "A Krukenberg tumor is a metastatic signet-ring cell carcinoma involving the ovary, classically from the stomach and often bilateral.",
+      "id": 21,
+      "examTip": "Bilateral ovarian masses with signet-ring cells are metastatic until proved otherwise."
     },
     {
       "num": 22,
@@ -882,12 +903,12 @@ window.QUIZ_DECKS.push({
         45,
         46
       ],
-      "caseStem": null,
-      "question": "A 17-year-old woman is referred by her primary care physician for the evaluation of primary amenorrhea. On physical examination, the patient has evidence of virilization. She also has a pelvic mass. During the workup of the patient, she is found to have sex chromosome mosaicism (45,X/46, XY).",
+      "caseStem": "A 17-year-old with primary amenorrhea, virilization, a pelvic mass, and a 45,X/46,XY karyotype has a dysgenetic gonad.",
+      "question": "Which tumor is most strongly associated with this setting?",
       "options": [
         {
           "key": "A",
-          "text": "Granulosa tumor"
+          "text": "Granulosa cell tumor"
         },
         {
           "key": "B",
@@ -912,11 +933,12 @@ window.QUIZ_DECKS.push({
         "A": "Incorrect. Granulosa cell tumors are estrogenic and not specifically associated with dysgenetic gonads or Y-chromosome mosaicism.",
         "B": "Incorrect. Although Sertoli-Leydig tumors virilize, they are not the tumor that characteristically arises within dysgenetic gonads carrying a Y chromosome.",
         "C": "Incorrect. Immature teratoma is a germ cell malignancy unrelated to gonadal dysgenesis or 45,X/46,XY mosaicism.",
-        "D": "Correct. A gonadoblastoma characteristically develops in dysgenetic gonads that contain a Y chromosome (as in 45,X/46,XY mixed gonadal dysgenesis); it can produce sex steroids causing virilization, and the presence of Y material mandates gonadectomy because of malignant (dysgerminoma) potential.",
+        "D": "Correct. Gonadoblastoma characteristically develops in a dysgenetic gonad containing Y-chromosome material and can be associated with malignant germ-cell transformation, especially dysgerminoma.",
         "E": "Incorrect. Krukenberg tumor is a metastatic GI lesion in older adults, not a primary gonadal tumor of a young patient with gonadal dysgenesis."
       },
-      "teaching": "In a phenotypic female with gonadal dysgenesis whose karyotype contains a Y chromosome (e.g., 45,X/46,XY mosaicism), the dysgenetic gonad is at high risk of developing a gonadoblastoma, which can virilize and can harbor a dysgerminoma. This is why prophylactic gonadectomy is recommended whenever Y-chromosome material is present in a dysgenetic gonad.",
-      "id": 22
+      "teaching": "Y-chromosome material in a dysgenetic gonad increases the risk of gonadoblastoma and associated germ-cell malignancy.",
+      "id": 22,
+      "examTip": "Dysgenetic gonad plus Y material equals gonadoblastoma risk."
     },
     {
       "num": 23,
@@ -925,12 +947,12 @@ window.QUIZ_DECKS.push({
         47,
         48
       ],
-      "caseStem": null,
-      "question": "A 19-year-old woman is undergoing exploratory laparotomy for a 9-cm right ovarian mass. The final pathology report shows evidence of glial tissue and immature cerebellar and cortical tissue.",
+      "caseStem": "A 19-year-old has a 9 cm ovarian mass. Pathology shows immature glial, cerebellar, and cortical tissue.",
+      "question": "Which diagnosis is most likely?",
       "options": [
         {
           "key": "A",
-          "text": "Granulosa tumor"
+          "text": "Granulosa cell tumor"
         },
         {
           "key": "B",
@@ -954,12 +976,13 @@ window.QUIZ_DECKS.push({
       "explanations": {
         "A": "Incorrect. Granulosa cell tumor is a sex cord-stromal tumor and does not contain neural/glial or embryonic tissue.",
         "B": "Incorrect. Sertoli-Leydig cell tumor is an androgen-secreting stromal tumor without immature neuroectodermal elements.",
-        "C": "Correct. Immature teratoma contains embryonic (immature) tissue from all three germ layers; the presence of immature neuroectoderm such as glial tissue and immature cerebellar/cortical tissue in a young woman is diagnostic, and the degree of immature neural tissue determines the grade.",
+        "C": "Correct. An immature teratoma contains immature embryonal tissue, most often neuroepithelium; the amount of immature neural tissue determines its grade.",
         "D": "Incorrect. Gonadoblastoma arises in dysgenetic gonads and is composed of germ cells and sex cord derivatives, not immature somatic neural tissue.",
         "E": "Incorrect. Krukenberg tumor is a metastatic signet-ring adenocarcinoma, not a germ cell tumor with immature neural elements."
       },
-      "teaching": "A solid ovarian mass in a young woman containing immature (embryonic) neuroectodermal tissue—glial and immature cerebellar/cortical tissue—is an immature teratoma, a malignant germ cell tumor. Its grade is based on the amount of immature neural tissue, distinguishing it from the benign mature cystic teratoma (dermoid).",
-      "id": 23
+      "teaching": "Immature neuroepithelial tissue in an ovarian germ-cell tumor identifies an immature teratoma; the amount of immature tissue determines grade.",
+      "id": 23,
+      "examTip": "Immature neural tissue is the key pathology clue for immature teratoma."
     },
     {
       "num": 24,
@@ -968,12 +991,12 @@ window.QUIZ_DECKS.push({
         47,
         48
       ],
-      "caseStem": null,
-      "question": "A 51-year-old menopausal woman is undergoing exploratory laparotomy for bilateral adnexal masses. A frozen section is performed on the excised ovaries and shows significant numbers of signet cells.",
+      "caseStem": "A 51-year-old has bilateral ovarian masses. Frozen section shows many mucin-filled signet-ring cells.",
+      "question": "Which diagnosis is most likely?",
       "options": [
         {
           "key": "A",
-          "text": "Granulosa tumor"
+          "text": "Granulosa cell tumor"
         },
         {
           "key": "B",
@@ -999,10 +1022,11 @@ window.QUIZ_DECKS.push({
         "B": "Incorrect. Sertoli-Leydig cell tumors contain tubules and Leydig cells (Reinke crystals), not mucin-filled signet cells.",
         "C": "Incorrect. Immature teratoma shows immature neuroectodermal and multi-germ-layer tissue, not signet-ring cells.",
         "D": "Incorrect. Gonadoblastoma is composed of germ cells and sex cord elements in dysgenetic gonads, without signet-ring cells.",
-        "E": "Correct. Signet-ring (mucin-laden) cells in bilateral ovarian masses are the pathognomonic feature of a Krukenberg tumor, a metastasis from a GI (commonly gastric) primary adenocarcinoma."
+        "E": "Correct. Mucin-laden signet-ring cells in bilateral ovarian masses are characteristic of a Krukenberg tumor, usually from a gastrointestinal primary."
       },
-      "teaching": "The mucin-filled signet-ring cell is the defining histologic feature of a Krukenberg tumor—metastatic adenocarcinoma to the ovaries, classically bilateral and usually of gastric origin. Bilaterality plus signet-ring cells should always prompt a search for a primary GI cancer.",
-      "id": 24
+      "teaching": "Bilateral ovarian tumors with signet-ring cells are Krukenberg metastases, most often from a gastrointestinal primary.",
+      "id": 24,
+      "examTip": "Signet-ring cells in both ovaries strongly suggest a Krukenberg tumor."
     },
     {
       "num": 25,
@@ -1011,12 +1035,12 @@ window.QUIZ_DECKS.push({
         50,
         51
       ],
-      "caseStem": "A 29-year-old G0 comes to your office complaining of a vaginal discharge for the past 2 weeks. The patient describes the discharge as thin in consistency and of a grayish white color. She has also noticed a slight fishy vaginal odor that seems to have started with the appearance of the discharge. She denies any vaginal or vulvar pruritus or burning. Last month she took a course of amoxicillin for the treatment of sinusitis. On physical examination, the vulva appears normal. There is a discharge present at the introitus. A copious, thin, whitish discharge is in the vaginal vault. The vaginal pH is 5.5. The cervix is not inflamed and there is no cervical discharge",
-      "question": "Which of the following is the most likely diagnosis?",
+      "caseStem": "A 29-year-old has 2 weeks of thin, gray-white vaginal discharge with a fishy odor. She has no itching or burning. Vaginal pH is 5.5, and the cervix is not inflamed.",
+      "question": "What is the most likely diagnosis?",
       "options": [
         {
           "key": "A",
-          "text": "Candidiasis"
+          "text": "Vulvovaginal candidiasis"
         },
         {
           "key": "B",
@@ -1032,20 +1056,21 @@ window.QUIZ_DECKS.push({
         },
         {
           "key": "E",
-          "text": "Chlamydia"
+          "text": "Chlamydial cervicitis"
         }
       ],
       "correct": "B",
       "answerSource": "circled",
       "explanations": {
         "A": "Incorrect. Candidiasis causes a thick, white, curd-like discharge with intense pruritus/burning and a normal pH (<4.5); this patient has a thin discharge, no itching, and an elevated pH.",
-        "B": "Correct. A thin grayish-white homogeneous discharge with a fishy odor and vaginal pH >4.5 (here 5.5), without inflammation or pruritus, is classic bacterial vaginosis (overgrowth of Gardnerella and anaerobes, often after antibiotic use disrupts normal lactobacilli).",
+        "B": "Correct. Thin homogeneous discharge, fishy odor, pH above 4.5, and little inflammation are classic bacterial vaginosis.",
         "C": "Incorrect. Trichomoniasis typically causes a frothy yellow-green discharge with pruritus and a 'strawberry cervix,' whereas this patient has a non-irritating grayish discharge and a non-inflamed cervix.",
         "D": "Incorrect. Physiologic discharge is odorless with a normal pH (<4.5); the fishy odor and pH of 5.5 exclude it.",
         "E": "Incorrect. Chlamydia is often asymptomatic or causes mucopurulent cervicitis, but this patient has no cervical inflammation or cervical discharge."
       },
-      "teaching": "Bacterial vaginosis is diagnosed by Amsel criteria: thin grayish-white discharge, vaginal pH >4.5, a positive whiff (fishy amine) test, and clue cells on microscopy. The absence of vulvar itching/inflammation and the elevated pH separate it from candidiasis (low pH, itchy) and trichomoniasis (inflamed, frothy green).",
-      "id": 25
+      "teaching": "Bacterial vaginosis causes a thin homogeneous discharge, fishy odor, pH above 4.5, clue cells, and little inflammation.",
+      "id": 25,
+      "examTip": "Fishy odor plus pH above 4.5 points to bacterial vaginosis."
     },
     {
       "num": 26,
@@ -1054,41 +1079,42 @@ window.QUIZ_DECKS.push({
         50,
         51
       ],
-      "caseStem": "A 29-year-old G0 comes to your office complaining of a vaginal discharge for the past 2 weeks. The patient describes the discharge as thin in consistency and of a grayish white color. She has also noticed a slight fishy vaginal odor that seems to have started with the appearance of the discharge. She denies any vaginal or vulvar pruritus or burning. Last month she took a course of amoxicillin for the treatment of sinusitis. On physical examination, the vulva appears normal. There is a discharge present at the introitus. A copious, thin, whitish discharge is in the vaginal vault. The vaginal pH is 5.5. The cervix is not inflamed and there is no cervical discharge",
-      "question": "In the patient described in the question above, which of the following is the best treatment?",
+      "caseStem": "A 29-year-old has symptomatic bacterial vaginosis with thin fishy discharge and vaginal pH 5.5.",
+      "question": "Which treatment is recommended?",
       "options": [
         {
           "key": "A",
-          "text": "Reassurance"
+          "text": "Reassurance only"
         },
         {
           "key": "B",
-          "text": "Oral Diflucan"
+          "text": "Oral fluconazole"
         },
         {
           "key": "C",
-          "text": "Doxycycline 100 mg PO twice daily for 1 week"
+          "text": "Doxycycline 100 mg twice daily for 7 days"
         },
         {
           "key": "D",
-          "text": "Ampicillin 500 mg PO twice daily for 1 week"
+          "text": "Ampicillin 500 mg twice daily for 7 days"
         },
         {
           "key": "E",
-          "text": "Metronidazole 500 mg PO twice daily for 1 week"
+          "text": "Metronidazole 500 mg twice daily for 7 days"
         }
       ],
       "correct": "E",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Bacterial vaginosis is symptomatic and increases risks (e.g., PID, preterm labor in pregnancy); it should be treated, not merely observed.",
+        "A": "Symptomatic bacterial vaginosis should be treated rather than managed with reassurance alone.",
         "B": "Incorrect. Oral fluconazole (Diflucan) treats candidiasis, not bacterial vaginosis.",
         "C": "Incorrect. Doxycycline covers chlamydia and other organisms but is not the treatment for bacterial vaginosis.",
-        "D": "Incorrect. Ampicillin does not reliably eradicate the anaerobes/Gardnerella of BV; in fact prior amoxicillin use predisposed to it.",
+        "D": "Ampicillin is not a recommended regimen for bacterial vaginosis and does not reliably treat its polymicrobial anaerobic overgrowth.",
         "E": "Correct. Metronidazole 500 mg PO twice daily for 7 days is the standard treatment for bacterial vaginosis, targeting the anaerobic overgrowth (topical metronidazole or clindamycin are alternatives)."
       },
-      "teaching": "Once bacterial vaginosis is diagnosed by the Amsel criteria, first-line therapy is metronidazole (oral 500 mg BID for 7 days or vaginal gel), with clindamycin as an alternative. Metronidazole targets the anaerobic bacteria responsible for the condition.",
-      "id": 26
+      "teaching": "Oral metronidazole 500 mg twice daily for 7 days is a standard regimen for symptomatic bacterial vaginosis.",
+      "id": 26,
+      "examTip": "Treat bacterial vaginosis with metronidazole or clindamycin, not an antifungal."
     },
     {
       "num": 27,
@@ -1096,41 +1122,42 @@ window.QUIZ_DECKS.push({
         52,
         53
       ],
-      "caseStem": null,
-      "question": "A couple presents for evaluation of primary infertility. The evaluation of the woman is completely normal. The husband is found to have a left varicocele. If the husband’s varicocele is the cause of the couple’s infertility, what would you expect to see when evaluating the husband’s semen analysis?",
+      "caseStem": "A couple has infertility. The woman’s evaluation is normal, and the man has a clinically significant varicocele.",
+      "question": "Which semen pattern is most consistent with varicocele-related infertility?",
       "options": [
         {
           "key": "A",
-          "text": "Decreased sperm count with an increase in the number of abnormal forms"
+          "text": "Low concentration, reduced motility, and more abnormal forms"
         },
         {
           "key": "B",
-          "text": "Decreased sperm count with an increase in motility"
+          "text": "Low sperm concentration with increased motility"
         },
         {
           "key": "C",
-          "text": "Increased sperm count with an increase in the number of abnormal forms"
+          "text": "High sperm concentration with more abnormal forms"
         },
         {
           "key": "D",
-          "text": "Increased sperm count with absent motility"
+          "text": "High sperm concentration with absent motility"
         },
         {
           "key": "E",
-          "text": "Azoospermia"
+          "text": "Complete absence of sperm"
         }
       ],
       "correct": "A",
       "answerSource": "circled",
       "explanations": {
-        "A": "Correct. A varicocele raises scrotal/testicular temperature and impairs spermatogenesis, producing the classic 'stress pattern': decreased sperm count (oligospermia), decreased motility, and an increased proportion of abnormal (tapered) forms.",
-        "B": "Incorrect. A varicocele decreases motility rather than increasing it, so decreased count with increased motility is not expected.",
-        "C": "Incorrect. Varicocele lowers, not raises, the sperm count even though abnormal forms do increase.",
-        "D": "Incorrect. Sperm count is reduced and motility is impaired but not typically completely absent, and it does not increase the count.",
-        "E": "Incorrect. Complete azoospermia is not the typical finding; varicocele usually causes oligospermia with reduced motility and increased abnormal forms."
+        "A": "Correct. Varicocele can impair spermatogenesis, causing low sperm concentration, reduced motility, and abnormal morphology.",
+        "B": "Incorrect. Varicocele is typically associated with reduced rather than increased motility, so this is not the expected pattern.",
+        "C": "Incorrect. Varicocele commonly reduces rather than raises sperm concentration, although abnormal forms may increase.",
+        "D": "Incorrect. Varicocele can reduce concentration and motility, but a high concentration with completely absent motility is not the typical pattern.",
+        "E": "Incorrect. Complete azoospermia is not the typical finding; varicocele more commonly causes reduced concentration and motility with increased abnormal forms."
       },
-      "teaching": "A varicocele is the most common correctable cause of male infertility. The dilated pampiniform plexus raises testicular temperature and produces a semen 'stress pattern': low count, low motility, and increased abnormal (tapered) forms. Surgical varicocelectomy can improve these parameters.",
-      "id": 27
+      "teaching": "Varicocele can impair sperm concentration, motility, and morphology, although no single semen pattern is diagnostic.",
+      "id": 27,
+      "examTip": "Varicocele often causes low count, low motility, and abnormal morphology."
     },
     {
       "num": 28,
@@ -1138,41 +1165,42 @@ window.QUIZ_DECKS.push({
         54,
         55
       ],
-      "caseStem": null,
-      "question": "A 25-year-old woman presents to your office for evaluation of primary infertility. She has regular periods every 28 days. She has done testing at home with an ovulation kit, which suggests she is ovulating. A hysterosalpingogram demonstrates patency of both fallopian tubes. A progesterone level drawn in the mid-luteal phase is lower than expected. A luteal phase defect is suspected to be the cause of this patient’s infertility. Which of the following studies is helpful in making this diagnosis?",
+      "caseStem": "A 25-year-old with infertility has regular cycles and a low mid-luteal progesterone value. A clinician suspects luteal phase deficiency.",
+      "question": "Which test was historically used for this diagnosis but is no longer recommended because it is unreliable?",
       "options": [
         {
           "key": "A",
-          "text": "Serum estradiol levels"
+          "text": "Serum estradiol"
         },
         {
           "key": "B",
-          "text": "Urinary pregnanetriol levels"
+          "text": "Urinary pregnanetriol"
         },
         {
           "key": "C",
-          "text": "Endometrial biopsy"
+          "text": "Endometrial biopsy for histologic dating"
         },
         {
           "key": "D",
-          "text": "Serum follicle-stimulating hormone (FSH) levels"
+          "text": "Early-follicular follicle-stimulating hormone"
         },
         {
           "key": "E",
-          "text": "Serum luteinizing hormone (LH) levels"
+          "text": "Serum luteinizing hormone"
         }
       ],
       "correct": "C",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Estradiol reflects follicular/ovarian estrogen production and does not assess the endometrial response to progesterone that defines a luteal phase defect.",
-        "B": "Incorrect. Urinary pregnanetriol is a metabolite of 17-hydroxyprogesterone used to evaluate congenital adrenal hyperplasia, not luteal endometrial maturation.",
-        "C": "Correct. A luteal phase defect is defined by inadequate progesterone effect on the endometrium; an endometrial biopsy showing a histologic lag (endometrial dating out of phase with the cycle day) is the classic diagnostic study.",
-        "D": "Incorrect. FSH levels assess ovarian reserve/follicular phase, not the luteal endometrial response.",
-        "E": "Incorrect. LH levels help detect the ovulatory surge but do not diagnose an inadequate luteal (endometrial) phase."
+        "A": "Estradiol does not diagnose luteal phase deficiency.",
+        "B": "Urinary pregnanetriol is not used to diagnose this condition.",
+        "C": "Correct. Endometrial histologic dating was used historically, but poor reproducibility and discrimination make it unsuitable for modern infertility evaluation.",
+        "D": "Early-follicular FSH evaluates ovarian reserve, not luteal function.",
+        "E": "LH may help identify ovulation but does not diagnose luteal phase deficiency."
       },
-      "teaching": "A luteal phase defect refers to inadequate progesterone support of the endometrium after ovulation. Historically it was diagnosed by a late-luteal endometrial biopsy demonstrating a maturation lag (the endometrium is more than 2 days 'out of phase' with the expected cycle day).",
-      "id": 28
+      "teaching": "Histologic endometrial dating was historically used for luteal phase deficiency, but it is imprecise and does not reliably distinguish fertile from infertile women.",
+      "id": 28,
+      "examTip": "Do not use endometrial biopsy to diagnose luteal phase deficiency in modern practice."
     },
     {
       "num": 29,
@@ -1180,36 +1208,37 @@ window.QUIZ_DECKS.push({
         56,
         57
       ],
-      "caseStem": null,
-      "question": "On which day of the menstrual cycle would you perform this diagnostic test?",
+      "caseStem": "A textbook describes the historical endometrial-biopsy method for suspected luteal phase deficiency in a 28-day cycle.",
+      "question": "When was that biopsy traditionally performed?",
       "options": [
         {
           "key": "A",
-          "text": "Day 3."
+          "text": "Day 3"
         },
         {
           "key": "B",
-          "text": "Day 8."
+          "text": "Day 8"
         },
         {
           "key": "C",
-          "text": "Day 14."
+          "text": "Day 14"
         },
         {
           "key": "D",
-          "text": "Day 26."
+          "text": "About day 26"
         }
       ],
       "correct": "D",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Day 3 is used to assess ovarian reserve (early follicular FSH/estradiol), not the luteal endometrium.",
-        "B": "Incorrect. Day 8 is in the follicular (proliferative) phase, before ovulation, so it cannot assess luteal-phase endometrial maturation.",
-        "C": "Incorrect. Day 14 is approximately ovulation; the endometrium has not yet undergone the secretory changes needed to date a luteal phase defect.",
-        "D": "Correct. The endometrial biopsy for a suspected luteal phase defect is performed in the late luteal phase, around day 26 (about 2-3 days before expected menses), when secretory maturation can be dated against the cycle day."
+        "A": "Day 3 is used for some ovarian-reserve testing, not late-luteal histology.",
+        "B": "Day 8 is in the follicular phase.",
+        "C": "Day 14 is near ovulation in a 28-day cycle.",
+        "D": "Correct. The historical biopsy was taken around day 26, shortly before expected menses; the method is no longer recommended."
       },
-      "teaching": "To diagnose a luteal phase defect, the endometrial biopsy is timed to the late secretory phase—about days 26-28 of a 28-day cycle, just before menses—so that the histologic 'date' of the endometrium can be compared with the actual cycle day. Sampling too early would not allow assessment of the progesterone-driven secretory changes.",
-      "id": 29
+      "teaching": "Historical endometrial dating sampled the late luteal phase, 2–3 days before expected menses. This test is not recommended in current infertility evaluation.",
+      "id": 29,
+      "examTip": "If asked about historical biopsy timing, choose the late luteal phase."
     },
     {
       "num": 30,
@@ -1217,8 +1246,8 @@ window.QUIZ_DECKS.push({
         58,
         59
       ],
-      "caseStem": null,
-      "question": "An 81-year-old woman presents to your office complaining that her uterus fell out 2 months ago. She has multiple medical problems, including chronic hypertension, congestive heart failure, and osteoporosis. She is limited to sitting in a wheelchair because of her health problems. Her fallen uterus causes significant pain. On physical examination, the patient is frail and requires assistance with getting on the examination table. She has complete procidentia of the uterus. Which of the following is the most appropriate next step in the management of this patient?",
+      "caseStem": "An 81-year-old with heart failure, frailty, and wheelchair dependence has painful complete uterine prolapse.",
+      "question": "What is the best initial management?",
       "options": [
         {
           "key": "A",
@@ -1226,7 +1255,7 @@ window.QUIZ_DECKS.push({
         },
         {
           "key": "B",
-          "text": "Placement of a pessary"
+          "text": "Fit a vaginal pessary"
         },
         {
           "key": "C",
@@ -1234,7 +1263,7 @@ window.QUIZ_DECKS.push({
         },
         {
           "key": "D",
-          "text": "Le Fort procedure"
+          "text": "Le Fort colpocleisis"
         },
         {
           "key": "E",
@@ -1250,8 +1279,9 @@ window.QUIZ_DECKS.push({
         "D": "Incorrect. A Le Fort colpocleisis (partial closure of the vagina) is an obliterative surgical option reserved for those who accept loss of coital function and who can tolerate surgery; a pessary is tried first and avoids operative risk.",
         "E": "Incorrect. Anterior colporrhaphy repairs a cystocele, not uterine procidentia, and would not correct her complete uterine prolapse."
       },
-      "teaching": "For pelvic organ prolapse, management is stratified by symptoms, degree, and surgical fitness. A vaginal pessary is the mainstay non-surgical treatment and is especially favored in elderly, frail, or medically unfit women who are poor operative candidates. Definitive surgery (vaginal hysterectomy, colpocleisis) is reserved for those able to tolerate an operation and who fail or decline a pessary.",
-      "id": 30
+      "teaching": "A pessary is effective nonoperative support for symptomatic prolapse in someone at high surgical risk; it requires follow-up for fitting and vaginal care.",
+      "id": 30,
+      "examTip": "For a frail poor surgical candidate, try a pessary first."
     },
     {
       "num": 31,
@@ -1259,28 +1289,28 @@ window.QUIZ_DECKS.push({
         60,
         61
       ],
-      "caseStem": null,
-      "question": "An intrauterine pregnancy of approximately 10 weeks gestation is confirmed in a 30-year-old G5P4 woman with an IUD in place. On examination, the string of the IUD is noted to be protruding from the cervical os. Which of the following is the most appropriate course of action?",
+      "caseStem": "A 30-year-old is 10 weeks pregnant with a confirmed intrauterine pregnancy and an intrauterine contraceptive device in place. Its strings are visible at the cervical opening.",
+      "question": "What is the best next step if she wishes to continue the pregnancy?",
       "options": [
         {
           "key": "A",
-          "text": "Leave the IUD in place without any other treatment."
+          "text": "Leave the device in place"
         },
         {
           "key": "B",
-          "text": "Leave the IUD in place and continue prophylactic antibiotics throughout pregnancy."
+          "text": "Leave it and give antibiotics throughout pregnancy"
         },
         {
           "key": "C",
-          "text": "Remove the IUD immediately, continue pregnancy."
+          "text": "Gently remove it now"
         },
         {
           "key": "D",
-          "text": "Terminate the pregnancy because of the high risk of infection."
+          "text": "Recommend pregnancy termination"
         },
         {
           "key": "E",
-          "text": "Perform a laparoscopy to rule out a heterotopic ectopic pregnancy"
+          "text": "Perform laparoscopy for a heterotopic pregnancy"
         }
       ],
       "correct": "C",
@@ -1290,10 +1320,11 @@ window.QUIZ_DECKS.push({
         "B": "Incorrect. Prophylactic antibiotics do not substitute for removing the device; the definitive step when the string is accessible is early removal of the IUD.",
         "C": "Correct. When a woman conceives with an IUD in place and the strings are visible at the cervical os in the first trimester, gentle prompt removal is recommended because it reduces the risks of septic abortion, miscarriage, and preterm delivery, while the pregnancy is continued.",
         "D": "Incorrect. Pregnancy with an IUD is not an indication for termination; removing the device markedly lowers the infection/miscarriage risk and the pregnancy can proceed.",
-        "E": "Incorrect. The pregnancy is already confirmed to be intrauterine, so laparoscopy to exclude a heterotopic gestation is unnecessary and not indicated by the string finding."
+        "E": "A confirmed intrauterine pregnancy does not absolutely exclude heterotopic pregnancy, but laparoscopy is not indicated without risk factors or concerning adnexal findings."
       },
-      "teaching": "If pregnancy occurs with an IUD in situ and the strings are visible, the IUD should be removed early in the first trimester to lower the risk of septic abortion, spontaneous miscarriage, chorioamnionitis, and preterm birth. If the strings are not visible, removal may cause harm and the device is usually left with counseling. Always confirm the pregnancy is intrauterine, as IUDs raise the relative risk of ectopic pregnancy.",
-      "id": 31
+      "teaching": "When strings are visible, early removal lowers—but does not eliminate—the risks of miscarriage, infection, and preterm birth.",
+      "id": 31,
+      "examTip": "Pregnancy plus visible IUD strings: remove the IUD promptly and gently."
     },
     {
       "num": 32,
@@ -1301,36 +1332,37 @@ window.QUIZ_DECKS.push({
         62,
         63
       ],
-      "caseStem": null,
-      "question": "Your patient delivered a health infant two weeks ago and wishes to initiate use a contraceptive method during the next few weeks. She is breast feeding exclusively. For which of the following is there strong evidence that use decreases the quantity and quality of breast milk?",
+      "caseStem": "A healthy woman is exclusively breastfeeding 2 weeks after delivery and wants contraception.",
+      "question": "Which contraceptive method should be avoided at this time?",
       "options": [
         {
           "key": "A",
-          "text": "Progesterone – only pills."
+          "text": "A progestin-only pill"
         },
         {
           "key": "B",
-          "text": "Depot medroxyprogesterone acetate."
+          "text": "Condoms"
         },
         {
           "key": "C",
-          "text": "Combine hormonal contraceptive."
+          "text": "Combined estrogen-progestin contraception"
         },
         {
           "key": "D",
-          "text": "None of the above."
+          "text": "A progestin implant"
         }
       ],
-      "correct": "D",
+      "correct": "C",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Progestin-only pills are considered safe in lactation and are not supported by strong evidence of reducing milk quantity or quality; they are a preferred method in breastfeeding women.",
-        "B": "Incorrect. Depot medroxyprogesterone acetate is progestin-only and is regarded as compatible with breastfeeding; there is no strong evidence it impairs milk supply or quality.",
-        "C": "Incorrect. Although the estrogen in combined hormonal contraception can theoretically reduce milk supply and its use is generally deferred early postpartum for other reasons, the item's intended answer is that no option has strong proven evidence of decreasing milk quantity and quality.",
-        "D": "Correct (circled). The keyed answer is 'None of the above' – for these methods there is no strong/conclusive evidence that use decreases the quantity and quality of breast milk."
+        "A": "A progestin-only pill is compatible with breastfeeding and avoids estrogen-related early postpartum risk.",
+        "B": "Condoms contain no hormones and do not affect breastfeeding or thromboembolic risk.",
+        "C": "Correct. Combined hormonal contraception is contraindicated before 21 days postpartum because of thrombosis risk and may reduce milk supply.",
+        "D": "A progestin implant is compatible with breastfeeding and does not carry the estrogen-related risk."
       },
-      "teaching": "In lactating women, progestin-only methods (POPs, DMPA, implants) are preferred and do not adversely affect milk supply. Combined estrogen-progestin contraceptives are traditionally avoided in the early postpartum period mainly because of venous thromboembolism risk, and their effect on milk is not firmly established. This author keyed the answer as 'None of the above,' reflecting the view that robust evidence of reduced milk quantity/quality is lacking for these options.",
-      "id": 32
+      "teaching": "Combined hormonal contraception is contraindicated in the first 21 postpartum days because of venous thromboembolism risk and may affect lactation; progestin-only and nonhormonal options are preferred.",
+      "id": 32,
+      "examTip": "Avoid estrogen-containing contraception in the first 3 postpartum weeks."
     },
     {
       "num": 33,
@@ -1338,36 +1370,37 @@ window.QUIZ_DECKS.push({
         64,
         65
       ],
-      "caseStem": null,
-      "question": "A 30 years old patient presents to your office complaining from heavy menstrual bleeding. With additional questioning, she reports new onset dysmenorrheal. Given this additional symptom, which of the following etiologies for her abnormal uterine bleeding is LEAST likely?",
+      "caseStem": "A 30-year-old has regular heavy menstrual bleeding with new dysmenorrhea.",
+      "question": "Which cause usually produces irregular, unpredictable bleeding rather than this pattern?",
       "options": [
         {
           "key": "A",
-          "text": "Infection."
+          "text": "Adenomyosis"
         },
         {
           "key": "B",
-          "text": "Anovulation."
+          "text": "Chronic anovulation"
         },
         {
           "key": "C",
-          "text": "Pregnancy complications."
+          "text": "Uterine fibroids"
         },
         {
           "key": "D",
-          "text": "Structural anomalies of the uterus."
+          "text": "Endometriosis"
         }
       ],
       "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect (it is a plausible cause). Pelvic infection/endometritis can cause both heavy bleeding and painful periods, so it remains a possible etiology and is not the least likely.",
-        "B": "Correct. Anovulatory bleeding is classically painless because dysmenorrhea is driven by progesterone-mediated ovulatory cycles and prostaglandin release; the new onset of dysmenorrhea points to ovulatory cycles, making anovulation the LEAST likely cause.",
-        "C": "Incorrect (it is a plausible cause). Pregnancy-related complications (e.g., miscarriage, ectopic) can produce bleeding with cramping pain, so they remain possible and are not the least likely.",
-        "D": "Incorrect (it is a plausible cause). Structural lesions such as fibroids or adenomyosis commonly cause heavy bleeding together with dysmenorrhea, so they remain likely."
+        "A": "Adenomyosis commonly causes heavy, painful periods.",
+        "B": "Correct. Chronic anovulation usually causes irregular, unpredictable bleeding rather than regular painful menses.",
+        "C": "Fibroids can cause heavy bleeding and pressure or dysmenorrhea.",
+        "D": "Endometriosis is a classic cause of secondary dysmenorrhea, although heavy bleeding is not its defining feature."
       },
-      "teaching": "Dysmenorrhea (painful menses) generally indicates ovulatory cycles, because ovulation and the subsequent progesterone withdrawal drive prostaglandin-mediated uterine cramping. Anovulatory abnormal uterine bleeding is typically painless and irregular. Therefore, when a patient with heavy bleeding also has dysmenorrhea, anovulation becomes the least likely explanation, and structural, infectious, and pregnancy-related causes rise in probability.",
-      "id": 33
+      "teaching": "Adenomyosis, fibroids, and endometriosis can cause painful cyclic bleeding. Chronic anovulation more often causes irregular, unpredictable bleeding.",
+      "id": 33,
+      "examTip": "Regular painful menses point away from chronic anovulation."
     },
     {
       "num": 34,
@@ -1375,24 +1408,24 @@ window.QUIZ_DECKS.push({
         66,
         67
       ],
-      "caseStem": null,
-      "question": "A patient for whom you initiated combined oral contraceptive pills 3 months ago returns to the office for a routine COC re-evaluation. She complaints of light, irregular bleeding during this time but states that is diminishing. What is the best diagnosis and plan of management?",
+      "caseStem": "A patient started a combined oral contraceptive 3 months ago. She takes it correctly and has light irregular bleeding that is already decreasing, with no pain or other warning signs.",
+      "question": "What is the best diagnosis and plan?",
       "options": [
         {
           "key": "A",
-          "text": "COC intolerance, requiring method discontinuation."
+          "text": "Pill intolerance; stop the method"
         },
         {
           "key": "B",
-          "text": "Breakthrough bleeding, requires counseling and reassurance."
+          "text": "Early breakthrough bleeding; reassure and continue"
         },
         {
           "key": "C",
-          "text": "Endometrial pathology, necessitate TV u/s."
+          "text": "Endometrial disease; arrange immediate ultrasound"
         },
         {
           "key": "D",
-          "text": "Hormonal imbalance, requiring selection of a different COC formulation."
+          "text": "Hormonal imbalance; change formulation now"
         }
       ],
       "correct": "B",
@@ -1403,8 +1436,9 @@ window.QUIZ_DECKS.push({
         "C": "Incorrect. In a young woman with early, resolving breakthrough bleeding and no risk features, immediate transvaginal ultrasound for endometrial pathology is not warranted.",
         "D": "Incorrect. Changing the COC formulation is considered only if breakthrough bleeding persists beyond about 3 months despite compliance; here it is already diminishing, so reassurance suffices."
       },
-      "teaching": "Unscheduled (breakthrough) bleeding is the most common side effect in the first 3 months of combined oral contraceptive use and usually settles spontaneously as the endometrium stabilizes. First-line management is reassurance, checking adherence, and continuing the pill. Only if bleeding persists beyond three months, or if red-flag features suggest pathology, do you investigate (e.g., ultrasound) or switch to a formulation with a different estrogen/progestin dose.",
-      "id": 34
+      "teaching": "Light unscheduled bleeding is common during the first months of combined-pill use. Check adherence and red flags, then reassure if it is improving.",
+      "id": 34,
+      "examTip": "Improving spotting in the first 3 pill cycles usually needs reassurance."
     },
     {
       "num": 35,
@@ -1412,20 +1446,20 @@ window.QUIZ_DECKS.push({
         68,
         69
       ],
-      "caseStem": "An 18 year old nulligravida woman presents with primary amenorrhea. Her examination is notable for Tanner stage IV breasts and the absence of pubic and axillary hair. Also, a blind ending vagina is identified.",
-      "question": "What is the likely diagnosis?",
+      "caseStem": "An 18-year-old has primary amenorrhea, Tanner stage IV breasts, absent pubic and axillary hair, and a short blind-ending vagina.",
+      "question": "What is the most likely diagnosis?",
       "options": [
         {
           "key": "A",
-          "text": "Mullarian agenesis."
+          "text": "Müllerian agenesis"
         },
         {
           "key": "B",
-          "text": "Premature ovarian failure."
+          "text": "Primary ovarian insufficiency"
         },
         {
           "key": "C",
-          "text": "Androgen insensitivity syndrome."
+          "text": "Complete androgen insensitivity syndrome"
         },
         {
           "key": "D",
@@ -1435,13 +1469,14 @@ window.QUIZ_DECKS.push({
       "correct": "C",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. Mullerian agenesis (MRKH) also gives primary amenorrhea and a blind/absent vagina, but affected patients are genetically female with normal ovaries and therefore have normal pubic and axillary hair; the ABSENCE of sexual hair points away from it.",
+        "A": "Müllerian agenesis also causes primary amenorrhea and a short vagina, but androgen action is intact, so pubic and axillary hair are usually normal.",
         "B": "Incorrect. Premature ovarian failure causes low estrogen with poor breast development and would not produce well-developed Tanner IV breasts with a blind-ending vagina; sexual hair is typically present.",
         "C": "Correct. Complete androgen insensitivity syndrome (46,XY) presents with primary amenorrhea, good breast development (testosterone aromatized to estrogen), a blind-ending/short vagina, and characteristically absent or scanty pubic and axillary hair due to end-organ androgen resistance.",
         "D": "Incorrect. Congenital adrenal hyperplasia causes androgen excess and virilization (e.g., ambiguous genitalia, hirsutism), the opposite of the absent sexual hair and feminine phenotype described here."
       },
-      "teaching": "Primary amenorrhea with good breast development, a blind-ending vagina, and absent pubic/axillary hair is the classic picture of complete androgen insensitivity syndrome. These patients are 46,XY with intra-abdominal testes; testosterone is produced but peripheral androgen receptors do not respond, so external genitalia are female and sexual hair is absent, while testosterone aromatized to estrogen drives breast development. This contrasts with Mullerian agenesis, where sexual hair is normal because the patient is a genetic female with functioning ovaries.",
-      "id": 35
+      "teaching": "Complete androgen insensitivity causes a female external phenotype, breast development, scant sexual hair, a short vagina, and no uterus in a 46,XY individual.",
+      "id": 35,
+      "examTip": "Absent uterus plus absent pubic hair points to androgen insensitivity, not Müllerian agenesis."
     },
     {
       "num": 36,
@@ -1449,36 +1484,37 @@ window.QUIZ_DECKS.push({
         70,
         71
       ],
-      "caseStem": "An 18 year old nulligravida woman presents with primary amenorrhea. Her examination is notable for Tanner stage IV breasts and the absence of pubic and axillary hair. Also, a blind ending vagina is identified.",
-      "question": "The patient in the previous question undergoes laparoscopy. The expected gonads are:",
+      "caseStem": "An 18-year-old with complete androgen insensitivity has primary amenorrhea, developed breasts, little sexual hair, and a blind-ending vagina.",
+      "question": "Which gonads are expected?",
       "options": [
         {
           "key": "A",
-          "text": "Ovaries."
+          "text": "Ovaries"
         },
         {
           "key": "B",
-          "text": "Testis."
+          "text": "Testes"
         },
         {
           "key": "C",
-          "text": "Oopharon."
+          "text": "Streak gonads"
         },
         {
           "key": "D",
-          "text": "Epoophoron"
+          "text": "Ovotestes"
         }
       ],
       "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "A": "Incorrect. The patient has androgen insensitivity syndrome and is genetically 46,XY; she has no ovaries.",
-        "B": "Correct. In androgen insensitivity syndrome the gonads are testes (often intra-abdominal or inguinal). They secrete anti-Mullerian hormone and testosterone, but androgen resistance yields a female phenotype; these testes are usually removed after puberty because of malignancy risk.",
-        "C": "Incorrect. 'Oophoron' (ovary) is not present in a 46,XY individual with AIS.",
-        "D": "Incorrect. The epoophoron is a vestigial mesonephric (Wolffian) remnant near the ovary, not the functional gonad expected here."
+        "A": "Ovaries are not present in a 46,XY person with complete androgen insensitivity.",
+        "B": "Correct. The gonads are testes, often located in the abdomen or inguinal canals.",
+        "C": "Streak gonads are typical of gonadal dysgenesis, not complete androgen insensitivity.",
+        "D": "Ovotestes define ovotesticular difference of sex development."
       },
-      "teaching": "Because complete androgen insensitivity syndrome patients are 46,XY, their gonads are testes, typically located intra-abdominally or in the inguinal canal rather than the scrotum. The testes produce anti-Mullerian hormone (so no uterus/upper vagina forms) and testosterone (which cannot act due to receptor resistance). Gonadectomy is generally recommended, usually after puberty is complete, because intra-abdominal testes carry a risk of germ cell malignancy.",
-      "id": 36
+      "teaching": "Complete androgen insensitivity occurs in a 46,XY person with testes, often intra-abdominal or inguinal.",
+      "id": 36,
+      "examTip": "Androgen insensitivity means testes are present but tissues cannot respond to testosterone."
     },
     {
       "num": 37,
@@ -1486,24 +1522,24 @@ window.QUIZ_DECKS.push({
         70,
         71
       ],
-      "caseStem": "An 18 year old nulligravida woman presents with primary amenorrhea. Her examination is notable for Tanner stage IV breasts and the absence of pubic and axillary hair. Also, a blind ending vagina is identified.",
-      "question": "What is the expected testosterone level in this patient?",
+      "caseStem": "An 18-year-old with complete androgen insensitivity has functioning testes and a female external phenotype.",
+      "question": "What serum testosterone level is expected?",
       "options": [
         {
           "key": "A",
-          "text": "Female level."
+          "text": "Typical female range"
         },
         {
           "key": "B",
-          "text": "Male level."
+          "text": "Typical male range"
         },
         {
           "key": "C",
-          "text": "Not measurable."
+          "text": "Unmeasurable"
         },
         {
           "key": "D",
-          "text": "Significantly elevated (>1000 ng/dL)."
+          "text": "Markedly above the typical male range because of a tumor"
         }
       ],
       "correct": "B",
@@ -1512,10 +1548,11 @@ window.QUIZ_DECKS.push({
         "A": "Incorrect. Female-range testosterone would be seen in a genetic female; this patient has functioning testes and therefore male-range levels.",
         "B": "Correct. In androgen insensitivity syndrome the testes produce testosterone in the normal male range; the phenotype is female because target tissues cannot respond to the androgen, not because testosterone is low.",
         "C": "Incorrect. Testosterone is produced and readily measurable; it is the receptor response that is defective.",
-        "D": "Incorrect. Levels are in the normal male range, not pathologically supraphysiologic; markedly elevated values (>1000 ng/dL) would suggest an androgen-secreting tumor, which is not the case here."
+        "D": "Testosterone is expected in the typical male range, not markedly above it; a much higher level would require evaluation for another source."
       },
-      "teaching": "The paradox of androgen insensitivity syndrome is that testosterone is normal-to-high (normal male range) yet the body appears female. The defect is in the androgen receptor, so circulating androgen cannot exert its effect; excess testosterone is aromatized to estrogen, producing breast development while pubic and axillary hair remain absent. Measured testosterone is therefore in the male range, not low, absent, or tumor-level elevated.",
-      "id": 37
+      "teaching": "Testes produce testosterone in the typical male range; the female phenotype results from androgen-receptor resistance, not deficient production.",
+      "id": 37,
+      "examTip": "In androgen insensitivity, testosterone is present but cannot act."
     },
     {
       "num": 38,
@@ -1523,24 +1560,24 @@ window.QUIZ_DECKS.push({
         72,
         73
       ],
-      "caseStem": "A 30 years old multipara presents with secondary amenorrhea since a spontaneous septic abortion 2 years ago that required dilation and curettage. She reports monthly breast tenderness and mood changes followed by severe cramp abdominal pain.",
-      "question": "Which of the following is the best method to treat her condition?",
+      "caseStem": "A 30-year-old has had no periods since a septic miscarriage treated with dilation and curettage 2 years ago. She still has monthly premenstrual symptoms and cyclic cramps, and hysterosalpingography shows multiple intrauterine filling defects consistent with synechiae.",
+      "question": "What is the best treatment?",
       "options": [
         {
           "key": "A",
-          "text": "Cervical dilation."
+          "text": "Cervical dilation alone"
         },
         {
           "key": "B",
-          "text": "Operative hysteroscopy."
+          "text": "Operative hysteroscopy"
         },
         {
           "key": "C",
-          "text": "Endometrial ablation."
+          "text": "Endometrial ablation"
         },
         {
           "key": "D",
-          "text": "Endometrial curettage."
+          "text": "Blind endometrial curettage"
         }
       ],
       "correct": "B",
@@ -1551,8 +1588,9 @@ window.QUIZ_DECKS.push({
         "C": "Endometrial ablation deliberately destroys the endometrium and would worsen the amenorrhea; it is contraindicated in a woman with adhesions who wants normal menstruation/fertility.",
         "D": "Blind endometrial curettage can create or worsen adhesions and cannot reliably treat established synechiae under direct vision, so it is inferior to hysteroscopy."
       },
-      "teaching": "Secondary amenorrhea following D&C for a septic abortion, accompanied by cyclic molimina (breast tenderness, mood changes signalling ongoing ovulation) and cyclic cramping pain, is classic Asherman syndrome. The ovaries still cycle normally, but intrauterine adhesions obliterate the cavity or obstruct outflow, causing hematometra. Both diagnosis and treatment are achieved by hysteroscopic adhesiolysis (operative hysteroscopy).",
-      "id": 38
+      "teaching": "This is Asherman syndrome. Hysteroscopic adhesiolysis restores the cavity under direct vision and is preferred to blind curettage.",
+      "id": 38,
+      "examTip": "Intrauterine adhesions are treated with hysteroscopic adhesiolysis."
     },
     {
       "num": 39,
@@ -1560,36 +1598,37 @@ window.QUIZ_DECKS.push({
         74,
         75
       ],
-      "caseStem": "A 20 year old girl presents with a 5years history of irregular cycles and worsening facial hair. Her menarche occurred at 14 years with only 3 to 4 periods per year. Clinical examination revealed a BMI of 36 kg/m2 and facial hairsutism with marked acne.",
-      "question": "What is the most likely diagnosis?",
+      "caseStem": "A 20-year-old has had 3–4 periods per year since menarche, gradually worsening hirsutism and acne, and a body mass index of 36 kg/m².",
+      "question": "What is the most likely diagnosis after excluding pregnancy and other endocrine causes?",
       "options": [
         {
           "key": "A",
-          "text": "Congenital adrenal hyperplasia."
+          "text": "Nonclassic congenital adrenal hyperplasia"
         },
         {
           "key": "B",
-          "text": "Polycystic ovarian syndrome."
+          "text": "Polycystic ovary syndrome"
         },
         {
           "key": "C",
-          "text": "Androgen producing ovarian tumor."
+          "text": "Androgen-secreting ovarian tumor"
         },
         {
           "key": "D",
-          "text": "Androgen producing adrenal tumor."
+          "text": "Androgen-secreting adrenal tumor"
         }
       ],
       "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "A": "Congenital adrenal hyperplasia can cause hyperandrogenism but typically presents earlier and with more pronounced virilization/ambiguity; it is far less likely than PCOS in this obese, oligomenorrhoeic young woman.",
-        "B": "Correct. Long-standing oligomenorrhea from menarche, hirsutism, acne and obesity (BMI 36) satisfy the Rotterdam criteria, making PCOS the most likely diagnosis.",
+        "A": "Nonclassic congenital adrenal hyperplasia can resemble this presentation, but it is less common and is excluded with appropriate testing such as an early-morning 17-hydroxyprogesterone.",
+        "B": "Correct. Long-standing oligo-ovulation and clinical hyperandrogenism meet diagnostic criteria for polycystic ovary syndrome after other causes are excluded.",
         "C": "An androgen-producing ovarian tumor causes rapid-onset, severe virilization with markedly elevated testosterone, not a gradual 5-6 year course since menarche.",
         "D": "An androgen-producing adrenal tumor also produces rapid virilization with high DHEA-S, inconsistent with this slow, chronic hyperandrogenic picture."
       },
-      "teaching": "PCOS is the commonest cause of chronic hyperandrogenic anovulation. A gradual, long-standing history dating to menarche of oligomenorrhea, hirsutism, acne and obesity fits the Rotterdam criteria (two of three: oligo/anovulation, clinical or biochemical hyperandrogenism, polycystic ovarian morphology). Rapid onset or severe virilization should instead raise suspicion of an androgen-secreting ovarian or adrenal tumor.",
-      "id": 39
+      "teaching": "Chronic oligo-ovulation plus clinical hyperandrogenism strongly supports polycystic ovary syndrome after alternative causes are excluded.",
+      "id": 39,
+      "examTip": "Gradual hirsutism with long-standing irregular cycles suggests polycystic ovary syndrome; rapid virilization suggests a tumor."
     },
     {
       "num": 40,
@@ -1597,36 +1636,37 @@ window.QUIZ_DECKS.push({
         76,
         77
       ],
-      "caseStem": "A 20 year old girl presents with a 5years history of irregular cycles and worsening facial hair. Her menarche occurred at 14 years with only 3 to 4 periods per year. Clinical examination revealed a BMI of 36 kg/m2 and facial hairsutism with marked acne.",
-      "question": "Requesting investigations that would help to confirm the diagnosis. Which the following is relevant in this case?",
+      "caseStem": "A 20-year-old has long-standing oligomenorrhea, hirsutism, acne, and obesity. Polycystic ovary syndrome is suspected.",
+      "question": "Which test is most useful to document biochemical hyperandrogenism?",
       "options": [
         {
           "key": "A",
-          "text": "Serum free testosterone."
+          "text": "Total testosterone and calculated free testosterone using validated methods"
         },
         {
           "key": "B",
-          "text": "Serum SHBG."
+          "text": "Sex hormone-binding globulin alone"
         },
         {
           "key": "C",
-          "text": "Serum DHEA-S."
+          "text": "Dehydroepiandrosterone sulfate alone"
         },
         {
           "key": "D",
-          "text": "Pelvic ultrasonography."
+          "text": "Pelvic ultrasound alone"
         }
       ],
-      "correct": "D",
+      "correct": "A",
       "answerSource": "circled",
       "explanations": {
-        "A": "Serum free testosterone documents hyperandrogenism but is often only mildly raised in PCOS and does not confirm the diagnosis; hyperandrogenism here is already clinically evident.",
-        "B": "SHBG is typically low in PCOS but is a nonspecific supportive marker, not a confirmatory test.",
-        "C": "DHEA-S is chiefly used to screen for an adrenal source of androgens, not to confirm PCOS.",
-        "D": "Correct. Transvaginal/pelvic ultrasonography demonstrates polycystic ovarian morphology, completing the Rotterdam criteria and directly confirming the diagnosis, while also assessing the endometrium."
+        "A": "Correct. Validated total testosterone and calculated free testosterone are preferred for assessing biochemical hyperandrogenism.",
+        "B": "Sex hormone-binding globulin may be low but is nonspecific and is not sufficient alone.",
+        "C": "Dehydroepiandrosterone sulfate helps assess an adrenal androgen source but is not the preferred sole test.",
+        "D": "Ultrasound may show polycystic morphology but is not required when two other diagnostic features are present and cannot exclude mimics."
       },
-      "teaching": "In a patient whose clinical picture already points to PCOS, pelvic (transvaginal) ultrasound is the most relevant confirmatory investigation, showing polycystic ovarian morphology (numerous small follicles or increased ovarian volume) and completing the Rotterdam criteria. Androgen assays and SHBG support the diagnosis of hyperandrogenism but do not confirm PCOS morphology.",
-      "id": 40
+      "teaching": "Validated total testosterone and calculated free testosterone are preferred for biochemical hyperandrogenism. Ultrasound is not required when ovulatory dysfunction and hyperandrogenism are already present.",
+      "id": 40,
+      "examTip": "Polycystic ovary syndrome is a diagnosis of exclusion; ultrasound alone does not confirm it."
     },
     {
       "num": 41,
@@ -1634,36 +1674,37 @@ window.QUIZ_DECKS.push({
         78,
         79
       ],
-      "caseStem": "A 20 year old girl presents with a 5years history of irregular cycles and worsening facial hair. Her menarche occurred at 14 years with only 3 to 4 periods per year. Clinical examination revealed a BMI of 36 kg/m2 and facial hairsutism with marked acne.",
-      "question": "Propose a plan for management of this case, which of the following options is currently excluded?",
+      "caseStem": "A 20-year-old with obesity and polycystic ovary syndrome has irregular cycles, hirsutism, and acne. She is not trying to conceive.",
+      "question": "Which treatment should be reserved for when pregnancy is desired?",
       "options": [
         {
           "key": "A",
-          "text": "Metformin."
+          "text": "Metformin for an appropriate metabolic indication"
         },
         {
           "key": "B",
-          "text": "Clomiphene citrate."
+          "text": "Ovulation induction with letrozole"
         },
         {
           "key": "C",
-          "text": "Weight loss & exsercise."
+          "text": "Weight loss and regular exercise"
         },
         {
           "key": "D",
-          "text": "Contraceptive pills containg cyproterone + ethinyl estradiol."
+          "text": "A suitable combined oral contraceptive"
         }
       ],
       "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "A": "Metformin improves insulin resistance and can help restore menstrual regularity in an obese PCOS patient, so it is an appropriate part of the current plan (not excluded).",
-        "B": "Correct. Clomiphene citrate is an ovulation-induction agent used when a woman actively seeks pregnancy. This patient is not currently trying to conceive, so ovulation induction is currently excluded.",
-        "C": "Weight loss and exercise are first-line lifestyle management for obese PCOS and are clearly indicated now.",
-        "D": "A combined pill containing the antiandrogen cyproterone with ethinyl estradiol treats her hirsutism/acne and regulates cycles, so it is appropriate current therapy."
+        "A": "Metformin may be appropriate for metabolic risk, impaired glucose tolerance, or selected cycle-related goals.",
+        "B": "Correct. Ovulation induction is used when pregnancy is desired, which is not her current goal.",
+        "C": "Lifestyle treatment is first-line for health and metabolic benefit.",
+        "D": "A suitable combined pill can regulate bleeding and improve acne and hirsutism if no contraindication exists."
       },
-      "teaching": "First-line management of PCOS in a woman not seeking immediate fertility is lifestyle modification (weight loss and exercise), with metformin for metabolic and menstrual benefit and a combined oral contraceptive (e.g., cyproterone-containing) for hyperandrogenic symptoms and cycle control. Ovulation induction with clomiphene citrate is reserved for women actively trying to conceive, so it is currently excluded here.",
-      "id": 41
+      "teaching": "Lifestyle treatment and cycle control are appropriate now. Letrozole is first-line ovulation induction only when pregnancy is desired.",
+      "id": 41,
+      "examTip": "Match polycystic ovary syndrome treatment to the fertility goal."
     },
     {
       "num": 42,
@@ -1671,24 +1712,24 @@ window.QUIZ_DECKS.push({
         80,
         81
       ],
-      "caseStem": "30 years old woman complaints of increasing dysmenorrhea and pelvic pain. She has not get pregnant despite 3 years of unprotected intercourse. Her pelvic examination demonstrates tenderness and nodularity of uterosacral ligaments and a 5 cm right ovarian cyst.",
-      "question": "The most likely provisional diagnosis is:",
+      "caseStem": "A 30-year-old has worsening dysmenorrhea, chronic pelvic pain, and infertility for 3 years. Examination finds tender nodules on the uterosacral ligaments and a 5 cm ovarian cyst.",
+      "question": "What is the most likely diagnosis?",
       "options": [
         {
           "key": "A",
-          "text": "Pelvic congestion syndrome."
+          "text": "Pelvic congestion syndrome"
         },
         {
           "key": "B",
-          "text": "Pelvic endometriosis."
+          "text": "Pelvic endometriosis with endometrioma"
         },
         {
           "key": "C",
-          "text": "Chronic PID."
+          "text": "Chronic pelvic inflammatory disease"
         },
         {
           "key": "D",
-          "text": "Chronic (slowly disturbed) ectopic pregnancy."
+          "text": "Chronic ectopic pregnancy"
         }
       ],
       "correct": "B",
@@ -1699,8 +1740,9 @@ window.QUIZ_DECKS.push({
         "C": "Chronic PID can cause pelvic pain and infertility but typically gives adnexal tenderness and a history of infection rather than the hallmark uterosacral nodularity.",
         "D": "A chronic ectopic pregnancy would be associated with a positive hCG and a shorter, more acute-on-chronic course, not 3 years of infertility with cyclical worsening pain."
       },
-      "teaching": "The combination of progressive secondary dysmenorrhea, infertility, and deep tenderness with nodularity of the uterosacral ligaments, together with an ovarian cyst (endometrioma / chocolate cyst), is classic for pelvic endometriosis. Uterosacral nodularity on examination is a hallmark clinical sign.",
-      "id": 42
+      "teaching": "Progressive dysmenorrhea, infertility, uterosacral nodularity, and an ovarian endometrioma are classic for endometriosis.",
+      "id": 42,
+      "examTip": "Uterosacral nodules plus an endometrioma strongly suggest endometriosis."
     },
     {
       "num": 43,
@@ -1708,36 +1750,37 @@ window.QUIZ_DECKS.push({
         82,
         83
       ],
-      "caseStem": "30 years old woman complaints of increasing dysmenorrhea and pelvic pain. She has not get pregnant despite 3 years of unprotected intercourse. Her pelvic examination demonstrates tenderness and nodularity of uterosacral ligaments and a 5 cm right ovarian cyst.",
-      "question": "A reliable diagnosis could be attained by which of the following modalities:",
+      "caseStem": "A 30-year-old has symptoms and examination findings strongly suggesting endometriosis. Noninvasive evaluation is inconclusive, and tissue confirmation is needed.",
+      "question": "Which procedure can provide direct diagnosis and biopsy?",
       "options": [
         {
           "key": "A",
-          "text": "TV u/s."
+          "text": "Transvaginal ultrasound"
         },
         {
           "key": "B",
-          "text": "Laparoscopy."
+          "text": "Laparoscopy"
         },
         {
           "key": "C",
-          "text": "CA 125."
+          "text": "Serum cancer antigen 125 (CA-125)"
         },
         {
           "key": "D",
-          "text": "B-hCG assay."
+          "text": "Serum beta-human chorionic gonadotropin"
         }
       ],
       "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "A": "Transvaginal ultrasound can detect an endometrioma but cannot reliably visualize peritoneal implants, adhesions, or superficial disease, so it does not give a definitive diagnosis.",
-        "B": "Correct. Laparoscopy with direct visualization and biopsy of lesions is the gold-standard reliable method for diagnosing endometriosis.",
-        "C": "CA-125 may be mildly elevated in endometriosis but is nonspecific and cannot establish the diagnosis.",
-        "D": "A B-hCG assay only excludes pregnancy/ectopic and has no role in confirming endometriosis."
+        "A": "Ultrasound can diagnose an endometrioma and deep disease but does not provide histology.",
+        "B": "Correct. When tissue confirmation is needed, laparoscopy allows direct visualization and biopsy.",
+        "C": "CA-125 is nonspecific and is not recommended to diagnose endometriosis.",
+        "D": "Beta-hCG evaluates pregnancy-related conditions, not endometriosis."
       },
-      "teaching": "Laparoscopy, with visualization and histological confirmation of implants, remains the gold standard for the definitive diagnosis of endometriosis. Ultrasound (for endometriomas) and CA-125 are supportive at best and cannot reliably confirm the disease.",
-      "id": 43
+      "teaching": "Endometriosis can often be diagnosed clinically and by imaging. When direct confirmation is needed, laparoscopy permits visualization and biopsy.",
+      "id": 43,
+      "examTip": "Laparoscopy is no longer required for every case, but it provides tissue confirmation."
     },
     {
       "num": 44,
@@ -1745,36 +1788,37 @@ window.QUIZ_DECKS.push({
         82,
         83
       ],
-      "caseStem": "30 years old woman complaints of increasing dysmenorrhea and pelvic pain. She has not get pregnant despite 3 years of unprotected intercourse. Her pelvic examination demonstrates tenderness and nodularity of uterosacral ligaments and a 5 cm right ovarian cyst.",
-      "question": "Which of the following treatment options is preferred as an initial management of this case?",
+      "caseStem": "A 30-year-old with 3 years of infertility has severe endometriosis-type pain and a symptomatic 5 cm ovarian endometrioma. She wishes to preserve fertility.",
+      "question": "Which listed treatment best addresses the cyst and allows treatment of visible pelvic disease?",
       "options": [
         {
           "key": "A",
-          "text": "Operative laparoscopy."
+          "text": "Operative laparoscopy"
         },
         {
           "key": "B",
-          "text": "Conventional laparotomy."
+          "text": "Open laparotomy"
         },
         {
           "key": "C",
-          "text": "TV u/s guided cyst aspiration."
+          "text": "Ultrasound-guided cyst aspiration"
         },
         {
           "key": "D",
-          "text": "GnRH agonist."
+          "text": "A gonadotropin-releasing hormone agonist alone"
         }
       ],
       "correct": "A",
       "answerSource": "circled",
       "explanations": {
-        "A": "Correct. In an infertile woman with a 5 cm endometrioma, operative laparoscopy confirms the diagnosis and treats disease (cystectomy, excision/ablation of implants) in a single setting, improving pain and fertility.",
-        "B": "Conventional laparotomy is more invasive with more adhesions and slower recovery, so it is not the preferred initial approach when laparoscopy is feasible.",
-        "C": "Ultrasound-guided cyst aspiration has a very high recurrence rate and provides no histology, so it is not recommended for an endometrioma.",
-        "D": "A GnRH agonist medically suppresses symptoms but does not remove the cyst or improve fertility and delays conception, so it is not the preferred initial management in an infertile woman."
+        "A": "Correct. Operative laparoscopy can remove the endometrioma and treat visible disease, but counseling must include possible reduction in ovarian reserve.",
+        "B": "Laparotomy is more invasive and is not preferred when laparoscopy is feasible.",
+        "C": "Aspiration has a high recurrence rate and does not provide adequate treatment.",
+        "D": "A gonadotropin-releasing hormone agonist can suppress pain but does not treat the cyst or improve fertility while it is being used."
       },
-      "teaching": "For an infertile woman with symptomatic endometriosis and a 5 cm endometrioma, operative laparoscopy is the preferred initial management: it both confirms the diagnosis and treats the disease (cystectomy plus excision/ablation of implants) in one procedure, enhancing fertility. Medical therapy such as GnRH agonists suppresses symptoms but does not improve fertility and postpones conception.",
-      "id": 44
+      "teaching": "Laparoscopic cystectomy and treatment of visible disease may be considered for a symptomatic large endometrioma, while counseling about possible loss of ovarian reserve.",
+      "id": 44,
+      "examTip": "Endometrioma aspiration recurs often; surgery must balance symptom benefit against ovarian-reserve loss."
     },
     {
       "num": 45,
@@ -1782,36 +1826,37 @@ window.QUIZ_DECKS.push({
         84,
         85
       ],
-      "caseStem": null,
-      "question": "A healthy 47-year old G2P2 woman presents with a history of regular menses every 28 days since the age of 14 years until 6 months ago when her cycle frequency changed to every 22 days. Which of the following is true?",
+      "caseStem": "A healthy 47-year-old had 28-day cycles for many years, but for 6 months her regular cycles have occurred every 22 days.",
+      "question": "Which statement is most accurate?",
       "options": [
         {
           "key": "A",
-          "text": "The patient is at increased risk of bone loss and fracture compared to women her age with menstrual cycles every 28 days."
+          "text": "This pattern alone greatly increases fracture risk"
         },
         {
           "key": "B",
-          "text": "This is a typical perimenopausal woman."
+          "text": "This is a common early perimenopausal change"
         },
         {
           "key": "C",
-          "text": "The patient no longer needs contraception."
+          "text": "She no longer needs contraception"
         },
         {
           "key": "D",
-          "text": "Anovulatory cycles are the likely cause of the change in her cycles."
+          "text": "The shorter cycles prove she is anovulatory"
         }
       ],
       "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "A": "Her cycles remain ovulatory with adequate estrogen, so she is not at increased risk of bone loss or fracture relative to peers with 28-day cycles.",
+        "A": "A shorter cycle pattern alone does not establish sustained estrogen deficiency or a major increase in fracture risk.",
         "B": "Correct. Shortening of cycle length in a woman in her late 40s is the earliest and most typical sign of the perimenopausal transition.",
-        "C": "She is still ovulating and can conceive, so contraception is still needed until menopause is established.",
-        "D": "The shortening is due to a shortened follicular phase from rising FSH with accelerated ovulation, not anovulation; anovulatory cycles usually lengthen or become irregular."
+        "C": "Ovulation can still occur during perimenopause, so pregnancy remains possible and contraception is still needed until menopause is established.",
+        "D": "Shorter regular cycles do not prove anovulation; they often reflect a shorter follicular phase early in the menopausal transition."
       },
-      "teaching": "In the late reproductive years/early perimenopause, declining ovarian reserve raises FSH and shortens the follicular phase, so cycles become shorter (e.g., 28 to 22 days). This is a normal, typical perimenopausal change; the cycles are still ovulatory, so pregnancy is still possible and contraception remains necessary, and this pattern does not confer an increased fracture risk.",
-      "id": 45
+      "teaching": "Early perimenopause often shortens the follicular phase and cycle length. Ovulation and pregnancy remain possible.",
+      "id": 45,
+      "examTip": "Shorter regular cycles can be an early sign of perimenopause."
     },
     {
       "num": 46,
@@ -1819,36 +1864,37 @@ window.QUIZ_DECKS.push({
         86,
         87
       ],
-      "caseStem": null,
-      "question": "A 60 years old woman presenting with postmenopausal bleeding was examined by transvaginal ultrasound which revealed an endometrial thickness of 12 mm. Which of the following sampling techniques is more reliable as a further step?",
+      "caseStem": "A 60-year-old has postmenopausal bleeding and an endometrial thickness of 12 mm on transvaginal ultrasound.",
+      "question": "Which procedure most reliably evaluates the cavity and samples focal lesions?",
       "options": [
         {
           "key": "A",
-          "text": "Endometrial cyto-brush."
+          "text": "Endometrial cytology brush"
         },
         {
           "key": "B",
-          "text": "Fractional curettage."
+          "text": "Hysteroscopy with directed endometrial biopsy"
         },
         {
           "key": "C",
-          "text": "Endometrial suction aspiration."
+          "text": "Blind suction aspiration"
         },
         {
           "key": "D",
-          "text": "Endometrial office biopsy."
+          "text": "Blind office endometrial biopsy"
         }
       ],
       "correct": "B",
       "answerSource": "circled",
       "explanations": {
-        "A": "An endometrial cyto-brush only yields cells for cytology, not a full tissue architecture sample; it is a screening tool and is not reliable enough to exclude carcinoma in a woman with a thickened (12 mm) endometrium and postmenopausal bleeding.",
-        "B": "Correct. With a markedly thickened endometrium (12 mm) and postmenopausal bleeding, fractional curettage provides the most reliable tissue diagnosis, systematically sampling the endocervix and the entire endometrial cavity and giving adequate histology to detect/exclude carcinoma and hyperplasia.",
-        "C": "Endometrial suction aspiration (e.g. Vabra/Pipelle-type suction) is an office, blind technique that samples only a limited portion of the cavity and can miss focal lesions, so it is less reliable than fractional curettage in this high-risk setting.",
-        "D": "Endometrial office (Pipelle) biopsy is a blind, small-sample method that may miss focal pathology; a negative result does not exclude cancer when the endometrium is thick, so it is less reliable than fractional curettage as the further step."
+        "A": "Cytology does not provide reliable tissue architecture for excluding endometrial cancer.",
+        "B": "Correct. Hysteroscopy visualizes the cavity and permits directed biopsy of focal lesions.",
+        "C": "Blind suction sampling may miss polyps or other focal disease.",
+        "D": "Office biopsy is useful for diffuse disease but can miss focal lesions; hysteroscopy is more reliable when focal pathology is a concern."
       },
-      "teaching": "Any endometrial thickness above 4-5 mm in a postmenopausal woman with bleeding is abnormal and mandates tissue sampling to exclude endometrial cancer. Blind office methods (Pipelle biopsy, suction aspiration, cyto-brush) are acceptable first-line screens but sample only part of the cavity and can miss focal disease. When the endometrium is markedly thickened, the more reliable further step is fractional curettage (ideally with hysteroscopy), which provides comprehensive histological sampling.",
-      "id": 46
+      "teaching": "Postmenopausal bleeding with endometrium thicker than 4 mm requires tissue assessment. Hysteroscopy with directed biopsy is most reliable for focal lesions.",
+      "id": 46,
+      "examTip": "Persistent bleeding or concern for a focal lesion calls for hysteroscopy-directed sampling."
     },
     {
       "num": 47,
@@ -1856,41 +1902,42 @@ window.QUIZ_DECKS.push({
         88,
         89
       ],
-      "caseStem": null,
-      "question": "A 30-year-old G0P0, asking for a second opinion after being diagnosed to have a bicornuate uterus. She and her husband are planning to start a family and want to know how this diagnosis would affect the future reproductive life. Which is the MOST LIKELY complication?",
+      "caseStem": "A 30-year-old with a bicornuate uterus asks how it may affect pregnancy.",
+      "question": "Which obstetric complication is characteristically increased?",
       "options": [
         {
           "key": "A",
-          "text": "Infertility requiring surgical intervention."
+          "text": "Infertility that usually requires surgery"
         },
         {
           "key": "B",
-          "text": "Recurrent miscarriage."
+          "text": "Recurrent first-trimester miscarriage"
         },
         {
           "key": "C",
-          "text": "Preterm rupture of membranes."
+          "text": "Post-term pregnancy"
         },
         {
           "key": "D",
-          "text": "Breech presentation when become pregnant."
+          "text": "Fetal malpresentation, including breech"
         },
         {
           "key": "E",
-          "text": "Bicornuate uterus should have no effect on the reproductive life"
+          "text": "No effect on pregnancy"
         }
       ],
       "correct": "D",
       "answerSource": "circled",
       "explanations": {
-        "A": "A bicornuate uterus does not typically cause infertility; affected women usually conceive without difficulty, so infertility requiring surgery is not the most likely reproductive consequence.",
-        "B": "Recurrent miscarriage is more classically associated with a septate uterus (poor implantation on the avascular septum); it can occur with a bicornuate uterus but is not the single most likely complication.",
-        "C": "Preterm labour and preterm prelabour rupture of membranes are increased with a bicornuate uterus due to the restricted, abnormally shaped cavity, but they are not the most likely problem asked for here.",
-        "D": "Correct. The abnormal fundal contour and reduced/distorted cavity of a bicornuate uterus most commonly cause fetal malpresentation, with breech (and transverse) lie being the most frequent complication once pregnancy is established.",
-        "E": "Incorrect; a bicornuate uterus is a Mullerian anomaly that clearly affects reproduction, increasing rates of malpresentation, preterm birth and second-trimester loss, so it does not have 'no effect.'"
+        "A": "A bicornuate uterus usually does not prevent conception or routinely require surgery.",
+        "B": "Pregnancy loss is increased, but first-trimester recurrent miscarriage is more strongly associated with a septate uterus.",
+        "C": "A bicornuate uterus is associated with preterm birth rather than a characteristic tendency to post-term pregnancy.",
+        "D": "Correct. The divided uterine cavity increases breech and transverse fetal presentation.",
+        "E": "A bicornuate uterus increases several obstetric risks."
       },
-      "teaching": "A bicornuate uterus results from incomplete fusion of the Mullerian ducts, producing two horns and a distorted cavity. Fertility (conception) is generally preserved, but the abnormal cavity leads to obstetric complications. Malpresentation (especially breech) is the most common problem, along with increased second-trimester loss, preterm labour and cervical incompetence.",
-      "id": 47
+      "teaching": "A bicornuate uterus usually permits conception but increases malpresentation, preterm birth, and pregnancy loss because the cavity is divided and smaller.",
+      "id": 47,
+      "examTip": "A bicornuate uterus is strongly associated with breech or transverse lie."
     },
     {
       "num": 48,
@@ -1898,28 +1945,28 @@ window.QUIZ_DECKS.push({
         90,
         91
       ],
-      "caseStem": "A 30-year-old G0P0, asking for a second opinion after being diagnosed to have a bicornuate uterus. She and her husband are planning to start a family and want to know how this diagnosis would affect the future reproductive life.",
-      "question": "In the previous case, you explain that additional testing is necessary because of the woman's increased risk of congenital anomalies in which organ system?",
+      "caseStem": "A 30-year-old has a congenital bicornuate uterus.",
+      "question": "Which other organ system should be assessed for associated congenital anomalies?",
       "options": [
         {
           "key": "A",
-          "text": "Skeletal."
+          "text": "Skeletal system"
         },
         {
           "key": "B",
-          "text": "Hernatopoietic."
+          "text": "Hematopoietic system"
         },
         {
           "key": "C",
-          "text": "Central nervous."
+          "text": "Central nervous system"
         },
         {
           "key": "D",
-          "text": "Urinary,"
+          "text": "Urinary tract"
         },
         {
           "key": "E",
-          "text": "Tracheoesophageal."
+          "text": "Tracheoesophageal system"
         }
       ],
       "correct": "D",
@@ -1928,52 +1975,54 @@ window.QUIZ_DECKS.push({
         "A": "Skeletal anomalies are not the classic associated malformation of an isolated Mullerian (uterine) anomaly, so skeletal screening is not the additional testing indicated here.",
         "B": "There is no recognized association between a bicornuate uterus and haematopoietic system anomalies.",
         "C": "Central nervous system malformations are not linked to Mullerian duct fusion defects, so CNS is not the system at increased risk.",
-        "D": "Correct. Because the Mullerian (paramesonephric) ducts develop alongside the mesonephric/Wolffian system, Mullerian anomalies such as a bicornuate uterus carry a high rate of associated urinary tract anomalies (e.g. unilateral renal agenesis, ectopic or duplex kidney), so renal tract imaging is warranted.",
+        "D": "Correct. Müllerian structures and the urinary tract develop in close association, so uterine anomalies can accompany renal agenesis, ectopic kidneys, or collecting-system anomalies.",
         "E": "Tracheoesophageal anomalies belong to associations such as VACTERL and are not the specific increased risk that accompanies a bicornuate uterus."
       },
-      "teaching": "The Mullerian ducts and the mesonephric (Wolffian) ducts develop in close embryological relationship, and the mesonephric duct guides Mullerian development. Consequently, any uterine (Mullerian) anomaly should prompt evaluation of the urinary tract, because renal anomalies such as unilateral renal agenesis are commonly associated. Always image the kidneys when a congenital uterine malformation is found.",
-      "id": 48
+      "teaching": "Müllerian anomalies are associated with renal and urinary tract anomalies because these systems develop closely together.",
+      "id": 48,
+      "examTip": "When a uterine anomaly is found, assess the kidneys and urinary tract."
     },
     {
       "num": 49,
       "pages": [
         92
       ],
-      "caseStem": null,
-      "question": "A 17-year-old girl undergoes a laparotomy for appendicitis. On laparotomy, there is noted to be a torted gangrenous ovarian cyst, for which she undergoes a unilateral oophorectomy. Further exploration reveals a complete absence of the uterus and both fallopian tubes. The renal tract appears normal. Vaginal examination reveals a blind pouch of 3 cm length. FSH, LH and serum estradiol levels are normal. She is about to get married. What is the NEXT STEP in her management?",
+      "caseStem": "During surgery in a 17-year-old, the uterus and fallopian tubes are absent and the vagina ends blindly at 3 cm. One presumed ovary was removed for torsion; the remaining gonad is present, and gonadotropins and estradiol are normal.",
+      "question": "What is the best next diagnostic step before planning long-term treatment?",
       "options": [
         {
           "key": "A",
-          "text": "Karyotyping."
+          "text": "Karyotype testing"
         },
         {
           "key": "B",
-          "text": "Psychosexual counseling."
+          "text": "Psychosexual counseling only"
         },
         {
           "key": "C",
-          "text": "Vaginoplasty."
+          "text": "Immediate vaginoplasty"
         },
         {
           "key": "D",
-          "text": "Utriculoplasty."
+          "text": "Uterine reconstruction"
         },
         {
           "key": "E",
-          "text": "Removal of the other gonad."
+          "text": "Immediate removal of the remaining gonad"
         }
       ],
       "correct": "A",
       "answerSource": "inferred",
       "explanations": {
-        "A": "Correct. Absent uterus and tubes with a blind vaginal pouch is Mullerian agenesis, and the essential next step is karyotyping to confirm 46,XX (MRKH) and, critically, to exclude a 46,XY disorder of sex development such as complete androgen insensitivity - the karyotype determines whether the remaining gonad must be removed.",
-        "B": "Psychosexual counseling is an important part of overall long-term care but is not the immediate next step; the diagnosis (chromosomal sex) must first be established.",
-        "C": "Vaginoplasty (or first-line vaginal dilatation) to create a functional vagina can be planned later once the diagnosis is confirmed; it is premature before karyotyping and is not urgent.",
-        "D": "Utriculoplasty is illogical because there is complete absence of the uterus - there is no uterine tissue to reconstruct.",
-        "E": "Removal of the remaining gonad is only indicated if karyotyping reveals XY gonadal tissue (malignancy risk in a DSD); doing it before establishing the karyotype would be premature and, if she is 46,XX with normal ovaries, unnecessary."
+        "A": "Correct. Karyotyping helps distinguish 46,XX Müllerian agenesis from a 46,XY sex-development condition and guides gonadal management.",
+        "B": "Supportive counseling is essential, but diagnostic clarification should occur before irreversible treatment decisions.",
+        "C": "Vaginal dilation is usually first-line when desired; surgery is not immediate and should follow diagnosis and counseling.",
+        "D": "There is no uterus to reconstruct with this proposed procedure.",
+        "E": "Removing the remaining gonad before establishing its type and malignancy risk could cause unnecessary harm."
       },
-      "teaching": "Primary amenorrhoea with a blind vaginal pouch and absent uterus/tubes points to Mullerian agenesis. The two main differentials are MRKH syndrome (46,XX, normally functioning ovaries, normal FSH/LH/estradiol) and complete androgen insensitivity syndrome (46,XY, intra-abdominal testes with malignant potential). Karyotyping is therefore the key next step, because it distinguishes the two and decides whether the gonads must be removed; definitive vaginal creation and counseling follow once the diagnosis is confirmed.",
-      "id": 49
+      "teaching": "Karyotyping helps distinguish 46,XX Müllerian agenesis from a 46,XY difference of sex development and guides management of the remaining gonad. Counseling and vaginal dilation or surgery follow a confirmed diagnosis and patient preference.",
+      "id": 49,
+      "examTip": "Absent uterus plus a short vagina: establish the karyotype and gonadal diagnosis before surgery."
     }
   ]
 });
